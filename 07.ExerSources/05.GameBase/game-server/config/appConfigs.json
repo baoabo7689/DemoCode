@@ -1,0 +1,33 @@
+{
+  "port": 3009,
+  "mongoDBConfig": {
+    "url": "mongodb://127.0.0.1:27017",
+    "options": {
+      "dbName": "BBGame",
+      "useNewUrlParser": true,
+      "useUnifiedTopology": true,
+      "auto_reconnect": true
+    }
+  },
+  "gameIds": {
+    "baucua": 1
+  },
+  "adminSecretKey": "asWDEerfOIdgsdqRTFabvmgh",
+  "supportedLanguages": ["en-US", "id-ID", "th-TH", "zh-CN", "zh-TW"],
+  "defaultLanguage": "en-US",
+  "enabledGameCron": true,
+  "apiSettings": {
+    "apiUrl": "http://l3-api-proxy.nexdev.net/local1/game-api",
+    "authUrl": "http://l3-auth-1.nexdev.net",
+    "client": { "id": "game-server", "secret": "gameserver@20luminet&" },
+    "useAuthenticate": true,
+    "requestTimeout": 10000,
+    "placeBetTimeout": 4500
+  },
+  "authenticateSettings": { "audiences": ["api", "admin-api", "game-services"] },
+  "corsUrls": [
+    "http://localhost:3000",
+    "http://localhost:3009"
+  ],
+  "disabledDirectLogin": false
+}

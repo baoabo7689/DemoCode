@@ -1,0 +1,49 @@
+body {
+  background-color: #d3d3d3;
+  padding: 10px;
+}
+
+label, .label {
+  margin-right: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hide {
+  display: none !important;
+}
+
+.group {
+  padding-top: 10px;
+}
+
+.err-msg{
+  color: red;
+}
+
+.game-round, .game-start-time, .game-end-time {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.chip-group {
+  height: 60px;
+}
+
+.bet-options-group, .choosed-bets-group, .last-result, .last-bets {
+  height: 100px;
+}
+
+.bet-option {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  background-size: 100% 100%;
+  cursor: pointer;
+
+  &:disabled {
+      display: none;
+  }
+}

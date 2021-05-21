@@ -1,0 +1,86 @@
+{
+  "port": 8081,
+  "env": "LOCAL",
+  "apiUrl": "http://l3-api-proxy.nexdev.net/local1/game-api",
+  "corsUrls": [
+    "http://localhost:7456",
+    "http://localhost:7457",
+    "http://minigame.luminetsoft.com",
+    "http://games.lumigame.com",
+    "http://10.23.10.103:7456"
+  ],
+  "enabledLogs": true,
+  "enabledTelegramLogger": false,
+  "telegramToken": "997354179:AAEDUUPpS-Vzm5FX0S4fo3EvZ9dK-Ebv1k0",
+  "telegramInfoGroup": "-471548574",
+  "telegramErrorGroup": "-482423146",
+  "disabledDirectLogin": false,
+  "gameIds": {
+    "taixiu": 1,
+    "xocxoc": 2,
+    "baucua": 3,
+    "txturbo": 4,
+    "chanle": 5,
+    "clturbo": 6,
+    "minidragontiger": 7,
+    "kenopromax": 8,
+    "baccarat": 10,
+    "bolaTangkas": 20,
+    "roulette": 21,
+    "sicbo": 25,
+    "blackjack": 23,
+    "kenomax": 12,
+    "kenomax2": 13,
+    "kenomini": 14,
+    "kenomini2": 15,
+    "kenoeast": 16,
+    "kenowest": 17,
+    "kenosouth": 18,
+    "kenonorth": 19
+  },
+  "enabledApi": true,
+  "apiSettings": {
+    "apiUrl": "http://l3-api-proxy.nexdev.net/local1/game-api",
+    "authUrl": "http://l3-auth-1.nexdev.net",
+    "client": { "id": "game-server", "secret": "gameserver@20luminet&" },
+    "useAuthenticate": true,
+    "requestTimeout": 10000,
+    "placeBetTimeout": 4500
+  },
+  "middleSiteSettings": {
+    "auth": {
+      "url": "http://l3-auth-1.nexdev.net",
+      "clientId": "game-server",
+      "clientSecret": "gameserver@20luminet&"
+    },
+    "apiUrl": "http://l3-middle-site-1.nexdev.net"
+  },
+  "enabledApiLog": true,
+  "sentryUrl": "https://4d8a523d6c48497c8be043f656bcb9cf@sentryuat.sabagame.com/141",
+  "mongoDBConfig": {
+    "url": "mongodb://127.0.0.1:27017",
+    "options": {
+      "dbName": "minigame",
+      "useNewUrlParser": true,
+      "useUnifiedTopology": true,
+      "auto_reconnect": true
+    }
+  },
+  "adminSecretKey": "asWDEerfOIdgsdqRTFabvmgh",
+  "marqueeMessageConfig": { "intervalTimeInMinute": 2, "delayTimeInMinute": 0.5 },
+  "authenticateSettings": { "audiences": ["api", "admin-api", "game-services"] },
+  "supportedLanguages": ["en-US", "id-ID", "th-TH", "zh-CN", "zh-TW"],
+  "defaultLanguage": "en-US",
+  "bolaTangkas": {
+    "timeout": 61,
+    "enabledLogEndgame": false,
+    "enabledRetryEndgame": true,
+    "generateResultCron": "*/1 * * * *",
+    "maximumStakeGroupPerCurrencyAndStake": 3,
+    "maximumGroupResultPerRequest": 5000,
+    "numberOfTables": 50,
+    "maximumTimeToOccupyTable": 300000
+  },
+  "intervalTimeReloadConfigInSecond": 60,
+  "enabledGameCron": true
+}

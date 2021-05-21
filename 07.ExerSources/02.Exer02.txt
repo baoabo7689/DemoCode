@@ -1,0 +1,121 @@
+
+
+"Study Game Bau Cua in Game Server Source Code
+https://git3.nexdev.net/indo-market/game-server "
+
+
+Study items:
++ Authentication
+D:\Nexcel\Nex3\game-server\app\web\authentication.js
+initAuthentication >> { ip, token } >> authApi.verifyToken >> handleAuthenticatedRequest
+	authApi.verifyToken: D:\Nexcel\Nex3\game-server\app\apis\clients\l1\src\auth.js
+		/AuthVerification/verify
+	handleAuthenticatedRequest: tạo new UserSession (tạo mới User nếu chưa có)
+	
+	
++ Join game
+D:\Nexcel\Nex3\game-server\app\Controllers\game\baccarat\join-room.js
+client > user
+ingameData
+
+
++ Mongoose Models
+https://mongoosejs.com/docs/connections.html
+mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true});
+
+https://mongoosejs.com/docs/api/model.html
+// `UserModel` is a "Model", a subclass of `mongoose.Model`.
+const UserModel = mongoose.model('User', new Schema({ name: String }));
+
+// You can use a Model to create new documents using `new`:
+const userDoc = new UserModel({ name: 'Foo' });
+await userDoc.save();
+
+// You also use a model to create queries:
+const userFromDb = await UserModel.findOne({ name: 'Foo' });
+
+
+
++ Place bet (Bet Queue/ Multiple Markets)
+D:\Nexcel\Nex3\game-server\app\Controllers\game\baccarat\place-bet.js
+validateBetRequest >> baccarat.ingame[client.profile.name].betQueue.push({ data: data, client: client });
+
+D:\Nexcel\Nex3\game-server\app\Controllers\game\baccarat\process-bet-queue.js
+D:\Nexcel\Nex3\game-server\app\Controllers\market-management\market-handlers\market-management.js
+getGameMarketByGameId
+getMarketByCurrency
+getGameMarketByGameIdAndCurrency
+
+
++ Settle (Game Cron)
+D:\Nexcel\Nex3\game-server\app\Cron\baucua.js
+balanceApi.endGame
+
+
++ Admin Control Result
+notifySettlementResult
+D:\Nexcel\Nex3\game-server\app\Controllers\admin\game\mini-base.js
+settlementResultFromAdmin
+D:\Nexcel\Nex3\game-server\app\Controllers\game\MiniBase\run-game.js
+
+
++ History
+D:\Nexcel\Nex3\game-server\app\Controllers\user\onHistory.js
+D:\Nexcel\Nex3\game-server\app\Controllers\game\baucua\getBCHistory.js
+BauCua_cuoc.find
+
+
++ Out game
+D:\Nexcel\Nex3\game-server\app\Controllers\game\baccarat\leave-room.js
+user.red({ baccarat: { outgame: { playerId: client.UID } } });
+
+
++ Change Language
+D:\Nexcel\Nex3\game-server\socketUsers.js
+message.changelanguage
+D:\Nexcel\Nex3\game-server\app\web\user_session_manager.js
+updateLanguage
+
+
+
++ Bot
+D:\Nexcel\Nex3\game-server\app\Controllers\admin\panel\HeThong\BCBot.js
+D:\Nexcel\Nex3\game-server\app\Controllers\game\MiniBase\bot.js
+
+
++ 1W API Error/Disable Game/Disable Market
+
+logAfterSendToApi
+Sentry.captureMessage
+
+placeBet >> configs.disabled_message
+marketConfigs.disabled_message
+D:\Nexcel\Nex3\game-server\app\Controllers\game\MiniBase\get-time.js
+const disabledMessage = marketConfigs ? marketConfigs.disabled_message : "";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+[{
+  "_id": {
+    "$oid": "60a32a255af9c63154529e0f"
+  },
+  "time": {
+    "$date": {
+      "$numberLong": "-62135596800000"
+    }
+  },
+  "__v": 0,
+  "theme": {
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#FFFFFFFF",
+    "centerColor": "#FFFFFFFF",
+    "labelColor": "#FFFFFFFF"
+  },
+  "label": "100",
+  "value": 1,
+  "enabled": false
+},{
+  "_id": {
+    "$oid": "60a741dd52833b521cff9a56"
+  },
+  "time": {
+    "$date": {
+      "$numberLong": "-62135596800000"
+    }
+  },
+  "__v": 0,
+  "theme": {
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#FFFFFFFF",
+    "centerColor": "#FFFFFFFF",
+    "labelColor": "#FFFFFFFF"
+  },
+  "label": "1",
+  "value": 1,
+  "enabled": true
+},{
+  "_id": {
+    "$oid": "60a7423f52833b521cff9a57"
+  },
+  "time": {
+    "$date": {
+      "$numberLong": "-62135596800000"
+    }
+  },
+  "__v": 0,
+  "theme": {
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#FFFFFFFF",
+    "centerColor": "#FFFFFFFF",
+    "labelColor": "#FFFFFFFF"
+  },
+  "label": "10",
+  "value": 10,
+  "enabled": true
+}]

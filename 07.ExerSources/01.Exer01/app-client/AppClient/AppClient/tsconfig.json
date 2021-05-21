@@ -1,0 +1,9 @@
+﻿{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "ES6"
+  },
+  "include": [
+    "Scripts/**/*.ts"
+  ]
+}

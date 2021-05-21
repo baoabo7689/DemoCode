@@ -1,0 +1,10 @@
+{
+  "name": "game-server",
+  "version": "0.0.1",
+  "description": "game server app",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.11",
+    "socket.io": "^4.1.2"
+  }
+}

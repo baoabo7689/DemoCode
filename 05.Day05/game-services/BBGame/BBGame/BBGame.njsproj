@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>BBGame</Name>
+    <RootNamespace>BBGame</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>26f0c7a2-f82a-41e7-aab8-e096f361b662</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <StartWebBrowser>True</StartWebBrowser>
+    <StartWebBrowser>true</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <NodejsPort>1337</NodejsPort>
+    <EnableTypeScript>true</EnableTypeScript>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ItemGroup>
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="server.ts" />
+    <Content Include=".vscode\settings.json" />
+    <Content Include="src\configs\appConfigs.js" />
+    <Content Include="src\configs\appConfigs.json" />
+    <Content Include="src\configs\game-settings.js" />
+    <Content Include="src\consumers\base-action-consumer.js" />
+    <Content Include="src\consumers\change-language-consumer.js" />
+    <Content Include="src\consumers\get-game-configs-consumer.js" />
+    <Content Include="src\consumers\ingame-consumer.js" />
+    <Content Include="src\consumers\outgame-consumer.js" />
+    <Content Include="src\consumers\place-bet-consumer.js" />
+    <Content Include="src\cron\bot.js" />
+    <Content Include="src\cron\game-cron.js" />
+    <Content Include="src\cron\process-bet-queue.js" />
+    <Content Include="src\helpers\choice-helper.js" />
+    <Content Include="src\helpers\random.js" />
+    <Content Include="src\helpers\result-helper.js" />
+    <Content Include="src\models\index.js" />
+    <Content Include="src\models\sicbo-bets.js" />
+    <Content Include="src\models\sicbo-rounds.js" />
+    <Content Include="src\models\bets.js" />
+    <Content Include="src\models\rounds.js" />
+    <Content Include="src\publishers\place-bet-publisher.js" />
+    <Content Include="src\publishers\round-result-publisher.js" />
+    <Content Include="src\query-apis\history-query.js" />
+    <Content Include="src\query-apis\round-query.js" />
+    <Content Include="src\resources\translation\en.js" />
+    <Content Include="src\resources\translation\id.js" />
+    <Content Include="src\resources\translation\languages.js" />
+    <Content Include="src\resources\translation\th.js" />
+    <Content Include="src\resources\translation\vi.js" />
+    <Content Include="src\routes\http-router.js" />
+    <Content Include="src\routes\socket-router.js" />
+    <Content Include="src\app.js" />
+    <Content Include="src\startup.js" />
+    <Content Include="src\jsconfig.json" />
+    <Content Include="src\configs\index.js" />
+    <Content Include="src\consumers\settle-game-consumer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".vscode\" />
+    <Folder Include="src\" />
+    <Folder Include="src\configs\" />
+    <Folder Include="src\consumers\" />
+    <Folder Include="src\cron\" />
+    <Folder Include="src\helpers\" />
+    <Folder Include="src\models\" />
+    <Folder Include="src\publishers\" />
+    <Folder Include="src\query-apis\" />
+    <Folder Include="src\resources\" />
+    <Folder Include="src\resources\translation\" />
+    <Folder Include="src\routes\" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "60a7179c6a86f42abc83ac13"
+  },
+  "time": {
+    "$date": "2021-05-21T02:14:52.891Z"
+  },
+  "__v": 0,
+  "name": "bbgame",
+  "enabled": true,
+  "botenabled": true,
+  "minbet": 10,
+  "maxbet": 120000,
+  "maxbot": 0,
+  "disabledround": null,
+  "bot_minbet": 0,
+  "bot_maxbet": 10000,
+  "hour_maxbot": null,
+  "disabled_message": "This game is under maintenance, it will be back shortly.",
+  "choices_maxbet": {
+    "fish": 10,
+    "prawn": 10,
+    "crab": 10,
+    "stag": 10,
+    "gourd": 10,
+    "rooster": 10
+  },
+  "odds": null,
+  "delayStartTime": 0,
+  "enableFreeBet": false
+}]

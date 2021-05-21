@@ -1,0 +1,37 @@
+{
+  "name": "bbgame",
+  "version": "0.0.0",
+  "description": "BBGame",
+  "type": "module",
+  "main": "./src/app.js",
+  "scripts": {
+    "dev": "nodemon --es-module-specifier-resolution=node",
+    "start": "node --es-module-specifier-resolution=node .",
+    "reg": "npm set registry http://npm.lumigame.com"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.7",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.0",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "@nex3/market-management": "^1.6.0",
+    "@nex3/memory-cache": "^1.0.2",
+    "@nex3/translation": "^1.8.1",
+    "chance": "^1.1.7",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.11",
+    "mongoose-auto-increment-reworked": "^1.2.1",
+    "random": "^3.0.6",
+    "random-js": "^2.1.0",
+    "sc-base-apis": "^1.7.0",
+    "sc-base-database": "^1.4.0",
+    "sc-common": "^1.5.0",
+    "sc-game-base": "^1.15.3",
+    "socket.io": "^4.1.2",
+    "socket.io-client": "^4.1.2"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,14 @@
+{
+  "port": 3009,
+  "gameName": "BBGame",
+  "database": {
+    "url": "mongodb://127.0.0.1:27017",
+    "options": {
+      "dbName": "BBGame",
+      "useNewUrlParser": true,
+      "useUnifiedTopology": true,
+      "auto_reconnect": true
+    }
+  },
+  "marketConfigCacheTimeout": 10000
+}

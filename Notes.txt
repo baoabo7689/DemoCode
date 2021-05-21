@@ -1,0 +1,693 @@
+NodeJS version mới nhất (bản x64)
+mọi người nhớ resigter npm luminet
+npm set registry http://npm.lumigame.com
+
+
+MongoDB
+https://cocos2d-x.org/filedown/CocosCreator_v2.2.2_win
+
+
+Visual Studio Code 
+.NetCore 3.15
+dotnet --list-sdks
+Severity	Code	Description	Project	File	Line	Suppression State
+Error	NETSDK1045	The current .NET SDK does not support targeting .NET Core 3.1.  Either target .NET Core 2.2 or lower, or use a version of the .NET SDK that supports .NET Core 3.1.	GameAdmin.Tests	C:\Program Files (x86)\dotnet\sdk\2.2.110\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.TargetFrameworkInference.targets	137	
+=> Cài Visual Studio 2019 
+
+
+yarn
+Chạy file cài đặt, không run [npm install --global yarn]
+
+game admin
+game user
+game server
+game client
+
+
+
+
+
+---------------------------------------------------------------------------------	
+
+Oscar: hú a... khi nào move lên zone c thì a mang hết toàn bộ thiết bị với dây nhợ lên luôn nha... đừng chừa lại gì nha vì trên đó kg có sẵn gì đâu... 
+IP mới của a sẽ là 10.23.10.107 và gateway là 10.23.10.1 nhá... khi nào lên r thì a chuyển qua giúp e nha...
+
+
+https://git3.nexdev.net/users/sign_in
+louis.nguyen@starixvn.com
+
+
+Turnoff Code Lens 
+Text Editor > View Whitespaces 
+
+
+game admin
+Connect MongoDB: mongodb://lmn_backend:LmnBackend@10.18.200.80:47102
+Export: minigames > admin_users
+D:\Nexcel\Nex3\MongoDB
+Multiple Startup Projects: GameAdmin.API & GameAdmin.Site
+
+Login: http://localhost:7779/
+superadmin/default
+Add New Game 
+Chip Config > Add New 
+Add New Market 
+Update Market Rate 
+Game Management > Enable 
+
+
+
+
+game-user 
+D:\Nexcel\Nex3\user-site\GameUser.Web\appsettings.json
+ "GameServerApiSettings": {
+    "BaseUrl": "http://l3-api-proxy.nexdev.net/local1/game-server-api/",
+    "BaseUrl": "http://localhost:4040/",
+    "GameSettingsCacheTimeout": 10
+  },
+Run
+
+
+
+Open game-client with Cocos > Run 
+Open game-client with Visual Studio Code
+	Game Admin API Host: http://localhost:7778/api > 
+	http://l3-lobby-1.nexdev.net/signin
+	
+
+game-server
+Open with Visual Studio Code
+yarn start
+
+
+game-server-api
+yarn dev
+D:\Nexcel\Nex3\game-server\
+ "middleSiteSettings": {
+    "auth": {
+      "url": "http://l3-auth-3.nexdev.net",
+      "url": "http://l3-auth-1.nexdev.net",
+      "clientId": "game-server",
+      "clientSecret": "gameserver@20luminet&"
+    },
+    "apiUrl": "http://localhost:55603/"
+    "apiUrl": "http://l3-middle-site-1.nexdev.net"
+  },
+
+
+
+game-client
+D:\Nexcel\Nex3\game-client\assets\_new-assets\Config.js 
+"localhost:7456": "l3-api-proxy.nexdev.net/local1/game-server",
+"localhost:7456": "localhost:8081",
+
+gameUserUrl: "http://l3-user-1.nexdev.net",
+gameUserUrl: "http://localhost:7780",
+
+
+
+http://l3-lobby-1.nexdev.net/signin
+
+
+
+
+
+---------------------------------------------------------------------------------	
+
+
+https://medium.com/javascript-in-plain-english/how-i-setup-unit-test-for-mongodb-using-jest-mongoose-103b772ee164
+
+https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#compiling-native-addon-modules
+npm install -g node-gyp
+npm config set msvs_version 2017
+
+
+https://nestjs.com/
+
+
+
+---------------------------------------------------------------------------------
+
+Nex3-Louis
+https://gitlab.nexdev.net/louis.nguyen/nex3-louis
+https://git3.nexdev.net/louis.nguyen/nex3-louis
+
+
+
+"#0) Must use Javascript for server side and typescript for client size
+#1) ""follow this toturial to build a local host web server https://expressjs.com/en/starter/hello-world.html
+
+cd D:\Nexcel\Nex3\01.Setup\01.Documents\02.Day02\myapp
+npm init
+https://expressjs.com/en/starter/installing.html
+npm install express --save
+node app.js
+
+http://localhost:3000/ 
+http://localhost:3000/game-data
+
+
+then write an api endpoint return these data
+{""""gameId"""":1, """"iconSize"""":""""big"""",""""sortOrder"""":6}
+{""""gameId"""":2, """"iconSize"""":""""small"""",""""sortOrder"""":4}
+{""""gameId"""":3,""""iconSize"""":""""medium"""",""""sortOrder"""":2}
+{""""gameId"""":4,""""iconSize"""":""""small"""",""""sortOrder"""":5}
+{""""gameId"""":5,""""iconSize"""":""""small"""",""""sortOrder"""":8,""""chips"""":[]}
+{""""gameId"""":6,""""iconSize"""":""""small"""",""""sortOrder"""":7}
+{""""gameId"""":7,""""iconSize"""":""""big"""",""""sortOrder"""":1,""""chips"""":[]}
+{""""gameId"""":8,""""iconSize"""":""""small"""",""""sortOrder"""":3}
+{""""gameId"""":10,""""iconSize"""":""""big"""",""""sortOrder"""":9}
+{""""gameId"""":20,""""iconSize"""":""""big"""",""""sortOrder"""":10}""
+
+#2) use XmlHttpRequest load data from #1 endpoint
+#3) convert request #2 to promise
+#4) convert request #2 to async/await
+#5) after you got all data, then use async/await to write console log each game setting and each log period is 500 miliseconds
+#6) convert request #5 to promise"
+
+
+
+https://www.w3schools.com/js/js_ajax_http_response.asp
+
+
+---------------------------------------------------------------------------------
+"Study Game Bau Cua in Game Server Source Code
+https://git3.nexdev.net/indo-market/game-server "
+"Study items:
++ Authentication
+D:\Nexcel\Nex3\game-server\app\web\authentication.js
+initAuthentication >> { ip, token } >> authApi.verifyToken >> handleAuthenticatedRequest
+	authApi.verifyToken: D:\Nexcel\Nex3\game-server\app\apis\clients\l1\src\auth.js
+		/AuthVerification/verify
+	handleAuthenticatedRequest: tạo new UserSession (tạo mới User nếu chưa có)
+	
++ Join game
+
++ Mongoose Models
+
+
++ Place bet (Bet Queue/ Multiple Markets)
+
+
++ Settle (Game Cron)
+
+
++ Admin Control Result
+
+
++ History
+
+
++ Out game
+
+
++ Change Language
+
+
++ Bot
+
+
++ 1W API Error/Disable Game/Disable Market"
+
+
+
+---------------------------------------------------------------------------------
+Implement Bau Cua Game in a standalone Game Service using nodejs
+"- Client connect to server using Websocket (Socket IO https://socket.io/)
+
+
+- As for demo site, you can implement as simple as you can, bet option can be a button, please don't spend to much time in UI. The game client must be contain:
++ Bet options
++ Round ID
++ Total Bet of current user and other user
++ Add/Reduce user balance
+
+
+- Implement these items below in game service: 
++ Authentication
++ Join game
++ Mongoose Models (Mongo DB) 
++ Place bet (Bet Queue)
++ Settle (Game Cron)
++ Out game
+
+Resources: https://drive.google.com/file/d/1IQICW5Dxlhi0QTHuhgicn2ywCj7c9EZ_/view?usp=sharing "
+
+
+https://www.c-sharpcorner.com/article/my-first-react-application-with-asp-net-mvc/
+React.Web.Mvc4
+Web.Optimization.React
+JavaScriptEngineSwitcher.V8
+JavaScriptEngineSwitcher.V8.Native.win-x64
+
+
+Uncaught SyntaxError: import declarations may only appear at top level of a module
+
+
+
+http://localhost:3003/
+http://localhost:3003/joingame?username=louis
+http://localhost:3003/leavegame?username=louis&roundId=4
+http://localhost:3003/placebet?username=louis&roundId=4&betOption=ca&betValue=10
+http://localhost:3003/addbalance?username=louis&balance=20
+http://localhost:3003/getroundturnover?roundId=4
+http://localhost:3003/getuserturnover?username=louis&roundId=4
+http://localhost:3003/settleRound?roundId=4
+
+https://docs.mongodb.com/mongodb-shell/connect/
+To connect to a MongoDB instance running on localhost with a non-default port 28015:
+mongosh --port 28015
+
+
+
+npm install mongoose --save
+const url = 'mongodb://127.0.0.1:27017/game-of-thrones'
+cls
+
+GameServer
+delete mongoose.connection.models['OnlineUser'];
+
+
+---------------------------------------------------------------------------------
+Write demo game client page to connect to this game service for placebet/settle
+
+
+
+https://dev.to/finallynero/using-websockets-in-react-4fkp
+
+
+npx create-react-app demo-site
+http://localhost:3006/demo-site
+yarn add node-sass@4.14.1
+https://ncoughlin.com/posts/react-background-images/
+
+https://medium.com/dailyjs/combining-react-with-socket-io-for-real-time-goodness-d26168429a34
+npm --global i create-react-app
+create-react-app game-server
+
+
+A server that integrates with (or mounts on) the Node.JS HTTP Server socket.io
+	npm i --save socket.io	
+A client library that loads on the browser side socket.io-client
+
+
+
+
+
+https://socket.io/get-started/chat
+npm install express@4
+http://localhost:3000
+npm install socket.io
+
+
+
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://127.0.0.1:3000/socket.io/?EIO=4&transport=polling&t=NccUu-6. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing).
+const io = new Server(server, { cors: { origin: '*' } });
+
+
+https://www.valentinog.com/blog/socket-react/
+let interval;
+
+io.on("connection", (socket) => {
+  console.log("New client connected");
+  if (interval) {
+    clearInterval(interval);
+  }
+  interval = setInterval(() => getApiAndEmit(socket), 1000);
+  socket.on("disconnect", () => {
+    console.log("Client disconnected");
+    clearInterval(interval);
+  });
+});
+
+socket.emit("FromAPI", response);
+npm install --save moment 
+npm install --save moment react-moment
+moment(round.startTime).format("hh:mm:ss")
+
+
+lastRoundId: 0,
+lastStartTime: "",
+lastEndTime: "",
+gameResult: ""
+
+
+
+npx create-react-app game-client
+npm install --save moment 
+npm install socket.io-client
+
+
+BBGameServer
+
+
+
+console.log(result.betOptions + " " + t.betOption + " = " + balance);
+
+
+
+---------------------------------------------------------------------------------
+
+
+"Study Game Base 
+http://npm.lumigame.com/-/web/detail/sc-game-base"
+
+
+
+
+
+
+
+"Support base implementations for SC game services. You can overide the base classes if needed for your detail business        
+        
+app / startup : Inititialize app service, register middlewares in startup like Database, Logger, ...        
+socket/http router : Handle and forward socket/http requests to specific comsumers        
+query-apis : Process the query request from router like get history, get logs        
+event-consumers : Process the requests which need to update database like place bet, ...        
+event-publishers : Work with socket, publish the repsonse data fronm event consumers to client via socket        
+Installation        
+npm set registry http://npm.lumigame.com        
+npm install sc-game-base --save-dev "
+
+
+
+npm init 
+
+
+---------------------------------------------------------------------------------
+
+
+Use Game Base to implement Bau Cua Game in Week 2
+"Authentication
+Join game
+Mongoose Models
+Place bet (Bet Queue)
+Settle (Game Cron)
+Admin Control Result
+History
+Out game
+"
+
+
+
+
+cd D:\Nexcel\Nex3\nex3-louis\05.GameBase
+npm init
+npm install express --save
+node app.js
+http://localhost:3000
+
+
+npm set registry http://npm.lumigame.com        
+npm install sc-game-base --save-dev
+
+
+
+WebSocket endpoints for Express applications.
+npm install --save express-ws
+
+
+
+require('./routes/games')(app, redT);
+require("./routerSocket")(app, redT); // load các routes WebSocket
+require("./app/web/authentication")(app);
+
+
+
+require("./app/Controllers/game/baucua/cuoc").initUserQueueProcessing(redT);
+
+
+
+http://localhost:3009
+http://localhost:1337
+
+const WebSocket = require('ws');
+const client = new WebSocket('ws://localhost:3009');
+
+ws://localhost:3009
+Now it’s time to make some connection using a WebSocket test client: these screenshots come from Smart Websocket Client (an extension of Chrome from the Chrome Web Store).
+
+
+D:\Nexcel\Nex3\game-services
+https://www.c-sharpcorner.com/article/node-js-with-visual-studio-2017/
+
+
+
+npm install sc-game-base --save-dev
+
+
+Game Server
+ "gameIds": {
+    "baucua": 1
+  }
+  
+  ConfigHelper.js 
+  end-game.js
+  ....
+ 
+ 
+ 
+ 
+Authentication
+	http://localhost:3009/authenticate
+	https://github.com/request/request		
+Join game
+	require("./routes/routerHttp")(app, redT); // load các routes HTTP
+	app.get("/api/settings", cors(corsOptions), (req, res) => requestHandlers.getSettings(req, res, redT));	
+	
+	this.socketClient.on("signin", this.handleSignIn.bind(this));
+	userSession find ss (username)
+	userInfo find userId	
+    console.log("Sign " + configs)	
+	console.log("gameData " + gameData)
+    console.log("gameData " + this.gameData.gameConfigs)
+	
+	Add gameConfig to DB: bbgame
+	Add UserInfo: (Admin page? >> can implement Signup function)	
+Out game
+	Disconnect
+Mongoose Models
+Place bet (Bet Queue)
+    console.log("Game Bau Cua " + last)
+	Game-Services
+	http://localhost:3008
+	this.socketClient.on("bet", this.handlePlaceBet.bind(this));
+	this.placeBetConsumer.consume(this.gameData.realPlayers[this.socketClient.id], payload);	
+    console.log("Place Bet ");
+	Add Markets, Game_Markets
+	
+	red amount trong userinfo: 
+	.net:7872
+	D:\Nexcel\Nex3\game-api
+	Failed: endBet: -1
+	Success: endBet: 1
+	
+	  const data = await UserInfo.findOne({ id: user.session.userId }).exec();
+	  data.red -= betAmount;
+	  await data.save();
+	  	  
+	settle-game-round-consumer.js	  
+	await userInfos.updateOne({ id: userId }, { $inc: redAdjustments });
+	
+	console.log(data)
+	
+	
+History
+    this.socketClient.on("getHistory", this.handleGetHistory.bind(this));	
+	FishPrawnCrabProBets
+	=> Luồng insert bets???
+	this.placeBetConsumer.consume(this.gameData.realPlayers[this.socketClient.id], payload);
+	
+	SettlementGameRoundConsumer
+	
+	FishPrawnCrabProRound
+	fishprawncrabpro_phiens
+	= null >> 
+	await this.settleGameRoundConsumer.settleRound(this.gameData);
+	publish: remainingTime	
+	
+		
+Settle (Game Cron)
+	Game-Server > Cron > baucua.js 	
+	import { generateResult, getSettlementResult } from "./helpers/result-helper";
+	
+	console.log(result);
+	{dice1, dice2, dice3}
+	
+	publishStartGame: remainingTime	
+	Hết giờ Place Bets: this.runningRoundInfoPublisher.publish(this.gameData); => totalBets
+	StartUp
+	process-bet-queue.js
+	this.processBetQueue.start();
+	50ms => xử lý queue
+    console.log(this.gameData.ingame)
+	
+		
+	Hết giờ:
+	await this.settleBets(finish);
+    const bets = await this.queryBets(roundId);
+	
+	
+    await this.userBetResultPublisher.publish(bet.uid, betResult);
+	this.roundResultPublisher.publishRoundResult(this.collectRoundResult(result, settlementResult, roundId));
+	
+Admin Control Result
+	Game-Service > settle-result > resultFromAdmin
+	Game-Server: resultFromAdmin	
+	if (this.env !== "PRO" && payload[this.definition.name].setResult) {
+        logger.logWarning(payload);
+        this.adminSettlementResultConsumer.consume(payload[this.definition.name].setResult);
+	}
+	
+	http://expressjs.com/en/resources/middleware/cors.html
+	var cors = require('cors')
+	var app = express()
+	app.use(cors())
+	{ roundId, result };
+	settlementResultFromAdmin
+	[ "fish", "prawn", "crab" ]
+	Last Result: async settleRound() => New Round???
+	RoundResultPublisher:  { finish: roundResult };
+	=> GetRoundResult
+	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW5fMSIsImlhdCI6MTYyMjgwMTIzNX0.RtpQMzLpCeRVRkwdwgFuChm6yJvNo-rgtCTckLzUFl8
+	console.log(jwt.sign({ user: "admin_1" }, privateKey))
+    console.log(jwt.verify("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW5fMSIsImlhdCI6MTYyMjgwMTIzNX0.RtpQMzLpCeRVRkwdwgFuChm6yJvNo-rgtCTckLzUFl8", privateKey))
+  
+    console.log(this.definition.name + " " + this.socketClient.id)
+	AdminAuthenticationConsumer
+	
+	adminToken???, Fix useragent, socket Admin close
+	socket Admin close: do reload page thôi
+	Fix useragent: do handleAuthenticatedRequest chỉ init với token >> phải đổi token
+	adminToken: 
+	
+	
+
+  
+---------------------------------------------------------------------------------
+
+Using Current System and integrate this game
+Game Disable/Enable/MinMaxBet/Odds configuration by admin site
+Game-Admin: chỉnh game Config 
+>> Game - Services lấy data 
+
+Bot
+Game Services >> cron >> bot
+
+Integrate with 1W API
+Game Services >>  L1API
+
+
+---------------------------------------------------------------------------------
+
+npm set registry http://npm.lumigame.com    
+npm install sc-game-base@1.15.3 --save
+Giới thiệu Game-Base
+
+Game Client 
+Cocos
+  
+
+---------------------------------------------------------------------------------
+
+
+
+	
+npm install @nex3/market-management@1.6.0
+npm install @nex3/memory-cache@1.0.2
+npm install @nex3/translation@1.8.1
+npm install chance@1.1.7
+npm install express@4.17.1
+npm install mongoose@5.12.11
+npm install mongoose-auto-increment-reworked@1.2.1
+npm install random@3.0.6
+npm install random-js@2.1.0
+npm install sc-base-apis@1.7.0
+npm install sc-base-database@1.4.0
+npm install sc-common@1.5.0
+npm install sc-game-base@1.15.3
+npm install socket.io@4.1.2
+npm install socket.io-client@4.1.2
+	
+npm install @types/node@14.14.7 --save-dev
+npm install nodemon@2.0.7 --save-dev
+npm install prettier@2.3.0 --save-dev
+npm install typescript@4.0.5 --save-dev
+	
+	
+
+"type": "module",
+"main": "./src/app.js",	
+	
+Phải xài version này:
+npm install socket.io@2.3.0
+npm install socket.io-client@2.3.0
+
+
+
+---------------------------------------------------------------------------------
+
+Ba Huy, [04.06.21 11:24]
+[Forwarded from Ba Huy]
+RUN yarn cache clean 
+RUN yarn --update-checksums
+
+Ba Huy, [04.06.21 11:24]
+ai run game service mà bị lỗi này thì run 2 lệnh này nhe
+
+
+
+		
+
+
+await this.startup.configureServices(app);
+await this.startup.startServer(app);
+await authenticationHelper.init(this.appConfigs.mainServerApiSettings);
+
+console.log("gameNameInSocketNamespace " + gameNameInSocketNamespace );
+"transports": ["websocket"]
+
+this.socketClient.on("testMethod", (data) => {
+      console.log("BB Here 2")
+    });
+
+
+
+    const socket = socketIOClient('http://localhost:3008/user/bbgame', { 
+      transports: ["websocket"],
+      allowUpgrades: false
+    });
+    
+    socket.on('connect', () => {
+      console.log("Connected 2")
+    });
+
+
+
+---------------------------------------------------------------------------------	
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
