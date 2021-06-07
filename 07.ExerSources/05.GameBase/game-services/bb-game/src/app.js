@@ -20,7 +20,7 @@ const run = async () => {
 
   logger.log(startupMessage);
   console.log(startupMessage);
-  
+    
   const gameData = new Table.TableGameData(constants.roundDuration, constants.resetTotalBets);
   const definition = new Table.TableGameDefinition(
     gameSettings,

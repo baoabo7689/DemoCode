@@ -4,6 +4,10 @@ const Phone = require("../Models/Phone");
 const UserInfo = require("../Models/UserInfo");
 const { removeFromDeleteQueue } = require("../Cron/UserCacheManagement/userCacheHandler");
 
+const sessionManager = require("./../web/user_session_manager");
+const Message = require("../Models/Message");
+const authApi = require("./../apis/authApi");
+
 let first = function (client) {
   UserInfo.findOne(
     { id: client.UID },

@@ -16,6 +16,7 @@
     "@nex3/memory-cache": "^1.0.2",
     "@nex3/translation": "^1.8.1",
     "chance": "^1.1.7",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.12.11",
     "mongoose-auto-increment-reworked": "^1.2.1",

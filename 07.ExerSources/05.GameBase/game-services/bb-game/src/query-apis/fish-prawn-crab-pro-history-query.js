@@ -7,7 +7,7 @@ export default class FishPrawnCrabProHistoryQuery extends Core.QueryApis.History
    * @return {Promise<{}|{history: {total: *, betLogs: [], pageSize: number, page: *}}>}
    */
   async queryHistory(player, query) {
-    const defaultQuery = { page: 1, pageSize: 8, currentRoundId: 0 };
+    const defaultQuery = { page: 1, pageSize: 1000, currentRoundId: 0 };
     const { page, pageSize, currentRoundId } = Object.assign({}, defaultQuery, query);
 
     if (page < 1 || !player) {

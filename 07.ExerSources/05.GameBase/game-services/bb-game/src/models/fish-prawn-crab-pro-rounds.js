@@ -5,9 +5,9 @@ const modelName = "FishPrawnCrabPro_phien";
 
 const resultSchema = new mongoose.Schema(
   {
-    dice1: { type: Number, required: true },
-    dice2: { type: Number, required: true },
-    dice3: { type: Number, required: true },
+    dice1: { type: String, required: true },
+    dice2: { type: String, required: true },
+    dice3: { type: String, required: true },
   },
   { _id: false }
 );
@@ -58,6 +58,13 @@ const settlementResultSchema = new mongoose.Schema(
     combination46: { type: Number, default: 0 },
 
     combination56: { type: Number, default: 0 },
+
+    stag: { type: Number, default: 0 },
+    gourd: { type: Number, default: 0 },
+    rooster: { type: Number, default: 0 },
+    fish: { type: Number, default: 0 },
+    crab: { type: Number, default: 0 },
+    prawn: { type: Number, default: 0 }
   },
   { _id: false }
 );

@@ -18,11 +18,17 @@ export default class HttpRouter extends TableHttpRouter {
         res.sendStatus(404);
         return;
       }
+      
+      this.gameData.settlementResultFromAdmin = {
+        roundId: parseInt(req.query.roundId),
+        result: {
+          dice1: req.query.dice1,
+          dice2: req.query.dice2,
+          dice3: req.query.dice3
+        } 
+      };
 
-      const { roundId, result } = req.body;
-      this.gameData.settlementResultFromAdmin = { roundId, result };
       logger.logError(`Set result from api: ${JSON.stringify(this.gameData.settlementResultFromAdmin)}`);
-
       res.send({ settlementResultFromAdmin: this.gameData.settlementResultFromAdmin });
     };
   }

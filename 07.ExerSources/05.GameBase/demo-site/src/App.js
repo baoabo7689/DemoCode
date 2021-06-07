@@ -1,51 +1,41 @@
 import './App.scss';
 import React from 'react';
-import socketIOClient from "socket.io-client";
-var request = require('request');
+import GameController from "./gameController"
+import appConfigs from './configs';
+const request = require('request');
+
+var gameController = new GameController();
 
 class App extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    const sockets = this.connectSockets();
     this.state = {
-        betOptions: ["bau", "ca", "cua", "ga", "ho", "tom"],
-        ...sockets,
-        username: 'admin',
-        password: '123456',
-
-        sessionId: '',
-        sessionName: '',
-
-        joinedGame: false,
-        chips: [],
-        betValue: 0,
-        choosedBets: [],
-
-        adminResult: 'ca,tom,cua'
+      ...gameController.connectSockets(this),
+      ...gameController.getDefaultState()
     };
   }
 
-  connectSockets() {
-    const userSocket = new WebSocket("ws://localhost:3009/websocket");
-    const adminSocket = new WebSocket("ws://localhost:3009/admin");
-    const socketIOUser = socketIOClient('http://localhost:3011/user/bbgame', { 
-      "pingInterval": 60000,
-      "pingTimeout": 60000,
-      "transports": ["websocket"],
-      "allowUpgrades": false 
-    });
-
-    userSocket.onmessage = (res) => {
-    };
-
-    adminSocket.onmessage = (res) => {
-     this.handleAdminResult(res);
-    };
-
-    return { socketIOUser, userSocket, adminSocket }
+  updateUsername(e) {
+    this.setState({ username: e.target.value });
   }
 
+  updatePassword(e) {
+    this.setState({ password: e.target.value });
+  }
+
+  updateAdminResult(e) {
+    this.setState({ adminResult: e.target.value });
+  }
+
+  resetState() {
+    this.setState({ ...gameController.getDefaultState() }); 
+  }
+
+  makeQueryStr(req) {
+    return Object.keys(req).map(key => key + '=' + req[key]).join('&');
+  }
+  
   handleAdminResult(res) {
     if(!res.data) {
       return;
@@ -59,7 +49,11 @@ class App extends React.PureComponent {
       }
 
       if(result.Authorized) {
-        this.setState({ sessionId: 'Authorized!' });
+        this.setState({ isAdmin: true });
+        
+        this.setState({ userServices: gameController.connectUserServices(this) });
+        this.state.userServices.emit("getCurrentGameRound");
+
         return;
       }
 
@@ -67,41 +61,17 @@ class App extends React.PureComponent {
     }
   }
 
-  updateUsername(e) {
-    this.setState({ username: e.target.value });
-  }
-
-  updatePassword(e) {
-    this.setState({ password: e.target.value });
-  }
-
-  resetSession() {
-    this.setState({ 
-      sessionId: "", 
-      sessionName: '',
-      errorMsg: '',
-
-      joinedGame: false,
-      chips: [],
-      betValue: 0,
-      choosedBets: []
-    }); 
-  }
-
-  makeQueryStr(req) {
-    return Object.keys(req).map(key => key + '=' + req[key]).join('&');
-  }
-
   authenticateUser() {
-    this.resetSession();
+    this.resetState();
 
     const req = {
       token: 'dummy-token',
       username: this.state.username,
-      userId: 1
+      userId: 1,
+      language: "en-US"
     };
 
-    request.get('http://localhost:3009/authenticate?' +  this.makeQueryStr(req),
+    request.get(`${appConfigs.gameServer}/authenticate?` +  this.makeQueryStr(req),
       (err, res, body) => {
         if(err) {
           this.setState({ errorMsg: err.message });  
@@ -123,37 +93,45 @@ class App extends React.PureComponent {
             }
           };
           
-          this.state.userSocket.send(JSON.stringify(data));
-        } else{
+          this.state.userServer.send(JSON.stringify(data));
+        } else {
           this.setState({  errorMsg: 'Not authenticated!' });          
         }
     });
   }
 
   authenticateAdmin() {
-    this.resetSession();
-
+    this.resetState();
+    this.setState({ adminServer: gameController.connectAdminServer(this), timestamp: new Date() });
     const req = {
       authentication:
       {
+        // token: gameController.generateToken(),
+        jwt: gameController.getJwt(this.state.username),
         username: this.state.username,
         password:this.state.password
       }
     };
     
-    this.state.adminSocket.send(JSON.stringify(req));
+    this.state.adminServer.send(JSON.stringify(req));
   }
 
   joinGame() {
-    const req = {
-      username: this.state.username,
-      userId: 1
-    };
+    this.setState({ userServices: gameController.connectUserServices(this) }) ;
 
-    request.get('http://localhost:3009/api/settings?' +  this.makeQueryStr(req), (err, res, body) => {
-      var result =  JSON.parse(body);
-      this.setState({ joinedGame: true, chips: result.chips, betValue:  result.chips[0].value });
+    gameController.userJoinGame({
+      username: this.state.sessionName,
+      ss: this.state.sessionId
     });
+  }
+
+  userSignedIn() {
+    this.state.userServices.emit("getCurrentGameRound");
+    this.state.userServices.emit('getGameConfigs')
+  }
+
+  updateGameConfigs(data) {
+    this.setState({ joinedGame: true, chips: data.chips, betValue: data.chips[0].value });
   }
 
   chooseChip(value) {
@@ -165,41 +143,113 @@ class App extends React.PureComponent {
   }
 
   chooseBet(e, b) {
+    if(!this.state.canPlaceBet) {
+      this.setState({ errorMsg: 'Please wait to 15s to place bet'});
+      return;
+    }
+
+    this.setState({ errorMsg: ''});
     var choosedBets = this.state.choosedBets;
     if (choosedBets.indexOf(b) !== -1) {
         return;
     }
   
-    // place bet
     choosedBets.push(b);
-    this.setState({ 
-      choosedBets,
+    this.setState({
+      choosedBets, 
+      currentBetOption: b,
       timestamp: new Date()
     });
+    gameController.placeBet({ [b]: this.state.betValue });
+  }
+
+  placedBet(result) {
+    if(result.endBet === 1) {
+      this.setState({ errorMsg: ''});
+    } else{      
+      this.setState({ errorMsg: result.notice  });
+    }
   }
 
   leaveGame() {
+    gameController.userLeaveGame();
     this.setState({ joinedGame: false });
+  }  
+
+  history() {
+    this.state.userServices.emit("getHistory", { page: 1 });
   }
-  
-  updateAdminResult(e) {
-    this.setState({ adminResult: e.target.value });
+
+  showHistory(history) {
+    this.setState({ showHistory: true, history });
   }
 
   setAdminResult() {
     this.setState({ setResultMsg: '' });
-    request.post('http://localhost:3008/set-result?' +  this.makeQueryStr({ adminResult: this.state.adminResult }), (err, res, body) => {
-      var result =  JSON.parse(body);
-      if(result.success) {
-        this.setState({ setResultMsg: 'Done set Admin Result' });
-      } else {
-        this.setState({ setResultMsg: 'Error set Admin Result' });
-      }
+    this.setState({ adminServer: gameController.connectAdminServer(this) });
+
+    const result = this.state.adminResult.split(",").map(c => gameController.mapChoice(c));
+    const adminResult = {
+      roundId: this.state.roundId + 1,
+      dice1: result[0],
+      dice2: result[1] || result[0],
+      dice3: result[2] || result[0]
+    };
+
+    // gameController.settleAdminResultByHttp(this, adminResult);    
+    gameController.settleAdminResultBySocker(this, adminResult);
+  }
+
+  setRemainingTime(remainingTime) {
+    const timePlaceBets = 15;
+
+    if(this.state.remainingTime <= 0) {
+     clearInterval(this.state.roundInterval)
+     
+     this.state.userServices.emit("getCurrentGameRound");
+     this.state.userServices.emit('getGameRoundResult', this.state.roundId-1)
+    }
+
+    this.setState({ 
+      remainingTime,
+      choosedBets: [],
+      totalBets: 0
+     })
+
+    const roundInterval = setInterval(() => {
+      const canPlaceBet = this.state.remainingTime <= timePlaceBets && this.state.remainingTime > 0;
+      this.setState({ 
+        remainingTime: this.state.remainingTime > 0 ? this.state.remainingTime-1:0,
+        canPlaceBet
+      })    
+    }, 1000);
+
+    this.setState({ roundInterval })
+  }
+
+  setTotalBets(totalBets) {
+    if(Object.keys(totalBets).length === 0) {
+      return;
+    }
+
+    const t = Object.values(totalBets).reduce((accumulator, val) => accumulator + val);
+    this.setState({ totalBets: t });
+  }
+
+  showGameRoundResult(data) {
+    console.log(data.gameRoundResult.result)
+    this.setState({
+      finishedRound: data.gameRoundResult,
+      resultId: data.gameRoundResult.id,
+      result: data.gameRoundResult.result
     });
   }
 
-  testCall() {  
-    this.state.socketIOUser.emit("testMethod", "BB")
+  setCurrentRound(data) {
+    this.setState({ roundId: data.currentGameRound.id })
+
+    this.setRemainingTime(data.currentGameRound.remainingTime)
+    this.setTotalBets(data.currentGameRound.totalBets)
   }
 
   render() { 
@@ -217,6 +267,10 @@ class App extends React.PureComponent {
           <button onClick={() => this.authenticateUser()}>Authenticate User</button>
           <button onClick={() => this.authenticateAdmin()}>Authenticate Admin</button>
         </div>
+        <div className="group">
+          <button onClick={(e) => gameController.testCall()}>Call Services</button>
+        </div>
+        
         <div className={"group " + (this.state.sessionId ? "":"hide")}> 
           <label>Session ID: {this.state.sessionId}</label>
         </div>
@@ -224,12 +278,18 @@ class App extends React.PureComponent {
            <button onClick={() => this.joinGame()}>Join Game</button>
            <button onClick={() => this.leaveGame()}>Leave Game</button>
         </div>
+        <div className={"group " + (this.state.joinedGame ? "":"hide")}> 
+          <label>Round: {this.state.roundId} - </label><label>Time: {this.state.remainingTime}</label>
+          <label> - Round Total Bets: {this.state.totalBets}</label>
+        </div>
         <div className={"group chip-group " + (this.state.joinedGame ? "":"hide")}> 
               <div className="bet-value">Bet Value: {this.state.betValue}</div>
               <div id="chips">
                   {
                       this.state.chips.map(b =>
-                          <button className="chip-option" onClick={(e) => this.chooseChip(b.value)}>{b.label}</button>)
+                          <button className={"chip-option " + (this.state.betValue===b.value?'selected':'')}
+                            key={"chip-" + b.value}
+                            onClick={(e) => this.chooseChip(b.value)}>{b.label}</button>)
                   }
               </div>
         </div>
@@ -256,14 +316,36 @@ class App extends React.PureComponent {
                 }
             </div>
         </div>
-        <div className="group">
+        <div className={"group " + (this.state.isAdmin ? "": 'hide')}>
+              <label>Round: {this.state.roundId+1} - </label>
               <label>Admin Result</label>
               <input id="admin-result" type="text" className="label" value={this.state.adminResult} onChange={(e) => this.updateAdminResult(e)} />
               <button onClick={(e) => this.setAdminResult()}>Set Admin Result</button>
               <label>{this.state.setResultMsg}</label>
         </div>
-        <div className="group">
-          <button onClick={(e) => this.testCall()}>Call Services</button>
+        <div className={"group " + (!!this.state.finishedRound ? '' : 'hide')}>
+          <label>Round Id: {this.state.resultId}</label>
+          <label>Result: </label>
+          <div className="bet-option bet-1" key="result-bet-1" style={{backgroundImage: 'url("/images/' + gameController.mapChoice(this.state.result.dice1) +'.png")'}}></div>
+          <div className="bet-option bet-2" key="result-bet-2" style={{backgroundImage: 'url("/images/' + gameController.mapChoice(this.state.result.dice2) +'.png")'}}></div>
+          <div className="bet-option bet-3" key="result-bet-3" style={{backgroundImage: 'url("/images/' + gameController.mapChoice(this.state.result.dice3) +'.png")'}}></div>
+       </div>
+        
+        <div className={"group " + (this.state.joinedGame ? "":"hide")}>
+          <button onClick={(e) => this.history()}>History</button>
+        </div>
+        <div className={"group history-group " + (this.state.showHistory ? "":"hide")}>
+          <label>Page: {this.state.history.page}</label> - <label>Page Size: {this.state.history.pageSize}</label> - <label>Total: {this.state.history.total}</label>
+          <div id="bet-logs">
+            {
+              this.state.history.betLogs.map(b => 
+                <div key={b.phien}>
+                  <label>Round: {b.phien}</label>
+                  <label> - Result: {b.result.dice1}, {b.result.dice2}, {b.result.dice3}</label>
+                  <label> - Bet: {gameController.getBetOptions(b)}</label>
+                </div>)
+            }
+          </div>      
         </div>
       </div>
     );

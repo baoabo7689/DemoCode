@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "60a32ac05af9c63154529e11"
+  },
+  "time": {
+    "$date": "2021-05-18T02:48:21.394Z"
+  },
+  "__v": 0,
+  "gameId": 1,
+  "gameName": "bbgame",
+  "markets": [
+    {
+      "marketId": "60a32a315af9c63154529e10",
+      "enabled": true,
+      "minBet": 10,
+      "maxBet": 10000,
+      "iconSize": "small",
+      "sortOrder": 0,
+      "maxBetChoices": [
+        {
+          "name": "stag",
+          "maxBet": 5000
+        },
+        {
+          "name": "gourd",
+          "maxBet": 5000
+        },
+        {
+          "name": "rooster",
+          "maxBet": 5000
+        },
+        {
+          "name": "fish",
+          "maxBet": 5000
+        },
+        {
+          "name": "crab",
+          "maxBet": 5000
+        },
+        {
+          "name": "prawn",
+          "maxBet": 5000
+        }
+      ],
+      "enabledChips": [
+        "60a741dd52833b521cff9a56",
+        "60a7423f52833b521cff9a57"
+      ]
+    }
+  ]
+}]

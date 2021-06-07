@@ -12,11 +12,9 @@ export default class PlaceBetConsumer extends BasePlaceBetConsumer {
    */
   normalizeBetPayload(bet) {
     const choices = this.definition.choices;
-
     return choices.reduce((result, choice) => {
       if (bet[choice]) {
         const amount = bet[choice] >> 0;
-
         amount > 0 && (result[choice] = amount);
       }
 
@@ -34,10 +32,8 @@ export default class PlaceBetConsumer extends BasePlaceBetConsumer {
 
     try {
       const success = await this.validateBetRequest(player, payload);
-
       if (success) {
         const name = player.profile.name;
-
         if (!this.gameData.ingame[name]) {
           this.gameData.ingame[name] = {
             name,
@@ -63,7 +59,6 @@ export default class PlaceBetConsumer extends BasePlaceBetConsumer {
     Object.entries(bet).forEach(([betChoice, amount]) => {
       if (this.gameData.ingame?.[userName]) {
         const playerInGame = this.gameData.ingame[userName];
-
         playerInGame.betTracks[betChoice] = (playerInGame.betTracks[betChoice] ?? 0) + amount;
       }
     });
@@ -101,9 +96,9 @@ export default class PlaceBetConsumer extends BasePlaceBetConsumer {
     const translation = Translation.getInstance(language);
 
     const configs = await marketManagement.getGameMarketConfig(this.definition.id, player.session.currency, player?.session?.language);
-
     const betTracks = this.gameData?.ingame[player.profile.name]?.betTracks ?? {};
-    const totalAmount = this.definition.choices.reduce((total, choice) => total + (betTracks[choice] || 0) + (payload.bet[choice] || 0), 0);
+    const totalAmount = this.definition.choices.reduce((total, choice) => total + (betTracks[choice] || 0) + (payload.bet[choice] || 0), 0);   
+
     const maxBetConfigs = convertAdminConfigToChoices(configs.maxBetChoices);
     const formatNumberWithComma = helpers.numberHelper.formatNumberWithComma;
 
@@ -120,8 +115,7 @@ export default class PlaceBetConsumer extends BasePlaceBetConsumer {
       },
       ...Object.entries(payload.bet).flatMap((bet) => {
         const [betChoice, amount] = bet;
-        const maxBetPerChoice = maxBetConfigs[betChoice] || 0;
-
+        const maxBetPerChoice = maxBetConfigs[betChoice] || 0;   
         return [
           {
             failure: amount > maxBetPerChoice || betTracks[betChoice] + amount > maxBetPerChoice,

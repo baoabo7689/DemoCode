@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "60b59b7199689558aced032a"
+  },
+  "ssoToken": "dummy-token",
+  "sessionId": "l6q6opiOm6wVU7qOhhwknF8PNGnl39Ce_admin_1",
+  "username": "admin_1",
+  "memberId": 1,
+  "ssoTime": {
+    "$date": "2021-06-01T02:29:05.501Z"
+  },
+  "recheckInTime": {
+    "$date": "2021-06-01T02:29:05.501Z"
+  },
+  "ip": "127.0.0.1",
+  "browserUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0",
+  "userId": "60b59b7199689558aced0329",
+  "currency": "UUS",
+  "clientId": "admin",
+  "memberName": "admin",
+  "__v": 0,
+  "language": "en-US"
+}]

@@ -1,0 +1,58 @@
+
+---------------------------------------------------------------------------------
+
+
+Using Current System and integrate this game
+Game Disable/Enable/MinMaxBet/Odds configuration by admin site
+Game-Admin: chỉnh game Config 
+>> Game - Services lấy data 
+
+
+---------------------------------------------------------------------------------
+
+Bot
+Game Admin > Game Management, Bot 
+Game Services >> cron >> bot
+
+const bot = new FishPrawnCrabProBot(definition, gameData);
+generatePlaceBetPayload
+
+BaseGameStartup
+this.gameCron.start();
+
+
+---------------------------------------------------------------------------------
+
+
+Integrate with 1W API
+Game Services >>  L1API
+
+import { placeBet as placeBetApi } from "sc-base-apis";
+const response = await apiClient.member.balance(getBalanceParams);
+
+
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

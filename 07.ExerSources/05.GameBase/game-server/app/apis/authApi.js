@@ -20,7 +20,8 @@ const authApi = {
                 memberId: verifyTokenParams.userId,
                 memberKey: verifyTokenParams.username,
                 memberName: verifyTokenParams.username,
-                currency: 'UUS'
+                currency: 'UUS',
+                language: verifyTokenParams.language || "en-US"
             };
 
             return result;

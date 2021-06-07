@@ -5,7 +5,7 @@ import MarketManagement from "@nex3/market-management";
  * @property {import("fish-prawn-crab-pro").Definition} definition
  */
 
-export default class ChangeLanguageConsumer {
+export default class GetGameConfigsConsumer {
   /**
    * @param {GetGameConfigsOptions} options
    */
@@ -24,6 +24,7 @@ export default class ChangeLanguageConsumer {
       maxBet: marketConfig.maxBet,
       maxBetChoices: marketConfig.maxBetChoices,
       odds: marketConfig.odds,
+      chips: marketConfig.chips
     };
 
     player.socketClient.emit(this.definition.name, { gameConfig });

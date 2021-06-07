@@ -58,6 +58,12 @@ const schema = new mongoose.Schema({
   odds: { type: Object },
   freeBet: { type: Boolean, default: false },
   totalBet: { type: Number, default: 0 },
+  stag: { type: Number, default: 0 },
+  gourd: { type: Number, default: 0 },
+  rooster: { type: Number, default: 0 },
+  fish: { type: Number, default: 0 },
+  crab: { type: Number, default: 0 },
+  prawn: { type: Number, default: 0 } 
 });
 
 export const FishPrawnCrabProBets = mongoose.model("FishPrawnCrabPro_cuoc", schema);

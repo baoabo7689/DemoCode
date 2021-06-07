@@ -2,13 +2,14 @@ import { Table } from "sc-game-base";
 
 import PlaceBetConsumer from "./consumers/place-bet-consumer";
 import IngameConsumer from "./consumers/ingame-consumer";
-import UserSignInConsumer from "./consumers/user-signin-comsumer";
+import UserSignInConsumer from "./consumers/user-signin-consumer";
 
 import initDatabase from "./models";
 import { FishPrawnCrabProHistoryQuery, FishPrawnCrabProRoundQuery } from "./query-apis";
 import SocketRouter from "./routes/socket-routes";
 import AdminSocketRouter from "./routes/socket-admin-routes";
 import HttpRouter from "./routes/http-router";
+import cors from 'cors';
 
 export default class Startup extends Table.TableGameStartup {
   initHttpRouter(app) {
@@ -53,6 +54,7 @@ export default class Startup extends Table.TableGameStartup {
 
   async configureServices(app) {
     super.configureServices(app);
+    app.use(cors())
 
     await initDatabase(this.appConfigs.database);
   }

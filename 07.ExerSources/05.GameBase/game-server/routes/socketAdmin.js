@@ -16,7 +16,6 @@ const authenticate = function (client, data, callback) {
   if (!!data && !!data.token) {
     try {
       var tokens = data.token.split("-");
-
       if (tokens.length == 2) {
         var isMatched = bcrypt.compareSync(appConfigs.adminSecretKey, tokens[0]);
         if (isMatched) {

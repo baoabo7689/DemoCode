@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "60a32a315af9c63154529e10"
+  },
+  "time": {
+    "$date": "2021-05-21T05:17:41.154Z"
+  },
+  "__v": 0,
+  "marketName": "Louis",
+  "enabled": true,
+  "defaultChipId": "60a32a255af9c63154529e0f",
+  "currencies": [
+    "UUS",
+    "IN"
+  ],
+  "rate": 1,
+  "isBase": true,
+  "cash": true
+}]

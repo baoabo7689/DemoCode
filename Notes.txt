@@ -560,6 +560,25 @@ Admin Control Result
 	socket Admin close: do reload page thôi
 	Fix useragent: do handleAuthenticatedRequest chỉ init với token >> phải đổi token
 	adminToken: 
+	const bcrypt = require("bcrypt");
+	bycryptjs
+	npm install bcryptjs
+	npm uninstall bcryptjs
+	
+    const bcrypt = require("bcrypt");
+    const salt = bcrypt.genSaltSync();
+    const hash = bcrypt.hashSync("default", salt);
+
+    console.log(hash);
+    return hash;
+	http://localhost:3012
+    console.log(decrypt(tokens[1]))
+	Game Lobby Simulator
+	
+	
+	
+	
+	
 	
 	
 
@@ -572,10 +591,14 @@ Game-Admin: chỉnh game Config
 >> Game - Services lấy data 
 
 Bot
+Game Admin > Game Management, Bot 
 Game Services >> cron >> bot
 
 Integrate with 1W API
 Game Services >>  L1API
+
+
+
 
 
 ---------------------------------------------------------------------------------

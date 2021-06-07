@@ -1,4 +1,5 @@
 import getRandomFunction from "./random";
+import gameSettings from "../configs/game-settings";
 
 const buildRules = (key, condition, min = 1, max = 6) =>
   [...Array(max - min + 1)].map((_, index) => ({ choice: `${key}${min + index}`, condition: condition(min + index) }));
@@ -63,15 +64,39 @@ const settlementRuleEntries = [
     buildCondition((value) => `.*5.*${value}.*`),
     6
   ),
+  {
+    choice: "stag",
+    condition: (dices) => (dices.indexOf("stag") !== -1) >> 0,
+  },
+  {
+    choice: "gourd",
+    condition: (dices) => (dices.indexOf("gourd") !== -1) >> 0,
+  },
+  {
+    choice: "rooster",
+    condition: (dices) => (dices.indexOf("rooster") !== -1) >> 0,
+  },
+  {
+    choice: "fish",
+    condition: (dices) => (dices.indexOf("fish") !== -1) >> 0,
+  },
+  {
+    choice: "crab",
+    condition: (dices) => (dices.indexOf("crab") !== -1) >> 0,
+  },
+  {
+    choice: "prawn",
+    condition: (dices) => (dices.indexOf("prawn") !== -1) >> 0,
+  }
 ];
 
 export const generateResult = () => {
   const range = (min, max) => getRandomFunction().range(min, max);
 
   const results = [...Array(100).keys()].map(() => ({
-    dice1: range(1, 6),
-    dice2: range(1, 6),
-    dice3: range(1, 6),
+    dice1: gameSettings.choices[range(1, 6)],
+    dice2: gameSettings.choices[range(1, 6)],
+    dice3: gameSettings.choices[range(1, 6)]
   }));
 
   const index = range(0, 99);

@@ -43,8 +43,8 @@ export default class AdminSocketRouter extends BaseAdminSocketRouter {
       }
 
       if (this.env !== "PRO" && payload[this.definition.name].setResult) {
-        logger.logWarning(payload);
         this.adminSettlementResultConsumer.consume(payload[this.definition.name].setResult);
+        this.socketClient.emit(this.definition.name, {adminSettle: {success: true}})
       }
     } catch (err) {
       logger.logError(err);

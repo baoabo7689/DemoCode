@@ -1,6 +1,6 @@
 import TableProcessBetQueue from "sc-game-base/src/table/crons/table-process-bet-queue";
 import Translation from "@nex3/translation";
-import { placeBet as placeBetApi } from "sc-base-apis";
+import { placeBet as placeBetApi } from "../apis/place-bet";
 import PlaceBetPublisher from "../publishers/place-bet-publisher";
 import MarketManagement from "@nex3/market-management";
 
@@ -53,7 +53,6 @@ export default class ProcessBetQueue extends TableProcessBetQueue {
 
     await this.insertOrUpdateBet(player, roundId, bet);
     await this.adjustGameData(player, bet, balance);
-
     this.notifyPlacingBetResult(player, balance, bet);
   }
 
@@ -69,7 +68,7 @@ export default class ProcessBetQueue extends TableProcessBetQueue {
       name: player.profile.name,
       round: roundId,
       time: new Date(),
-      bet,
+      bet
     };
 
     if (player.session) {
@@ -96,8 +95,9 @@ export default class ProcessBetQueue extends TableProcessBetQueue {
       phien: roundId,
       time: new Date(),
       odds: configs.odds,
-      freeBet,
+      freeBet
     };
+
     const totalBet = Object.values(bet).reduce((total, betValue) => total + betValue, 0);
     const existingBetIncrement = { ...bet, totalBet };
 

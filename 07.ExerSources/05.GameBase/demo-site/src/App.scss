@@ -32,8 +32,16 @@ button {
   height: 60px;
 }
 
+.chip-option.selected {
+  border: solid 1px #1520a6;
+}
+
 .bet-options-group, .choosed-bets-group, .last-result, .last-bets {
   height: 100px;
+}
+
+.history-group {
+  height: 200px;
 }
 
 .bet-option {

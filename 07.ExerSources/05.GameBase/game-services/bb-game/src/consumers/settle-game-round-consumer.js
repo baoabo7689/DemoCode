@@ -4,6 +4,7 @@ import { convertAdminConfigToChoices } from "../helpers/choice-helper";
 export default class FishPrawnCrabProSettleGameRoundConsumer extends TableSettlementGameRoundConsumer {
   calculateBetResult(settlementResult, bet, odds) {
     const normalizedOdds = convertAdminConfigToChoices(odds);
+  
     const betResult = Object.entries(settlementResult).reduce(
       (result, [choice, win]) => {
         const oddChoice = choice.startsWith("single") ? `single${win}${choice.substr("single".length)}` : choice;
@@ -35,6 +36,7 @@ export default class FishPrawnCrabProSettleGameRoundConsumer extends TableSettle
 
     betResult.totalWin = parseFloat(betResult.totalWin.toFixed(2));
     betResult.netWin = parseFloat(betResult.netWin.toFixed(2));
+
     return betResult;
   }
 

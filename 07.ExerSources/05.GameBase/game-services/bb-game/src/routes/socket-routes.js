@@ -36,9 +36,8 @@ export default class FishPrawnCrabProSocketRouter extends Table.Routers.SocketRo
 
     this.socketClient.on("changeLanguage", this.handleChangeLanguage.bind(this));
     this.socketClient.on("getGameConfigs", this.handleGetGameConfigs.bind(this));
-    this.socketClient.on("testMethod", (data) => {
-      console.log("BB Here 2")
-    });
+    this.socketClient.on("getCurrentGameRound", this.handleGetCurrentGameRound.bind(this));
+    this.socketClient.on("getGameRoundResult", this.handleGetGameRoundResult.bind(this));
   }
 
   /**
@@ -81,10 +80,39 @@ export default class FishPrawnCrabProSocketRouter extends Table.Routers.SocketRo
       }
 
       const history = await this.historyQuery.queryHistory(this.gameData.realPlayers[this.socketClient.id], payload);
-
       this.socketClient.emit(this.definition.name, history);
     } catch (error) {
       logger.logError(error);
     }
+  }
+
+  async handleGetCurrentGameRound() {
+    const round = await this.definition.roundRepository
+      .findOne()
+      .sort({ _id: -1 })
+      .lean()
+      .exec();
+
+    const result = {
+      id: round?.id || 0,
+      remainingTime: this.gameData.remainingTime,
+      totalBets: this.gameData.totalBets,
+      currentBets: {
+        message: 'Not Implement yet!!!'
+      }
+    };
+    
+    this.socketClient.emit(this.definition.name, { currentGameRound: result });  
+  }
+
+  async handleGetGameRoundResult(id) {
+    const round = await this.definition.roundRepository.findOne({ id }).exec();
+    if(!round) {
+      return;
+    }
+
+    const result = { id, result: round.result };
+    
+    this.socketClient.emit(this.definition.name, { gameRoundResult: result });  
   }
 }

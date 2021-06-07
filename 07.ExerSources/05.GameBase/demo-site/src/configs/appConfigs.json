@@ -1,0 +1,15 @@
+{
+  "gameServer": "http://localhost:3009",
+  "gameServices": "http://localhost:3011",
+  "userSocket": "ws://localhost:3009/websocket",
+  "adminSocket": "ws://localhost:3009/admin",
+  "userServices": "http://localhost:3011/user/bbgame",
+  "adminServices": "http://localhost:3011/admin/bbgame",
+  "socketOptions": { 
+    "pingInterval": 60000,
+    "pingTimeout": 60000,
+    "transports": ["websocket"],
+    "allowUpgrades": false 
+  },
+  "adminSecretKey": "asWDEerfOIdgsdqRTFabvmgh"
+}
