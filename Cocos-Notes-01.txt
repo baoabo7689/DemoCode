@@ -1,0 +1,68 @@
+
+
+
+
+Adding component scripts to implement interactive functions
+Scripting development using dynamic language support, you can use JavaScript to develop games,
+quickly preview and debug on physical machines and devices, and update your published games.
+TypeScript is also supported and can be mixed with your JavaScript code at the same time.
+
+
+Packages folder is used to place custom extensions for this project.
+If you need to install the extension manually, you can create this folder manually.
+If you need to uninstall the extension, delete the corresponding folder in packages.
+
+
+When the move transform tool is activated:
+Press red arrow and drag mouse, then the node will be moved on the x axis;
+Press green arrow and drag mouse, then the node will be moved on the y axis;
+Press blue cube and drag mouse, then the node will be moved freely on both the axises.
+
+
+When you need to edit several assets properties of the same type at once, you can press Shift in the Assets panel to select several assets,
+and then the Properties panel will display the number of selected assets and editable asset properties.
+After that, click the Apply button on the top right.
+
+
+
+
+Open your project in Cocos Creator, and choose Developer -> VS Code Workflow -> Install VS Code Extension from main menu.
+Let's run VS Code, and choose File -> Open... from main menu, then select your project's root folder and click Open.
+Now you can create a new script or edit existing script and enjoy autocomplete and syntax highlight.
+
+
+Use VS Code to activate script compilation
+Install cURL
+In the Creator Editor main menu, execute Developer -> VS Code Workflow -> Add Compile Task. This operation will add the tasks.json task configuration file in the .vscode folder of the project.
+Press Cmd/Ctrl+p in VS Code to activate Quick open input box, then enter task compile and select compile.
+Ctrl+P > task compile
+
+workbench.action.tasks.runTask
+Ctrl B, Ctrl B
+
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

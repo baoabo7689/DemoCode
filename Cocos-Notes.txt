@@ -1,20 +1,275 @@
+https://docs.google.com/spreadsheets/d/1BlwZwHFF2nm86VLA2vYakON0I-EQfCDyMWnZAwiX8sw/edit#gid=263491754
+
+Skype	Add Skype friends
+Anders	quanglewin
+Ricky	nbhuy89
+	
+	
+Softwares	
+Cocos Creator dashboard + cocos creator 2.4.3	
+Visual Studio Code	
+Demo for cocos ability: https://cocos2d-x.org/js-tests/	
+Books	
+Clean Code by Robert Martin (Uncle Bob)	
+	
+================================================================================================================================================================================================	
+
+Week 01
+https://docs.cocos.com/creator/manual/en/getting-started/introduction.html
+
+Beginner Guide		
+	About Cocos Creator	
+	Install and Launch	
+	Project Structure	
+	Using Editor	
+	Coding Environment Setup	
+		
+Asset workflow		
+	https://docs.cocos.com/creator/manual/en/asset-workflow/	
+Scene Building Workflow		
+	https://docs.cocos.com/creator/manual/en/content-workflow/	
+Using Component		Try to use Typescript
+	https://docs.cocos.com/creator/manual/en/scripting/use-component.html	
+	https://docs.cocos.com/creator/manual/en/scripting/access-node-component.html	
+	https://docs.cocos.com/creator/manual/en/scripting/basic-node-api.html	
+Lifecycle callback		
+	https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html	
+Event System		
+	https://docs.cocos.com/creator/manual/en/scripting/events.html	
+	https://docs.cocos.com/creator/manual/en/scripting/internal-events.html	
+		
+Tutorial Flappy Bird	Demo: https://zzxgame.com.cn/FlappyBirdDemo_Preview/	
+	Part 1: https://www.cocos.com/7398	
+	Part 2: https://www.cocos.com/?p=7410?language=en#7410	
+		
+Home Reading: Clean Code by Robert Martin (Uncle Bob) 		
+	Chapter 1 - Clean Code	
+	Chapter 2 - Meaningful names	
+		
+Git		
+	Reset	
+	Cherry pick	
+	rebase	
+	merge	
+	rebase vs merge	
+	force push	
+	force push with lease	
+	pull	
+	pull merge	
+	pull rebase	
+	fetch	
+	Fetch all	
+	Fetch and prune all	
+
 
 
 
 
 ================================================================================================================================================================================================	
 
+Week 02
+
+	https://javascript.info/		
+			
+JavaScript Fundamentals		Code quality	
+	An Introduction to JavaScript		Debugging in Chrome
+	Type Conversions		Coding Style
+	Loops: while and for	Objects: the basics	
+	Code structure		Objects
+	Basic operators, maths		Object methods, "this"
+	The "switch" statement		Object copying, references
+	Comparisons		Constructor, operator "new"
+	Functions		Object to primitive conversion
+	Variables		Garbage collection
+	Conditional branching: if, '?'		Optional chaining '?.'
+	Function expressions	Data types	
+	Data types		Methods of primitives
+	Logical operators		Array methods
+	Arrow functions, the basics		Object.keys, values, entries
+	Nullish coalescing operator '??'		Numbers
+Advanced working with functions			Iterables
+	Global object		Destructuring assignment
+	Decorators and forwarding, call/apply		Strings
+	The old "var"		Date and time
+	Scheduling: setTimeout and setInterval		Arrays
+	Variable scope, closure		JSON methods, toJSON
+	Function binding		Map/Reduce/Filter
+	Arrow functions revisited		
+Classes		Error handling	
+	Class basic syntax		Error handling, "try..catch"
+	Private and protected properties and methods		Custom errors, extending Error
+	Class checking: "instanceof"	Promises, async/await	
+	Class inheritance		Introduction: callbacks
+	Mixins		Promise
+	Static properties and methods		Promises chaining
+	Extending built-in classes		Error handling with promises
+Modules			Promise API
+	Modules, introduction		Promisification
+	Export and Import		Microtasks
+Network requests			Async/await
+	Fetch		Asynchronous array functions
+	Fetch: Cross-Origin Requests		
+	WebSocket		
+	XMLHttpRequest		
+Storing data in the browser			
+	Cookies, document.cookie		
+	LocalStorage, sessionStorage		
+			
+Home Reading: Clean Code by Robert Martin (Uncle Bob) 			
+	Chapter 3 - Functions		
+			
 
 
+================================================================================================================================================================================================	
+
+Week 03
+New version Flappy Bird	Demo: https://drive.google.com/file/d/1ujSrZr5u7xV8T16a5qgC8xzzg_LGa5Gv/view?usp=sharing		
+	Change gameplay from endless mode to level mode		
+	Create a scene to select level.		
+	Load level from prefab.		https://docs.cocos.com/creator/manual/en/scripting/load-assets.html
+	Create a level with moving enemies.	Tween and Action	"https://docs.cocos.com/creator/manual/en/scripting/tween.html
+https://docs.cocos.com/creator/manual/en/scripting/actions.html
+https://easings.net/"
+	Create a progress bar display how far main character flyed	Progress Bar, Sprite	"https://docs.cocos.com/creator/manual/en/components/progress.html
+https://docs.cocos.com/creator/manual/en/components/sprite.html"
+	Add more effect:explosion when bird died, firework when complete a level.	Particle system	https://docs.cocos.com/creator/manual/en/components/particle-system.html
+	Create a shop scene to buy skin for main character. Requirement: scrollable to choose item, then highlight the selected item	Scrollview	https://docs.cocos.com/creator/manual/en/components/scrollview.html
+	User Data Storage 		https://docs.cocos.com/creator/manual/en/advanced-topics/data-storage.html
+	Resources: https://drive.google.com/file/d/14UNuUTf9rzsAGj20qwYEzMnxzz0I4TPJ/view?usp=sharing		
+Typescript			
+	TypeScript for JS Programmers		
+	Basic Types		
+	Interfaces		
+	Functions		
+	Literal Types		
+	Unions and Intersection Types		
+	Classes		
+	Enums		
+	Generics		
+Home Reading	S.O.L.I.D principles		
+	S - Single-responsiblity principle		
+	O - Open-closed principle		
+	L - Liskov substitution principle		
+	https://drive.google.com/file/d/1SPPq8j7miY6z8Ul2BQqGE8m-Yi_md59T/view?usp=sharing		
+Excercise	 Review Clean Code & SOLID		
 
 
 
 ================================================================================================================================================================================================	
 
+Week04
+UI Rendering Batch Processing	https://docs.cocos.com/creator/manual/en/advanced-topics/ui-auto-batch.html
+Renderer Component	https://docs.cocos.com/creator/manual/en/render/
+	Label, label outline, label shadow
+	Mask
+	Motion Streak
+	Spine
+	DragonBone
+	Webview
+	
+UI	https://docs.cocos.com/creator/manual/en/ui/
+	Sliced Sprite
+	Widget alignment
+	Label layout
+	Layout component
+	Other UI components
+	Texture Packer
+Animation	https://docs.cocos.com/creator/manual/en/animation/
+Audio	https://docs.cocos.com/creator/manual/en/audio/
+	
+Custom Engine	https://docs.cocos.com/creator/manual/en/advanced-topics/engine-customization.html
+	
+Home Reading	S.O.L.I.D principles
+	I - Interface segregation principle
+	D - Dependency Inversion Principle
+	https://drive.google.com/file/d/1SPPq8j7miY6z8Ul2BQqGE8m-Yi_md59T/view?usp=sharing
+	
+	
+================================================================================================================================================================================================	
+
+Week05
+	Step	Description
+"Exercise 1 - Callback/Promise/Async/Await
+(Dont use any lib, just use XmlHttpRequest for fetching data from server)"	0	Must use Javascript for server side and typescript for client size
+	1	"follow this toturial to build a local host web server https://expressjs.com/en/starter/hello-world.html
+then write an api endpoint return these data
+{""gameId"":1, ""iconSize"":""big"",""sortOrder"":6}
+{""gameId"":2, ""iconSize"":""small"",""sortOrder"":4}
+{""gameId"":3,""iconSize"":""medium"",""sortOrder"":2}
+{""gameId"":4,""iconSize"":""small"",""sortOrder"":5}
+{""gameId"":5,""iconSize"":""small"",""sortOrder"":8,""chips"":[]}
+{""gameId"":6,""iconSize"":""small"",""sortOrder"":7}
+{""gameId"":7,""iconSize"":""big"",""sortOrder"":1,""chips"":[]}
+{""gameId"":8,""iconSize"":""small"",""sortOrder"":3}
+{""gameId"":10,""iconSize"":""big"",""sortOrder"":9}
+{""gameId"":20,""iconSize"":""big"",""sortOrder"":10}"
+	2	use callback load data from #1 endpoint
+	3	convert request #2 to promise
+	4	convert request #2 to async/await
+	5	after you got all data, then use async/await to write console log each game setting and each log period is 500 miliseconds
+	6	convert request #5 to promise
+Excercise 2 - Dragon Tiger Game	0	"Must use Javascript for server side and typescript for client size
+Game Rule: 
++ Dragon Tiger is a simple card game similar to Baccarat. The game is played with one standard 52-card deck (excluding Joker). There are 3 betting options Dragon, Tiger, and Tie.
++ Two cards are drawn, one for the Dragon and one for the Tiger. The players bet on Dragon or Tiger which one will win with the higher value card. The players can also bet on “Tie” option if they predict Dragon and Tiger will have the same value card, irrespective of suit.
+Dragon: the player bets on the Dragon will win if Dragon has a higher value card than Tiger.
+Tiger: the player bets on the Tiger will win if the Tiger has a higher value card than Dragon.
+Tie: the players bet on Tie will win if Dragon and Tiger have the same value card, irrespective of suit.
+The game determines the win or loss by comparing the point of the card instead of its suit. K is the maximum, while Ace is the minimum.
+Cards’ point values
+Card        A        2        3        4        5        6        7        8        9        10         J         Q          K
+Point        1        2        3        4        5        6        7        8        9        10        11        12        13"
+	1	"Implement server side to generate result when client make get result request
+Eg: access to http://your-domain/api/dragon-tiger/result"
+	2	"Use cocos creator to build client side. In client side, we have a button, that when user click on, client side makes a request to get generated result from sever and then display resule and build a scoreboard like below
+"
+		
+		
+		
+		
+		"If new game result is different from the previous one  => add and dislay on top of a new column right next to it
+Else => add and dislay in the same column with the previous one. If the number of row exceeds the max height, go to the new column right next to it.
+If result is Tie then don't add new result, just add a mark like above picture to previous result
+Tiger: Red
+Dragon: Yellow
+Tie: Blue
+Please be noted that Scoreboard can be scrolled from left to right and vice versa"
+		Scoreboard Atlas: https://drive.google.com/file/d/11XQx-Ax8hSsDVXTismOSL64ioHm79MNW/view?usp=sharing
+Excercise 3 - Multiple Players	1	"To allow user play this game, we need to implement more features in Client/Server. 
+In Game Server, implement these business below:
++ Allow user login & join to table to play game
++ A game cron that handles game, each game round is 30 seconds, this will count down from 30 to 0, user cannot place bet in last 5 seconds.  
++ Allow new user join game, if this is new user, then give them 10000 coin
++ Accept user bet, and settle when game round has been done (count to 0) 
+In Game client:
++ Implement login form
++ Display game round id
++ total bet of current user
++ total bet of a game round
++ Default bet is 10
++ User balance will be updated when settlement has been done"
+		
+	2	Dont need to use real database here, just store all users in server memory or to json file, that's enough
+		
+================================================================================================================================================================================================	
+
+Week06
+Unittest		
+Book	THE ART OF UNIT TESTING - 2nd Edition	
+Javascript Testing Framework	https://jestjs.io/docs/en/getting-started	
+Expectation	"Understand concepts below:
++ Unittests
++ TDD
++ Stub vs Mock
++ Setup and Teardown
++ How to create readable, maintainable, trustworthy tests"	
+Excercise 1	"Back to Week 5 - Excercise 2 - Dragon Tiger Game
+In game server:
+ + Write unittests for settlement method
+In game client, study whether we can write unittest for those code?"	
 
 
-
-
+================================================================================================================================================================================================	
 
 
 
