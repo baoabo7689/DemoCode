@@ -1,5 +1,5 @@
 {
-  "start-scene": "5dcd99cb-77a4-4c95-a7d8-4b5b45295ae5",
+  "start-scene": "current",
   "group-list": [
     "default"
   ],
@@ -8,18 +8,7 @@
       true
     ]
   ],
-  "excluded-modules": [
-    "Geom Utils",
-    "3D",
-    "3D Primitive",
-    "3D Physics/cannon.js",
-    "3D Physics/Builtin",
-    "3D Particle",
-    "SafeArea"
-  ],
-  "migrate-history": [
-    "cloud-function"
-  ],
+  "excluded-modules": [],
   "last-module-event-record-time": 0,
   "design-resolution-width": 960,
   "design-resolution-height": 640,

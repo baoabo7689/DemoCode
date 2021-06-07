@@ -31,6 +31,7 @@ Let's run VS Code, and choose File -> Open... from main menu, then select your p
 Now you can create a new script or edit existing script and enjoy autocomplete and syntax highlight.
 
 
+https://docs.cocos.com/creator/manual/en/getting-started/coding-setup.html
 Use VS Code to activate script compilation
 Install cURL
 In the Creator Editor main menu, execute Developer -> VS Code Workflow -> Add Compile Task. This operation will add the tasks.json task configuration file in the .vscode folder of the project.
@@ -40,7 +41,35 @@ Ctrl+P > task compile
 workbench.action.tasks.runTask
 Ctrl B, Ctrl B
 
+
+https://discuss.cocos2d-x.org/t/how-to-edit-code-with-vscode/35907
+To use VS Code as the default editor, open the properties menu (on Mac it’s under CocosCreator). On the left hand side select the “Data Editor” path. There you can change the External Script Editor to be VS Code. Creator will now use VS Code when you click on scripts.
+If you look in the developer menu, there’s a VS Code workflow menu, I believe the first option puts the creator.d.ts file in the proper spot for Intellisense.
+C:\Users\louis.nguyen\AppData\Local\Programs\Microsoft VS Code\Code.exe
+
+
+
+
+ 
+ 
+ 
 ---------------------------------------------------------------------------------
+
+In Cocos Creator, cc.tween provides a chain-created method that can manipulate any object, and easing any of the object's properties.
+cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
+cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
+cc.director.loadScene('game');
+this.player.stopAllActions(); 
+
+
+
+https://www.cocos.com/en/the-best-software-tools-to-use-with-cocos
+
+
+
+
+
+
 
 
 
