@@ -1,6 +1,6 @@
 
 
-
+Beginer Guide
 
 Adding component scripts to implement interactive functions
 Scripting development using dynamic language support, you can use JavaScript to develop games,
@@ -49,12 +49,7 @@ C:\Users\louis.nguyen\AppData\Local\Programs\Microsoft VS Code\Code.exe
 
 
 
-
- 
- 
- 
----------------------------------------------------------------------------------
-
+https://www.cocos.com/en/the-best-software-tools-to-use-with-cocos
 In Cocos Creator, cc.tween provides a chain-created method that can manipulate any object, and easing any of the object's properties.
 cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
 cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
@@ -62,8 +57,85 @@ cc.director.loadScene('game');
 this.player.stopAllActions(); 
 
 
+Cocos Creator provides is a more thorough data driven method. All the information edited in the editor will be serialized into data documents.
+Understanding workflows of Cocos Creator from the angle of data driven
+In Cocos Creator, when developers have finished building scenes in editor,
+all the data will be saved as a scene-name.fire document and then be stored in Asset Database.
+Developers can load a scene resource by using cc.director.loadScene.
+ 
+ 
+ 
+---------------------------------------------------------------------------------
 
-https://www.cocos.com/en/the-best-software-tools-to-use-with-cocos
+Asset workflow
+
+When importing any asset files in assets folder a Meta file will be generated for each asset, with the same filename at the same location.
+
+Warning: Unmatched asset meta found
+If you move or rename asset file in Explorer or Finder without moving or renaming the meta files accordingly,
+the Editor will consider the moved or renamed asset as newly imported thus creating new meta files with new uuid.
+Also the old meta files will have no matched asset and be removed.
+It will also cause missing reference to the asset (including scripts) in scenes and prefabs.
+
+Any unmatched meta files will be removed from assets folder, and will be backed up to temp folder.
+
+File -> Export Asset
+File -> Import Asset
+
+To enable auto releasing, select the desired scene in Assets panel, then change the "Auto Release Assets" property in Properties panel, the property is true by default.
+
+With the auto releasing enabled for a scene, if some of the scene's assets are saved in the script as "special reference",
+these references will become invalid once the scene switched, since the resource has been released, may cause rendering problems.
+To prevent these assets from being released automatically, we can use Asset.addRef to retain them.
+
+When loading a scene, if its "Async Load Assets" is set to false, all its dependent assets (including recursive dependents) will be load and the scene will launch after loaded completely.
+
+
+You can choose Auto Sync or Manual Sync for every prefab instances in the scene.
+If set to Manual Sync, when its originating asset changed, the prefab instances will NOT dynamically refresh to stay synchronized with the originating asset. Refreshing only triggered when users manually revert the prefab.
+If set to Auto Sync, the prefab instances will dynamically refresh to stay synchronized with the originating asset.
+
+After deleting a prefab from the Assets panel, you can convert the corresponding prefab instance in the scene to an ordinary node.
+To do this, select the prefab instance and click menu Node -> Convert to Regular Node.
+
+
+Then you can generate Atlas by special tools. We suggest:
+https://www.codeandweb.com/texturepacker
+https://zwopple.com/zwoptex/
+
+In Assets panel right-click on a folder, and click the following context menu item Create -> Auto Atlas.
+It will create a AutoAtlas.pac asset to hold your atlas configuration for current folder.
+With an Auto Atlas asset created, all SpriteFrame assets in the current folder including sub-folders will be used to generate a sprite sheet atlas during build process.
+And all SpriteFrame assets added to the folder or its sub-folder will be added to the atlas automatically in the future.
+
+
+cc.assetManager.loadRemote('http://example.com/background.mp3', callback);
+cc.assetManager.loadRemote('http://example.com/background.mp3', { audioLoadMode: cc.AudioClip.LoadMode.DOM_AUDIO }, callback);
+
+Creator has officially supported the JSON file since 1.10. All the .json files under the project's assets folder are imported as cc.JsonAsset.
+Creator has officially supported text files since 1.10. Common text formats such as .txt, .plist, .xml, .json, .yaml, .ini, .csv, .md will be imported as cc.TextAsset.
+
+
+
+---------------------------------------------------------------------------------
+
+Scene Building Workflow
+
+
+We can add multiple components to one node so that we can compose varying features to an element.
+In the example above, we can continue to select the New Sprite node, click the Add component button
+at the bottom of the Properties panel and select UI Component -> Button to add a Button component.
+
+
+Anchor is another important property of nodes. It determines which point in the constraint frame of the node itself should be taken as the position of the whole node.
+The position we see the transformation tool show after we choose the node is the anchor position of the node.
+Once the anchor position is decided, all the child nodes will take the anchor position as the coordinate origin.
+
+The engine will render all nodes according to the order in Node Tree, from top to bottom.
+So that the node on bottom will be drawn over the node on top.
+
+In a parent child relationship, the parent node is always on top, so child node will be rendered last.
+That's why we make a separate body node in the example, so that we can specify the exact order of shadow and body.
 
 
 
@@ -72,9 +144,65 @@ https://www.cocos.com/en/the-best-software-tools-to-use-with-cocos
 
 
 
+---------------------------------------------------------------------------------
+
+
+Workflow of script development
+
+
+Recommended coding standards
+It is recommended to use full uppercase underline to name “constant”.
+Use underscores _ when naming private attributes
+We use dash nomenclature for files
+Try your best to use single quotation marks '' to define a string in js code
+When defining multi-lines string, try your best to use +
+Use === and !== rather than == and !=
+
+Please add ; at the end of the statement.
+Please put a space before ( of the logic state expressions ( if, else, while, switch)
+Leave one space between the binary ternary operators
 
 
 
+Inheritance
+extends: Shape
+The constructor of the super class will be automatically invoked at first before the instantiation of the child class, you do not need to call it explicitly by yourself.
+
+After setting get or set in the property, when you access the property, the pre-defined get or set method will be triggered. Defining the method is as follows:
+You can define the get method only, so this is like one property of read only.
+
+
+
+Access node and other component
+Getting the node which the component belong is easy, just use this.node variable in component:
+You will get other component in the same node frequently, that is where getComponent comes in, it help you to find the component you need.
+
+this.node.getChildByName("Cannon 01");
+cc.find("Cannon 01/Barrel/SFX", this.node);
+When omit the second parameter of cc.find, it will find starts from the scene root:
+
+
+
+https://docs.cocos.com/creator/manual/en/scripting/basic-node-api.html
+this.node.removeFromParent(false);
+parentNode.addChild(this.node);
+removeFromParent usually need to pass a false, otherwise it will clear all the events and actions on the node.
+Creating a new node with Creating and Destroying Nodes section, you'll need to give the newly created node a parent to initialize it properly.
+
+
+
+Life cycle callback
+onLoad
+	triggered when the node is first activated
+start
+	triggered before the first activation of the component
+update
+lateUpdate
+	perform other operations after update of all the components are done, then we'll need the lateUpdate callback.
+onDestroy
+onEnable
+	.If the node is created for the first time, and enabled is true, then it will be called after onLoad but before start.
+onDisable
 
 
 
@@ -86,6 +214,40 @@ https://www.cocos.com/en/the-best-software-tools-to-use-with-cocos
 
 
 ---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
