@@ -97,6 +97,24 @@ https://www.typescriptlang.org/docs/handbook/symbols.html
 
 ---------------------------------------------------------------------------------
 
+cc.director.loadScene('main');
+
+
+this.mainControl = this.node.parent.getComponent('MainControl');
+
+cc.loader.loadRes('Prefab/Level01', (err, prefab) => {
+	var currentSceen = cc.director.getScene();
+	this.node.removeAllChildren(true);
+	// var canv = currentSceen.getChildByName('Canvas');
+	// canv.destroy();
+
+	var newNode = cc.instantiate(prefab);
+	this.node.addChild(newNode);
+	this.level01Scene = newNode;
+	this.node.on(cc.Node.EventType.TOUCH_START, this.onTouchStart, this);
+});
+
+https://discuss.cocos2d-x.org/t/cocos-creator-create-sprite-with-node-dynamically/34573
 
 
 

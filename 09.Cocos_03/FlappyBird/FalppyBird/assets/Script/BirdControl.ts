@@ -14,7 +14,7 @@ import { SoundType } from './AudioSourceControl';
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class BirdControl extends cc.Component {
     //Speed of bird
     speed: number = 0;
 
@@ -22,8 +22,8 @@ export default class NewClass extends cc.Component {
     mainControl: MainControl = null;
 
     onLoad() {
-        cc.Canvas.instance.node.on(cc.Node.EventType.TOUCH_START, this.onTouchStart, this);
-        this.mainControl = cc.Canvas.instance.node.getComponent('MainControl');
+        this.node.parent.on(cc.Node.EventType.TOUCH_START, this.onTouchStart, this);
+        this.mainControl = this.node.parent.getComponent('MainControl');
     }
 
     start() {}

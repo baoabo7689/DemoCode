@@ -18,7 +18,7 @@ export enum SoundType {
 }
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class AudioSourceControl extends cc.Component {
     @property({ type: cc.AudioClip })
     backgroundMusic: cc.AudioClip = null;
 

@@ -19,7 +19,7 @@ export enum GameStatus {
 }
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class MainControl extends cc.Component {
     @property(cc.Sprite)
     spBg: cc.Sprite[] = [null, null];
 
