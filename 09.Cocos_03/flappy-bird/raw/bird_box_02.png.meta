@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "bbc59d6e-861e-41ed-8706-0d977ac4c530",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 259,
+  "height": 146,
+  "platformSettings": {},
+  "subMetas": {
+    "bird_box_02": {
+      "ver": "1.0.4",
+      "uuid": "fc1fab83-0725-4d69-8336-c73d9ac7af8f",
+      "rawTextureUuid": "bbc59d6e-861e-41ed-8706-0d977ac4c530",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -3.5,
+      "offsetY": -1,
+      "trimX": 11,
+      "trimY": 12,
+      "width": 230,
+      "height": 124,
+      "rawWidth": 259,
+      "rawHeight": 146,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

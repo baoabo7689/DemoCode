@@ -9,6 +9,7 @@
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import AudioSourceControl, { SoundType } from './AudioSourceControl';
+import Level01Control from './Level01Control';
 
 const { ccclass, property } = cc._decorator;
 
@@ -42,6 +43,14 @@ export default class MainControl extends cc.Component {
     @property(AudioSourceControl)
     audioSourceControl: AudioSourceControl = null;
 
+    @property(cc.ProgressBar)
+    progressBar: cc.Node = null;
+
+    @property(cc.Sprite)
+    progress: cc.Sprite = null;
+
+    level01Control: Level01Control = null;
+
     // LIFE-CYCLE CALLBACKS:
 
     onLoad() {
@@ -62,6 +71,11 @@ export default class MainControl extends cc.Component {
         this.audioSourceControl = this.node
             .getChildByName('AudioSource')
             .getComponent(AudioSourceControl);
+
+        this.progressBar = this.node.getChildByName('DistProgressBar');
+        this.progress = this.progressBar.getComponentInChildren(cc.Sprite);
+
+        this.level01Control = this.node.getComponent(Level01Control);
     }
 
     start() {
@@ -108,6 +122,7 @@ export default class MainControl extends cc.Component {
         this.btnStart.node.active = true;
         this.gameStatus = GameStatus.Game_Ready;
         this.audioSourceControl.playSound(SoundType.E_Sound_Die);
+        this.level01Control.gameOver();
     }
 
     touchStartBtn() {
@@ -127,5 +142,16 @@ export default class MainControl extends cc.Component {
 
         this.gameScore = 0;
         this.labelScore.string = `Score: ${this.gameScore}`;
+
+        this.level01Control.init();
+        this.progress.fillRange = 0;
+    }
+
+    increaseScore() {
+        this.gameScore++;
+        this.labelScore.string = `Score: ${this.gameScore}`;
+        this.audioSourceControl.playSound(SoundType.E_Sound_Score);
+
+        this.progress.fillRange = this.level01Control.getProgressScore();
     }
 }

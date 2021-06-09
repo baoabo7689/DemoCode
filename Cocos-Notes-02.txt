@@ -119,7 +119,40 @@ https://discuss.cocos2d-x.org/t/cocos-creator-create-sprite-with-node-dynamicall
 
 
 
+https://www.programmersought.com/article/28725010032/
 
+
+
+
+
+https://docs.cocos.com/creator/manual/en/asset-workflow/atlas.html
+Create Atlas Asset
+You should prepare the original images for generating Atlas:
+Then you can generate Atlas by special tools
+Please select plist files for cocos2d-x when export atlas by the tool. Then you will get plist & png with the same name:
+
+Import Atlas
+Drag plist & png files into Assets Panel at the same time. Then you can use it in Cocos Creator.
+
+
+https://docs.cocos.com/creator/manual/en/scripting/tween.html
+cc.tween provides two APIs for setting properties:
+    to: Calculate the absolute value of the property. And the final run result is the property value that is set.
+    by: Calculate the relative value of the property. And the final run result is the property value that is set, plus the property value of the node at the start of the run.
+
+
+
+https://docs.cocos.com/creator/manual/en/scripting/pooling.html
+this.enemyPool = new cc.NodePool();
+enemy = this.enemyPool.get();
+this.enemyPool.put(enemy); // populate your pool with put method
+
+
+https://www.programmersought.com/article/28725010032/
+Use the Sprite component to implement the progress bar function:
+There are five types of rendering modes for Sprite components (Type): as shown in the figure below, they are
+SIMPLE (normal), Sliced ​​( ), Tiled, Filled, Mesh.
+fillStart: 0
 
 
 

@@ -26,6 +26,7 @@ export default class NewClass extends cc.Component {
 
     // update (dt) {}
     startLevel01() {
+        // cc.director.loadScene('main');
         cc.loader.loadRes('Prefab/Level01', (err, prefab) => {
             var currentSceen = cc.director.getScene();
             this.node.removeAllChildren(true);
@@ -38,6 +39,7 @@ export default class NewClass extends cc.Component {
             this.node.on(cc.Node.EventType.TOUCH_START, this.onTouchStart, this);
         });
     }
+
     onTouchStart(event: cc.Event.EventTouch) {
         if (!!this.level01Scene) {
             this.node.getComponentInChildren('BirdControl').onTouchStart(event);

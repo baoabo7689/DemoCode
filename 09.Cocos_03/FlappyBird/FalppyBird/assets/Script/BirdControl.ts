@@ -52,17 +52,19 @@ export default class BirdControl extends cc.Component {
     }
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
-        if (other.tag === 0) {
-            //game over
-            cc.log('game over');
-            this.mainControl.gameOver();
-            this.speed = 0;
-        }
-        // collider tag is 1, that means the bird cross a pipe, then add score
-        else if (other.tag === 1) {
-            this.mainControl.gameScore++;
-            this.mainControl.labelScore.string = `Score: ${this.mainControl.gameScore}`;
-            this.mainControl.audioSourceControl.playSound(SoundType.E_Sound_Score);
+        switch (other.tag) {
+            case 2:
+            case 4:
+            case 5:
+                //game over
+                cc.log('game over');
+                this.mainControl.gameOver();
+                this.speed = 0;
+                break;
+            case 1:
+                // collider tag is 1, that means the bird cross a pipe, then add score
+                this.mainControl.increaseScore();
+                break;
         }
     }
 }

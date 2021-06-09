@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "a80df975-49b1-4b5d-9c64-d52f805e3aab",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 190,
+  "height": 187,
+  "platformSettings": {},
+  "subMetas": {
+    "skeleton-fly_06": {
+      "ver": "1.0.4",
+      "uuid": "8bf6f5e4-2680-478d-bcf4-e202f2201d83",
+      "rawTextureUuid": "a80df975-49b1-4b5d-9c64-d52f805e3aab",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 5.5,
+      "offsetY": 1.5,
+      "trimX": 15,
+      "trimY": 16,
+      "width": 171,
+      "height": 152,
+      "rawWidth": 190,
+      "rawHeight": 187,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
