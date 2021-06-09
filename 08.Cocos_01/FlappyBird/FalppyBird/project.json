@@ -1,0 +1,9 @@
+{
+  "engine": "cocos2d-html5",
+  "packages": "packages",
+  "version": "2.2.2",
+  "id": "5236b788-dd7e-4e63-b840-4738c60f5db2",
+  "scripts": {
+    "prettier-watch": "onchange 'src/**/*.ts' -- prettier --write {{changed}}"  
+  }
+}

@@ -139,11 +139,6 @@ That's why we make a separate body node in the example, so that we can specify t
 
 
 
-
-
-
-
-
 ---------------------------------------------------------------------------------
 
 
@@ -206,7 +201,200 @@ onDisable
 
 
 
+Scene Managing
+There's only one scene running at the same time, when switching scenes the previous scene will be destroyed.
+To easily store and pass information among scenes we can mark a node as persist node to prevent it from being destroyed during scene switch.
+This way the node and all the component instances attached to it will remain in memory.
 
+cc.director.loadScene("MyScene", onSceneLaunched);
+Sometimes we need to load new scene in the background when still running previous scene, and only switch scene when new scene is loaded.
+We can use cc.director.preloadScene to do this:
+
+Each asset provides two methods addRef and decRef that you can use to control references to dynamic resources, for example:
+
+
+Developers can divide the scenes, resources, and code in the project into different Asset Bundles, which will not be loaded at game launch,
+but will be loaded by developers manually calling loadBundle during the game, thus effectively reducing the startup time of the game and make loading on demand as easy as possible.
+The Asset Bundle is configured in folders.
+When we select a folder in the Assets panel, the Properties panel will show a Is Bundle option, if set, the folder-related configuration options will appear:
+cc.assetManager.loadBundle('01_graphics', (err, bundle) => {
+    bundle.load('xxx');
+});
+
+// Reuse Asset Bundles from other projects
+cc.assetManager.loadBundle('https://othergame.com/remote/01_graphics', (err, bundle) => {
+    bundle.load('xxx');
+});
+
+After the Asset Bundle has been loaded, it will be cached, and you can use the name to get the Asset Bundle. For example:
+let bundle = cc.assetManager.getBundle('01_graphics');
+
+Release resources in the Asset Bundle
+Remove the Asset Bundle
+
+We've made some optimizations for passing event arguments since v2.0.
+When emitting event, you could pass five extra parameters from the second one to the sixth one in the emit function call,
+they will be transferred as final arguments to invoke the callback function registered in on function.
+
+
+Be noted, when you want to dispatch a custom event, please do not use cc.Event because it's an abstract class, instead, you should use cc.Event.EventCustom to dispatch a custom event.
+https://docs.cocos.com/creator/manual/en/scripting/internal-events.html
+cc.Node.EventType.MOUSE_DOWN
+this.node.pauseSystemEvents();
+this.node.resumeSystemEvents();
+
+https://docs.cocos.com/creator/manual/en/scripting/player-controls.html
+Global system events are irrelevant with the node hierarchy, so they are dispatched globally by cc.systemEvent, currently supported:
+
+
+Compared to easing, custom progress function has more freedom to control the easing process.
+// Customize the progress for all properties
+cc.tween().to(1, { scale: 2, rotation: 90 }, {
+  progress: (start, end, current, ratio) => {
+    return start + (end - start) * ratio;
+  }
+})
+
+// Customize the progress for a single property
+cc.tween().to(1, {
+  scale: 2,
+  position: {
+    value: cc.v3(),
+    progress: (start, end, current, t) => {
+      // Note that the passed in property is cc.Vec3, so you need to use Vec3.lerp for interpolation calculations
+      return start.lerp(end, t, current);
+    }
+  }
+})
+
+Parallel execution easing
+Delayed execution
+
+https://docs.cocos.com/creator/manual/en/scripting/actions.html
+Developers can also set tags for the actions and control the actions by tag.
+// set tag for the action
+var ACTION_TAG = 1;
+action.setTag(ACTION_TAG);
+// get the action by tag
+node.getActionByTag(ACTION_TAG);
+// stop one action by tag
+node.stopActionByTag(ACTION_TAG);
+
+https://docs.cocos.com/creator/manual/en/scripting/action-list.html
+
+
+
+
+Using the timer
+Some people may think setTimeout and setInterval are enough.
+Developers surely can use these two functions, but we prefer using the timer more as it is quicker and more powerful and it combines better with the components!
+The developer can use the call-back function itself to cancel the timer:
+
+
+The sequence of component scripts executed on the same node can be controlled by the order in which the components are in the Properties. 
+
+
+Standard network interface
+In Cocos Creator, we support the most widely used standard network interface on the Web platform:
+XMLHttpRequest: for short connection
+WebSocket: for long connection
+
+
+Pooling
+We recommend to only create node and component instance in onLoad life cycle callback during scene initialization, and only destroy them at scene switching.
+If we are making a game with lots of dynamically generated and destroyed enemies and bullets,
+how can we keep the performance cost of instance creating and destroying from messing up our framerate?
+It would be a perfect case for node pooling to shine.
+
+Node Pool is a collection of reusable node object.
+We can use new cc.NodePool() to create an instance of Node Pool for a certain node template.
+Create your prefab
+Create Node Pool instance
+Requesting node from pool
+Return node to the pool
+Register reuse and unuse callback
+Clear Node Pool
+
+The considerations of cc.NodePool
+When you get and return nodes, addChild and removeFromParent will be constantly executed on nodes by cc.NodePool,
+when operating Node Pools in large quantities and frequently, such as making shooting game barrage, which may still lead to performance degradation on low-end device.
+
+
+Modularize Script
+What require returned is the object exported by the module
+module.exports value can be any JavaScript type.
+
+
+
+CCClass Advanced Reference
+Static variable and static method
+Static variables and static methods can be defined in statics property of the Prototype Object.
+
+Different from constructor, overridden method from parent class will not be called automatically, so you need to call explicitly if needed:
+
+
+Property delay definition
+If two classes refer to each other, in the script load phase there will be a circular reference, the circular reference will lead to script loading error:
+=> đưa import statement vào function lúc cần thiết
+
+
+
+
+The script loading order is as follows:
+Cocos2d engine
+Plugin Script (If there are multiple, they are loaded in alphabetical order according to the path in the project)
+Normal Script (Only one file after packing, the internal scripts will be initialized in the order of require dependencies)
+=> Import As Plugin
+
+http://bonsaiden.github.io/JavaScript-Garden/
+
+https://docs.cocos.com/creator/manual/en/scripting/typescript.html
+
+
+
+
+---------------------------------------------------------------------------------
+
+https://service.cocos.com/document/en/
+
+
+Release a Game on Web platform
+You can use cc.view.enableRetina(true) to set the high resolution in the script, and the Retina display will be turned on by default when you build to the Web platform.
+Release a game on Web server
+If you want to release or share your games on the Internet, click the Open button next to Build path.
+After opening the release path, copy everything in the built web-mobile or web-desktop folders, and drop them into your Web server. Then you can see the game later there.
+
+
+https://docs.cocos.com/creator/manual/en/publish/debug-jsb.html
+First choose to use the Simulator (debug) as the preview platform on the top of the editor toolbar, and then click the Run Preview button in the editor to run the game in the simulator.
+After running the simulator, open the address devtools://devtools/bundled/js_app.html?v8only=true&ws=127.0.0.1:5086/00010002-0003-4004-8005-000600070008 directly with the Chrome browser to debug.
+(If you are using an older version of Chrome, you need to change the devtools at the beginning of the address to chrome-devtools)
+
+
+Screenshot
+Screenshot is a very common demand in the game, through the camera and rendertexture we can quickly achieve a screenshot function.
+
+
+
+
+https://docs.cocos.com/creator/manual/en/physics/collision/edit-collider-component.html
+Polygon Collider
+Group Management
+In the Group Collide Map section we can control whether collide is allowed for each group with any other groups. The Collide map looks like this:
+
+
+
+https://docs.cocos.com/creator/manual/en/3d/lighting.html
+https://docs.cocos.com/creator/manual/en/extension/your-first-extension.html
+
+
+Internationalization (i18n)
+To enable i18n, put an i18n folder in your package path and add a javascript file named for each language code (e.g. en.js for english).
+
+
+https://docs.cocos.com/creator/manual/en/advanced-topics/hot-update.html
+https://docs.cocos.com/creator/manual/en/advanced-topics/data-storage.html
+Cocos Creator we use cc.sys.localStorage API to save and read user data.
 
 
 
@@ -215,6 +403,26 @@ onDisable
 
 ---------------------------------------------------------------------------------
 
+Tutorial Flappy Bird
+	Demo: https://zzxgame.com.cn/FlappyBirdDemo_Preview/	
+	Part 1: https://www.cocos.com/7398	
+	Part 2: https://www.cocos.com/?p=7410?language=en#7410	
+
+
+A few tips
+The mouse is within the scope of the scene editor, the scene can be zoomed in and out by the mouse wheel.
+After zooming in or out, the node we want to see is often not in the middle of the scene editor. Select the node, and then use CTRL + F so that the IDE will automatically move the selected node to the middle of the scene editor.
+Every modification changes the project. CTRL + S saves the current scene. It is always a good habit to save often.
+
+
+https://discuss.cocos2d-x.org/t/tutorial-cocos-creator-learning-flappy-bird-part-7/49418
+https://scottsauber.com/2017/06/10/prettier-format-on-save-never-worry-about-formatting-javascript-again/
+File >> Preferences >> Settings >> Search for Format On Save and check the box
+Config: defaultFormatter = esbenp.prettier
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
 
 
 
@@ -237,11 +445,7 @@ onDisable
 
 
 
-
-
-
-
-
+---------------------------------------------------------------------------------
 
 
 

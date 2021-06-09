@@ -1,0 +1,3 @@
+- Install NodeJS from https://nodejs.org/en/download/
+- Open command promt at project folder, run "node server.js". 
+- Open browser, enter the url "http://localhost:3000/index.html".

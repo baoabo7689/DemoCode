@@ -1,0 +1,129 @@
+
+
+
+
+https://www.typescriptlang.org/docs/handbook/basic-types.html
+
+Tuple
+// Declare a tuple type
+let x: [string, number];
+
+Unknown
+Any
+Unlike unknown, variables of type any allow you to access arbitrary properties, even ones that don’t exist.
+These properties include functions and TypeScript will not check their existence or type:
+
+Never
+For instance, never is the return type for a function expression or an arrow function expression that always throws an exception or one that never returns.
+
+
+Interface
+Readonly properties
+Class Types
+interface ClockInterface {
+  currentTime: Date;
+}
+
+class Clock implements ClockInterface {
+  currentTime: Date = new Date();
+  constructor(h: number, m: number) {}
+}
+
+Extending Interfaces
+interface Square extends Shape {
+  sideLength: number;
+}
+
+
+Interfaces Extending Classes
+When an interface type extends a class type it inherits the members of the class but not their implementations.
+It is as if the interface had declared all of the members of the class without providing an implementation.
+Interfaces inherit even the private and protected members of a base class.
+This means that when you create an interface that extends a class with private or protected members, that interface type can only be implemented by that class or a subclass of it.
+
+
+
+String Literal Types
+type Easing = "ease-in" | "ease-out" | "ease-in-out";
+
+
+https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html
+Union Types
+function padLeft(value: string, padding: string | number) {
+  // ...
+}
+
+
+Intersection Types
+Intersection types are closely related to union types, but they are used very differently.
+An intersection type combines multiple types into one. This allows you to add together existing types to get a single type that has all the features you need.
+For example, Person & Serializable & Loggable is a type which is all of Person and Serializable and Loggable.
+That means an object of this type will have all members of all three types.
+
+type ArtworksResponse = ArtworksData & ErrorHandling;
+
+
+https://www.typescriptlang.org/docs/handbook/classes.html
+Class 
+Public by default
+Static Properties
+
+Objects vs Enums
+In modern TypeScript, you may not need an enum when an object with as const could suffice:
+
+https://www.typescriptlang.org/docs/handbook/generics.html
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+Generic Classes
+Generic Constraints
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+  console.log(arg.length); // Now we know it has a .length property, so no more error
+  return arg;
+}
+
+
+https://www.typescriptlang.org/docs/handbook/2/conditional-types.html
+
+
+
+https://www.typescriptlang.org/docs/handbook/namespaces.html
+https://www.typescriptlang.org/docs/handbook/symbols.html
+
+
+
+
+
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
