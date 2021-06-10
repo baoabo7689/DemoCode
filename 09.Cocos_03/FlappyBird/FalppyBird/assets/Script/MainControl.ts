@@ -17,6 +17,7 @@ export enum GameStatus {
     Game_Ready = 0,
     Game_Playing,
     Game_Over,
+    Game_CompleteLevel,
 }
 
 @ccclass
@@ -51,6 +52,19 @@ export default class MainControl extends cc.Component {
 
     level01Control: Level01Control = null;
 
+    @property(cc.Prefab)
+    collParticle: cc.Prefab = null;
+
+    @property(cc.Prefab)
+    congratParticle: cc.Prefab = null;
+
+    congratParticles: cc.Node[] = [null, null, null];
+
+    @property(cc.Node)
+    spCompleteLevel: cc.Node = null;
+
+    btnMainScreen: cc.Button = null;
+
     // LIFE-CYCLE CALLBACKS:
 
     onLoad() {
@@ -76,6 +90,12 @@ export default class MainControl extends cc.Component {
         this.progress = this.progressBar.getComponentInChildren(cc.Sprite);
 
         this.level01Control = this.node.getComponent(Level01Control);
+
+        this.spCompleteLevel = this.node.getChildByName('CompleteLevel');
+        this.spCompleteLevel.active = false;
+
+        this.btnMainScreen = this.node.getChildByName('MainScreen').getComponent(cc.Button);
+        this.btnMainScreen.node.on(cc.Node.EventType.TOUCH_START, this.mainScreen, this);
     }
 
     start() {
@@ -123,6 +143,7 @@ export default class MainControl extends cc.Component {
         this.gameStatus = GameStatus.Game_Ready;
         this.audioSourceControl.playSound(SoundType.E_Sound_Die);
         this.level01Control.gameOver();
+        this.btnMainScreen.node.active = true;
     }
 
     touchStartBtn() {
@@ -145,6 +166,22 @@ export default class MainControl extends cc.Component {
 
         this.level01Control.init();
         this.progress.fillRange = 0;
+
+        const congratParticleCount = 3;
+        const prPosts = [new cc.Vec2(-60, 120), new cc.Vec2(0, 160), new cc.Vec2(60, 120)];
+        for (var i = 0; i < congratParticleCount; i++) {
+            const pr = cc.instantiate(this.congratParticle);
+            pr.setPosition(prPosts[i]);
+
+            if (this.congratParticles[i]) {
+                this.congratParticles[i].removeFromParent();
+            }
+
+            this.congratParticles[i] = pr;
+        }
+
+        this.spCompleteLevel.active = false;
+        this.btnMainScreen.node.active = false;
     }
 
     increaseScore() {
@@ -152,6 +189,35 @@ export default class MainControl extends cc.Component {
         this.labelScore.string = `Score: ${this.gameScore}`;
         this.audioSourceControl.playSound(SoundType.E_Sound_Score);
 
-        this.progress.fillRange = this.level01Control.getProgressScore();
+        const progress = this.level01Control.getProgressScore();
+        this.progress.fillRange = progress;
+        if (progress == 1) {
+            this.completeLevel();
+        }
+    }
+
+    showCollision(other: cc.Collider, self: cc.Collider) {
+        const coll = cc.instantiate(this.collParticle);
+        const birdPost = self.node.getPosition();
+        coll.setPosition(new cc.Vec2(birdPost.x + 20, birdPost.y));
+        this.node.addChild(coll);
+    }
+
+    completeLevel() {
+        for (var i = 0; i < this.congratParticles.length; i++) {
+            const pr = this.congratParticles[i];
+            this.node.addChild(pr);
+        }
+
+        this.gameStatus = GameStatus.Game_CompleteLevel;
+
+        this.spCompleteLevel.active = true;
+        this.btnStart.node.active = true;
+        this.gameStatus = GameStatus.Game_Ready;
+        this.btnMainScreen.node.active = true;
+    }
+
+    mainScreen() {
+        cc.director.loadScene('level-01-10');
     }
 }

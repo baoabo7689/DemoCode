@@ -24,6 +24,7 @@ export default class BirdControl extends cc.Component {
     onLoad() {
         this.node.parent.on(cc.Node.EventType.TOUCH_START, this.onTouchStart, this);
         this.mainControl = this.node.parent.getComponent('MainControl');
+        this.loadSkin();
     }
 
     start() {}
@@ -56,15 +57,45 @@ export default class BirdControl extends cc.Component {
             case 2:
             case 4:
             case 5:
-                //game over
-                cc.log('game over');
-                this.mainControl.gameOver();
-                this.speed = 0;
+                this.gameOver(other, self);
                 break;
             case 1:
                 // collider tag is 1, that means the bird cross a pipe, then add score
                 this.mainControl.increaseScore();
                 break;
         }
+    }
+
+    gameOver(other: cc.Collider, self: cc.Collider) {
+        //game over
+        cc.log('game over');
+        this.mainControl.showCollision(other, self);
+        this.mainControl.gameOver();
+        this.speed = 0;
+    }
+
+    loadSkin() {
+        const skinIndex = parseInt(cc.sys.localStorage.getItem('SelectedSkin'));
+        let animName = '';
+        switch (skinIndex) {
+            case 2:
+            case 17:
+                animName = 'BirdSkin02';
+                break;
+            default:
+                animName = 'BirdSkin01';
+                break;
+        }
+
+        const anim = this.node.getComponent(cc.Animation);
+        cc.loader.loadRes(`Animation/${animName}`, function (err, clip) {
+            const clips = anim.getClips();
+            anim.removeClip(clips[0]);
+
+            anim.addClip(clip);
+            anim.currentClip = clip;
+            anim.defaultClip = clip;
+            anim.play(animName);
+        });
     }
 }

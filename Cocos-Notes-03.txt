@@ -1,0 +1,228 @@
+
+"Exercise 1 - Callback/Promise/Async/Await
+(Dont use any lib, just use XmlHttpRequest for fetching data from server)"
+
+Must use Javascript for server side and typescript for client size
+"follow this toturial to build a local host web server https://expressjs.com/en/starter/hello-world.html
+then write an api endpoint return these data
+{""gameId"":1, ""iconSize"":""big"",""sortOrder"":6}
+{""gameId"":2, ""iconSize"":""small"",""sortOrder"":4}
+{""gameId"":3,""iconSize"":""medium"",""sortOrder"":2}
+{""gameId"":4,""iconSize"":""small"",""sortOrder"":5}
+{""gameId"":5,""iconSize"":""small"",""sortOrder"":8,""chips"":[]}
+{""gameId"":6,""iconSize"":""small"",""sortOrder"":7}
+{""gameId"":7,""iconSize"":""big"",""sortOrder"":1,""chips"":[]}
+{""gameId"":8,""iconSize"":""small"",""sortOrder"":3}
+{""gameId"":10,""iconSize"":""big"",""sortOrder"":9}
+{""gameId"":20,""iconSize"":""big"",""sortOrder"":10}"
+use callback load data from #1 endpoint
+convert request #2 to promise
+convert request #2 to async/await
+after you got all data, then use async/await to write console log each game setting and each log period is 500 miliseconds
+convert request #5 to promise
+
+
+01.Exer01
+
+
+
+
+---------------------------------------------------------------------------------
+
+Excercise 2 - Dragon Tiger Game
+"Must use Javascript for server side and typescript for client size
+Game Rule: 
++ Dragon Tiger is a simple card game similar to Baccarat. The game is played with one standard 52-card deck (excluding Joker). There are 3 betting options Dragon, Tiger, and Tie.
++ Two cards are drawn, one for the Dragon and one for the Tiger. The players bet on Dragon or Tiger which one will win with the higher value card. The players can also bet on “Tie” option if they predict Dragon and Tiger will have the same value card, irrespective of suit.
+Dragon: the player bets on the Dragon will win if Dragon has a higher value card than Tiger.
+Tiger: the player bets on the Tiger will win if the Tiger has a higher value card than Dragon.
+Tie: the players bet on Tie will win if Dragon and Tiger have the same value card, irrespective of suit.
+The game determines the win or loss by comparing the point of the card instead of its suit. K is the maximum, while Ace is the minimum.
+Cards’ point values
+Card        A        2        3        4        5        6        7        8        9        10         J         Q          K
+Point        1        2        3        4        5        6        7        8        9        10        11        12        13"
+"Implement server side to generate result when client make get result request
+Eg: access to http://your-domain/api/dragon-tiger/result"
+"Use cocos creator to build client side. In client side, we have a button, that when user click on, client side makes a request to get generated result from sever and then display resule and build a scoreboard like below
+"
+
+
+"If new game result is different from the previous one  => add and dislay on top of a new column right next to it
+Else => add and dislay in the same column with the previous one. If the number of row exceeds the max height, go to the new column right next to it.
+If result is Tie then don't add new result, just add a mark like above picture to previous result
+Tiger: Red
+Dragon: Yellow
+Tie: Blue
+Please be noted that Scoreboard can be scrolled from left to right and vice versa"
+Scoreboard Atlas: https://drive.google.com/file/d/11XQx-Ax8hSsDVXTismOSL64ioHm79MNW/view?usp=sharing
+
+
+
+
+03.BauCuaGame
+
+
+
+
+
+---------------------------------------------------------------------------------
+
+"To allow user play this game, we need to implement more features in Client/Server. 
+In Game Server, implement these business below:
++ Allow user login & join to table to play game
++ A game cron that handles game, each game round is 30 seconds, this will count down from 30 to 0, user cannot place bet in last 5 seconds.  
++ Allow new user join game, if this is new user, then give them 10000 coin
++ Accept user bet, and settle when game round has been done (count to 0) 
+In Game client:
++ Implement login form
++ Display game round id
++ total bet of current user
++ total bet of a game round
++ Default bet is 10
++ User balance will be updated when settlement has been done"
+
+Dont need to use real database here, just store all users in server memory or to json file, that's enough
+
+
+---------------------------------------------------------------------------------
+
+"Back to Week 5 - Excercise 2 - Dragon Tiger Game
+In game server:
+ + Write unittests for settlement method
+In game client, study whether we can write unittest for those code?"
+
+D:\Nexcel\Nex3\nex3-louis\05.GameBase\game-services\bb-game
+
+
+Unit Test ở game-services
+"test:result": "node --es-module-specifier-resolution=node ./src/helpers/result-helper.test.js",
+npm run test:result
+
+https://code.visualstudio.com/api/working-with-extensions/testing-extension
+vscode-test
+
+
+
+https://stackoverflow.com/questions/41958510/how-to-run-all-tests-in-visual-studio-code
+https://marketplace.visualstudio.com/items?itemName=formulahendry.dotnet-test-explorer
+.NET Core Test Explorer
+"dotnet-test-explorer.testProjectPath": "**/*.sln"
+
+
+https://docs.microsoft.com/en-us/visualstudio/javascript/unit-testing-javascript-with-visual-studio?view=vs-2019&tabs=mocha
+https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter
+
+https://mochajs.org/
+
+"test": "mocha 'test/**/*.js' --recursive --reporter mocha-junit-reporter --timeout 60000 --exit"
+"test:result": "node --es-module-specifier-resolution=node ./test/helpers/result-helper.tests.js",
+
+Unit Test ở game-client
+In game client, study whether we can write unittest for those code?
+các hàm xử lý, ...
+
+
+
+npm install --save-dev @babel/register
+npm install --save-dev @babel/core
+https://marketplace.visualstudio.com/items?itemName=maty.vscode-mocha-sidebar
+
+
+
+  "test": "npx mocha --require esm --reporter spec test_path/"
+
+mocha --require js:babel/register test/helpers/result-helper.tests.js
+ 
+mocha 'test/helpers/result-helper.tests.js' --require esm
+
+mocha 'test/**/*.js' --require esm
+https://alxgbsn.co.uk/2019/02/22/testing-native-es-modules-mocha-esm/
+
+
+"scripts": {
+  "test": "npm run test-node && npm run test-browser",
+  "test-browser": "mocha --recursive './test/browser/**/*.js' --require esm",
+  "test-node": "mocha --recursive './test/node/**/*.js'",
+},
+
+mocha ts-node/register  'test/helpers/tests-result-helper.ts'
+
+
+
+https://mochajs.org/
+
+
+[ERR_REQUIRE_ESM]: Must use import to load ES Module:
+
+
+mocha 'temp-sources/module-test.js'
+mocha 'test/helpers/result-helper.js'
+https://github.com/mochajs/mocha/wiki/Using-Mocha-programmatically
+
+
+
+https://mochajs.org/#configuring-mocha-nodejs
+package.json: Create a mocha property in your project’s package.json.
+
+
+    "require": [
+      "esm"
+    ],
+    "esModuleSpecifierResolution": "node",
+    "--es-module-specifier-resolution": "node"
+
+
+
+import 'source-map-support/register';
+
+// Instead of:
+import sourceMapSupport from 'source-map-support';
+sourceMapSupport.install();
+
+
+import { getSettlementResult } from '../../src/helpers/result-helper';
+
+,
+  "mocha": {
+    "require": "esm",
+    "env": {
+      "EXPERIMENTAL_MODULES": "",
+      "ES_MODULE_SPECIFIER_RESOLUTION": "NODE"
+    }
+  }
+
+
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

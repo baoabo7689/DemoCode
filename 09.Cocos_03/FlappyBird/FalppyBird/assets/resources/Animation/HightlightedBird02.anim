@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "HightlightedBird02",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.6833333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "c957d3f2-227a-4ae4-8f2a-c0cd8843a20c"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "9101b635-fc22-40e8-a6ea-11f7d21153a5"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "c5c2cce8-6a1d-47bb-949b-39c1cead50f5"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "052b151b-580c-4f05-a262-a5c509f12226"
+            }
+          },
+          {
+            "frame": 0.6666666666666666,
+            "value": {
+              "__uuid__": "052b151b-580c-4f05-a262-a5c509f12226"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

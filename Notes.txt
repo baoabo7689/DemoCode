@@ -689,7 +689,52 @@ this.socketClient.on("testMethod", (data) => {
 
 ---------------------------------------------------------------------------------	
 
-		
+
+this.socketClient.on("signin", this.handleSignIn.bind(this));
+UserSignInConsumer
+AdminAuthenticationConsumer
+
+Game-server: reCheckin
+User-site: Recheckin
+
+
+
+
+---------------------------------------------------------------------------------	
+
+https://blog.bitsrc.io/16-unique-vscode-extensions-every-developer-should-have-in-2020-c4dcdb74506a
+Prettier
+Bracket Pair Colorizer 2
+Code Spell Checker
+Auto Rename Tag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------	
+
+
+
+
+
+
+
+
+
+
 
 
 

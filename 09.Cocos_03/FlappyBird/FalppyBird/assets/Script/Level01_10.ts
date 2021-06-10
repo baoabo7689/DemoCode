@@ -20,13 +20,22 @@ export default class NewClass extends cc.Component {
     onLoad() {
         this.level01 = this.node.getChildByName('Level01').getComponent(cc.Button);
         this.level01.node.on(cc.Node.EventType.TOUCH_START, this.startLevel01, this);
+
+        this.node
+            .getChildByName('Level02')
+            .getComponent(cc.Button)
+            .node.on(cc.Node.EventType.TOUCH_START, this.startLevel02, this);
+
+        this.node
+            .getChildByName('Shop')
+            .getComponent(cc.Button)
+            .node.on(cc.Node.EventType.TOUCH_START, this.shop, this);
     }
 
     start() {}
 
     // update (dt) {}
     startLevel01() {
-        // cc.director.loadScene('main');
         cc.loader.loadRes('Prefab/Level01', (err, prefab) => {
             var currentSceen = cc.director.getScene();
             this.node.removeAllChildren(true);
@@ -44,5 +53,13 @@ export default class NewClass extends cc.Component {
         if (!!this.level01Scene) {
             this.node.getComponentInChildren('BirdControl').onTouchStart(event);
         }
+    }
+
+    startLevel02() {
+        cc.director.loadScene('level-02');
+    }
+
+    shop() {
+        cc.director.loadScene('shop');
     }
 }

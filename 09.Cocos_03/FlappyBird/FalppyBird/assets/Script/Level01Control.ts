@@ -77,7 +77,7 @@ export default class NewClass extends cc.Component {
     }
 
     getProgressScore() {
-        let update_fillRange = this.mainControl.gameScore * 0.3;
+        let update_fillRange = this.mainControl.gameScore * 0.5;
         update_fillRange = Math.min(1, update_fillRange);
         return update_fillRange;
     }

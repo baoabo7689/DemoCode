@@ -156,14 +156,60 @@ fillStart: 0
 
 
 
+https://docs.cocos.com/creator/manual/en/components/particle-system.html
+Click the Add Component button at the bottom of the Properties panel and select ParticleSystem from Renderer Component to add the ParticleSystem component to the node.
 
 
 
 
+https://docs.cocos.com/creator/manual/en/components/scrollview.html
+view > Type: Image_Stencil
+
+https://docs.cocos.com/creator/manual/en/advanced-topics/data-storage.html
+If it's an offline game you will also need to store game progress locally. In Cocos Creator we use cc.sys.localStorage API to save and read user data.
+cc.sys.localStorage.setItem(key, value)
+cc.sys.localStorage.getItem(key)
+
+
+https://docs.cocos.com/creator/1.9/manual/en/scripting/load-assets.html
+cc.loader.loadRes("test assets/anim", function (err, clip) {
+    self.node.getComponent(cc.Animation).addClip(clip, "anim");
+});
+
+
+anim.addClip(clip);
+anim.currentClip = clip;
+anim.defaultClip = clip;
 
 
 
 ---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
