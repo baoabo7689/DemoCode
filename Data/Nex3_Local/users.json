@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "60b493a8ea860112786288a2"
+  },
+  "local": {
+    "ban_pass": 0,
+    "ban_login": false,
+    "username": "1_1",
+    "password": "$2b$12$3WQgkErOSWBuMJzJqJktT./bU.Yur7YZvmg2RjUJgT/EHklslSUxe",
+    "regDate": {
+      "$date": "2021-05-31T07:43:36.098Z"
+    },
+    "memberId": 1,
+    "memberName": "louis.nguyen",
+    "clientId": "1",
+    "currency": "UUS"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b59b7199689558aced0329"
+  },
+  "local": {
+    "ban_pass": 0,
+    "ban_login": false,
+    "username": "admin_1",
+    "password": "$2b$12$bG9qVxV8j/tNoGmyon5nx.fsLTShTI/WmIUDbtVFTS62QAabSdO1e",
+    "regDate": {
+      "$date": "2021-06-01T02:29:05.490Z"
+    },
+    "memberId": 1,
+    "memberName": "admin",
+    "clientId": "admin",
+    "currency": "UUS"
+  },
+  "__v": 0
+}]

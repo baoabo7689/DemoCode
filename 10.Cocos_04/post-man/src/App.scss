@@ -1,0 +1,39 @@
+body {
+  background-color: #d3d3d3;
+  padding: 10px;
+}
+
+label,
+.label {
+  margin-right: 5px;
+}
+
+button {
+  cursor: pointer;
+  min-width: 80px;
+}
+
+.hide {
+  display: none !important;
+}
+
+.group {
+  padding-top: 10px;
+}
+
+.err-msg {
+  color: red;
+}
+
+textarea {
+  min-width: 600px;
+  min-height: 200px;
+}
+
+.request-data {
+  resize: none;
+}
+
+.response-data {
+  resize: none;
+}

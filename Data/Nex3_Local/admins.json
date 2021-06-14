@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "60b467e63459b437344751ba"
+  },
+  "rights": 9,
+  "username": "admin",
+  "password": "$2b$12$Adiehg.O6D1R7Z968.oUBelUAwd10WHkPMU92M3dfqVKSq2ap4sNy",
+  "regDate": {
+    "$date": "2021-05-31T04:36:54.282Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b488771285f64cf460f1cb"
+  },
+  "rights": 9,
+  "username": "admin1",
+  "password": "$2b$12$fO67xOD70ZLr1miaB7Vsh.T7iIVBqUWHd3m7a05Rh9KZd1NZNHknK",
+  "regDate": {
+    "$date": "2021-05-31T06:55:51.381Z"
+  },
+  "__v": 0
+}]

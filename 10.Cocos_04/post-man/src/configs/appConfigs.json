@@ -1,0 +1,11 @@
+{
+  "userServicesTest": "http://localhost:3014",
+  "userServices": "http://localhost:8085/user/baucua",
+  "adminServices": "http://localhost:3011/admin/bbgame",
+  "socketOptions": {
+    "pingInterval": 60000,
+    "pingTimeout": 60000,
+    "transports": ["websocket"],
+    "allowUpgrades": false
+  }
+}

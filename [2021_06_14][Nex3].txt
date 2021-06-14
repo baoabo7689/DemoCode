@@ -1,0 +1,64 @@
+
+---------------------------------------------------------------------------------	
+
+https://code.visualstudio.com/docs/nodejs/reactjs-tutorial
+npx create-react-app post-man
+yarn add node-sass@4.14.1
+npm install socket.io@2.3.0
+npm install socket.io-client@2.3.0
+
+
+D:\Nexcel\Nex3\nex3-louis\03.BauCuaGame\game-server
+Port 3000
+
+npm install socket.io-client@4.1.2
+
+
+
+
+
+---------------------------------------------------------------------------------	
+
+import Translation from "@nex3/translation";
+const translation = Translation.getInstance(payload?.language);
+const notice = { title: translation.t(translation.keys.notice), text: umMessage, load: false };
+
+
+npm install
+
+const gameNameInSocketNamespace = this.definition.name.toLowerCase();
+Game name: baucua
+dbName: "Nex3_Local"
+
+
+{
+	bet: {
+	}
+}
+
+
+---------------------------------------------------------------------------------	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
