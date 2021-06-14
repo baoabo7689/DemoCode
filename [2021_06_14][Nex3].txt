@@ -1,4 +1,36 @@
 
+
+	
+---------------------------------------------------------------------------------	
+	
+	
+	
+	
+	
+	Ba Huy, [11.06.21 08:31]
+	khi nào ông ổn rồi thì xem cái service này nhe
+	Ba Huy, [11.06.21 08:31]
+	https://git3.nexdev.net/indo-market/game-services/fish-prawn-crab-service
+	Ba Huy, [11.06.21 08:31]
+	code này hiện tại chưa chạy, nhiệm vụ của ông là tích hợp phần multiple language và multiple market của bên nex3 vào đó
+	Ba Huy, [11.06.21 08:31]
+	và làm cho nó run đc
+	Ba Huy, [11.06.21 08:31]
+	đừng dùng DB ở LOCAL nha, dùng ở máy dev ông thôi
+	Ba Huy, [11.06.21 08:32]
+	branch ra từ master nhe
+			
+	00000-MultiLanguage
+	
+	git subject may not be empty
+	git type may not be empty
+	
+	chore: return Language Code to Client
+	fix: xxx
+	
+	
+	
+	
 ---------------------------------------------------------------------------------	
 
 https://code.visualstudio.com/docs/nodejs/reactjs-tutorial
@@ -15,6 +47,7 @@ npm install socket.io-client@4.1.2
 
 
 
+npm install sc-game-base@1.22.4-beta.5
 
 
 ---------------------------------------------------------------------------------	
@@ -30,13 +63,72 @@ const gameNameInSocketNamespace = this.definition.name.toLowerCase();
 Game name: baucua
 dbName: "Nex3_Local"
 
+export default {
+    cannotPlaceBet: "SB1906",
+    placeBetNextRound: "SB1905",
+    minBet: "SB1909",
+    maxBet: "SB1911",
+    notEnoughMoney: "SB1907",
+    maxBetForChoice: "SB1910",
+    invalidBet: "SB1935",
+    youOrOtherLoggedInToThisAccount: "SB0003",
+    notEnoughScoin: "SB1908",
+};
 
-{
-	bet: {
-	}
-}
+
+process-bet-queue
+placeBetWithValidAmount
+
+container-registry.js
+import { endGame, getBalance, notifyLogin, placeBet, validateBalance } from "sc-base-apis";
+sc-api-client
+Member/PlaceBet
+D:\Nexcel\Nex3\game-api
+
+base-game-startup.js 
+import { init as initApis } from "sc-base-apis";
+await initApis(this.appConfigs.apiSettings);
+http://localhost:8868
+"IdentityAudiences": [
+      "game-server"
+],
+
+D:\Nexcel\Nex3\game-admin\GamesAdmin
+5001
 
 
+TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Authorization"
+this.member = initMember(this.configs);
+ 
+ 
+http://l3-lobby-3.nexdev.net/signin
+member_auths
+token: "f910e716-df92-4d07-9c6e-d302171f3c19"
+
+
+console.log(this.gameData.remainingTime + ":" + this.definition.durations.lockingBet + ":" + this.definition.durations.placingBets);
+38:5:30
+http://localhost:8868/Member/Balance
+
+
+console.log(`${apiUrl}${action}`)
+console.log(params)
+console.log(requestConfigs)
+getFailedResponse
+isPlaceBetFailed
+
+
+
+D:\Nexcel\Nex3\game-services\fish-prawn-crab-service\node_modules\sc-base-apis\src\get-balance.js
+D:\Nexcel\Nex3\game-services\fish-prawn-crab-service\node_modules\sc-base-apis\src\place-bet.js
+const response =  {
+	isOk: true,
+	errorCode: 0,
+	response: { red: 2000 }
+};
+
+	
+	
 ---------------------------------------------------------------------------------	
 
 
