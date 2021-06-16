@@ -127,9 +127,255 @@ const response =  {
 	response: { red: 2000 }
 };
 
+
+import MarketManagement from "@nex3/market-management";
+MarketManagement.init(appConfigs.marketConfigCacheTimeout);
+"marketConfigCacheTimeout": 10000
+	
+
+console.log(this.definition.id + " " + player.session.currency + " " + player?.session?.language);
+console.log(betChoice + " " + amount);	
+console.log("remainingTime: " + this.gameData.remainingTime);	
+	
 	
 	
 ---------------------------------------------------------------------------------	
+
+To do:
+	Ba Huy, [15.06.21 15:16]
+	hiện tại team mình đang dùng cái này để host package dùng chung bên nodejs
+
+	Ba Huy, [15.06.21 15:16]
+	mọi người nghía qua thử nhe
+
+	Ba Huy, [15.06.21 15:17]
+	sau này sẽ cần để mà push package mình tự viết lên để service install
+  https://verdaccio.org/
+  
+  Ba Huy, [16.06.21 10:19]
+	đợi xíu mình cung cấp feature id cho mọi người branch
+
+	Ba Huy, [16.06.21 10:27]
+	https://nexdev.net/issues/157063
+
+	Ba Huy, [16.06.21 10:27]
+	add task vào đây nhe mn
+	
+https://sentryuat.sabagame.com/luminet/l3-game-services-local/getting-started/node/
+
+
+Must remove:
+  console.log("remainingTime: " + this.gameData.remainingTime);
+
+
+
+
+
+---------------------------------------------------------------------------------	
+
+liệu có thể tách thêm được 1 package dùng dùng chung
+mà người khác đi implement cái này https://git3.nexdev.net/indo-market/game-services/dragon-tiger-service, dùng package của ông thì code ít nhất
+
+
+sau này sẽ cần để mà push package mình tự viết lên để service install
+https://verdaccio.org/
+https://github.com/verdaccio/verdaccio
+
+
+Verdaccio must be installed globally using either of the following methods
+npm install -g verdaccio
+
+npm set registry http://npm.lumigame.com
+Now you can navigate to http://localhost:4873/ where your local packages will be listed and can be searched.
+
+
+npm adduser --registry http://npm.lumigame.com
+louis.nguyen
+AfricaCuncung7689
+louis.nguyen@starixvn.com
+
+D:\Nexcel\Nex3\01.Setup\DemoCode\10.Cocos_04\additional-research
+npm publish --registry http://npm.lumigame.com
+npm unpublish --force additional-research
+npm install additional-research
+
+
+https://git3.nexdev.net/indo-market/core-packages/translation
+https://github.com/semantic-release/semantic-release
+
+
+
+---------------------------------------------------------------------------------	
+thì suy nghĩ thử apply Jest vào viết unittest
+unit test with Jest
+https://jestjs.io/docs/getting-started
+npm install --save-dev jest
+
+
+Jest Test Explorer
+Jest Runner
+
+
+
+
+
+---------------------------------------------------------------------------------	
+
+
+
+	
+	8074072
+	2ReZwHBv
+	8c18dc14-cd15-40f2-955b-640c01784f2a
+	http://localhost:7456/?token=b6326e9a-9cf5-428c-a203-6c9f1746a135
+	Ashley52398
+	
+	Game-Client:
+	gameUserUrl: "http://localhost:7780"
+	http://localhost:7456/?token=626767d9-b2e8-4a36-b0b5-dd118304de44
+	sessionExpiredMessage
+	MainGame.js
+	getMainScene
+	
+	UserClientCommunicator >> gameUserUrl
+	localhost:7780/api/user/signIn
+	token
+	http://localhost:7780/api/user/Authentication/signIn
+	services.AddSingleton(RestService.For<IApi>(apiSettings.BaseUrl, refitSettings));
+	"BaseUrl": "http://l3-api-proxy.nexdev.net/local1/game-api/"
+	
+	splash
+	index.html
+	index-PRO.html
+	
+	https://docs.cocos.com/creator/1.9/manual/en/publish/custom-project-build-template.html
+	build-templates/web-mobile/index.html
+	https://docs.cocos.com/creator/manual/en/getting-started/basics/preview-build.html
+	https://docs.cocos.com/creator/manual/en/publish/debug-jsb.html	
+	devtools://devtools/bundled/js_app.html?v8only=true&ws=127.0.0.1:5086/00010002-0003-4004-8005-000600070008 
+	
+	
+	const response = yield this.userSiteCommunicator.signIn(options.token);
+	localhost:7780/api/user/signIn
+	isAuthenticated=false
+	var verificationResult = await api.VerifyToken(request);
+	AuthVerification/verify
+	
+	D:\Nexcel\Nex3\game-api-simulator
+	var memberAuth = memberAuthDataAccess.GetByToken(verificationParams.Token);
+	memberAuthCollection.Find(memberAuth => memberAuth.Token == token).FirstOrDefault();
+	token=626767d9-b2e8-4a36-b0b5-dd118304de44
+	
+	http://localhost:7456/?token=626767d9-b2e8-4a36-b0b5-dd118304de44
+	
+	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36
+
+	cc.director.loadScene("sessiontimeout");
+	D:\Nexcel\Nex3\game-client\assets\_new-assets\lobby\main\view-models
+	MainGame.js
+	
+	
+	https://sonarqube.lumigame.com/
+	
+	gamesimulator_807629
+	Gary13448: userinfos
+	"ws://localhost:8081/websocket"
+	mainGame.auth
+	cc.RedT.send(obj);
+	_onSocketData
+	>> game-server >> 
+        console.log(verifyResult);
+        console.log("success " + ws.session);
+		console.log("success " + user);
+		console.log(session);
+        console.log(error);
+		console.log(`${apiUrl}${action}`);
+		http://l3-api-proxy.nexdev.net/local1/game-api/Member/Balance
+		http://localhost:8868/
+		generalErrorMessage
+		Cannot update your account balance.
+		
+		const l1Client = require("l1.client.node-js")(apiSettings);
+		const result = await this.getBearerToken();
+		http://localhost:8868/Member/Balance
+		[ApiController, Route("[controller]"), Authorize]
+		SabaClub/GetBalance
+		>> game-admin 
+		00000-ReviewFlow
+		
+		
+	AuthorizationMiddleware
+	
+	
+openMiniGame
+openBauCua
+openGame
+openGameByGameName
+MainGame.js
+
+remove 
+debugger;
+
+
+---------------------------------------------------------------------------------	
+
+mongodb://lmn_backend:LmnBackend@10.18.200.80:47101
+>> mem_auths
+	http://localhost:7456/?token=626767d9-b2e8-4a36-b0b5-dd118304de44
+>> users
+	{ "local.username": "gamesimulator_807629" }
+>> userSession
+{ ssoToken: "626767d9-b2e8-4a36-b0b5-dd118304de44" }	
+
+
+
+Game-Admin: 
+7778
+5001 
+
+Game-User >> 
+7780
+"BaseUrl": "http://l3-api-proxy.nexdev.net/local1/game-api/"
+"BaseUrl": "http://l3-api-proxy.nexdev.net/local1/game-server-api/",
+
+
+Game-API
+8868
+
+Game-Server
+"ws://localhost:8081/websocket"	
+Khi Login Session >> authenticate >> get balance >> 
+	balanceApi.getBalance
+	{
+	  Seq: 'n,m,Nex3',
+	  SiteId: '4100300',
+	  ObCustId: 807629,
+	  Language: 'en-US'
+	}
+	{ name: "Glenys41105" }
+	{ memberId: 807629 }
+	http://l3-ow-api-1.nexdev.net/SabaClub/CreateCustomer
+	balanceApi.updateUserBalanceToDatabase(session.userId, result.red);
+	D:\Nexcel\Nex3\game-api-simulator
+	
+	
+
+onAuthorized
+    "BaseUrl": "http://localhost:8868/"
+
+---------------------------------------------------------------------------------	
+
+
+
+	
+	
+	
+	
+	
+
+
+
+
 
 
 

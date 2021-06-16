@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Dev;SIT;UAT;PRO;LOCAL</Configurations>
+    <UserSecretsId>8bad5a68-0bbe-4e8a-b774-d9c83df657bb</UserSecretsId>
+    <CodeAnalysisRuleSet>GamesAdmin.Database.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\.sonarlint\l3-game-admin\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.10.2" />
+    <PackageReference Include="MongoDB.Driver.Core" Version="2.10.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GamesAdmin.Core\GamesAdmin.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,37 @@
+﻿@using GamesAdmin.Site.Features.Report.ViewModels;
+@model BolaTangkasReportViewModel
+@{ ViewData["Title"] = "Bola Tangkas"; }
+
+@section Styles {
+    <link href="~/scss/pages/reports.min.css" rel="stylesheet" asp-append-version="true" />    
+}
+<form class="form filter" data-ajax="true" data-ajax-method="GET" asp-action="GetBolaTangkasReport" data-ajax-mode="replace" data-ajax-update="#report-result"
+      data-ajax-loading="#spinner"
+      method="get">
+    <div class="form-row align-items-center">
+        <div class="col-auto">
+            <label asp-for="RoundId" class="control-label"></label>
+            <input type="number" class="form-control" asp-for="RoundId">
+        </div>
+        <div class="col-auto">
+            <label asp-for="Nickname" class="control-label"></label>
+            <input type="text" class="form-control" placeholder="Nickname" asp-for="Nickname">
+        </div>       
+        <div class="col-auto mt-5">
+            <button type="submit" class="btn-submit">Submit</button>
+            <div id="spinner" class="spinner-border" style="display: none">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div id="report-result" class="col-sm-12 report-container">
+</div>
+
+<partial name="_Modal" />
+
+@section Scripts {
+    <script src="~/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/js/report.min.js" asp-append-version="true"></script>
+}

@@ -1,0 +1,49 @@
+﻿@{ Layout = null; }
+
+@using GamesAdmin.Site.Features.GameSettings.ViewModels;
+@model EditOddsViewModel;
+
+@{ ViewData["Title"] = Model.GameName; }
+
+@section Styles {
+    <link href="~/css/adjust-bot.min.css" rel="stylesheet" asp-append-version="true" />
+}
+
+<div class="setting-odds-model">
+
+    <div class="message-success hidden-cls" id="successMsg"><i class="icon-check"></i><span>Updated successfully</span></div>
+    <div class="message-error hidden-cls" id="failedMsg"><span id="failedMsgContent">Error</span></div>
+
+    <form class="card-body form" asp-action="updateodds" asp-controller="GameSettings" method="put" id="oddsForm">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div><b>Odds Settings</b></div>
+        <br />
+
+        <fieldset>
+            <legend>Odds Bet Choices</legend>
+            @for (var j = 0; j < (Model.Odds.Count / 3 + 1); j++)
+            {
+            <div class="form-group row">
+            @for (var k = 0; k < 3; k++)
+            {
+                var index = j * 3 + k;
+                if (index < Model.Odds.Count)
+                {
+                    var displayName = Model.Odds[index].DisplayName;
+                    var maxBet = Model.Odds[index].Odds;
+                    <div class="col-lg-4" id="odds-config-@index">
+                        <label class="control-label">@displayName</label>
+                        <input type="text" hidden asp-for="@Model.Odds[index].Name" class="form-control" />
+                        <input type="number" asp-for="@Model.Odds[index].Odds" class="form-control" />
+                    </div>
+                }
+            }
+            </div>
+            }
+        </fieldset>
+        <br />
+
+        <input type="hidden" asp-for="@Model.GameName" />
+    </form>
+</div>

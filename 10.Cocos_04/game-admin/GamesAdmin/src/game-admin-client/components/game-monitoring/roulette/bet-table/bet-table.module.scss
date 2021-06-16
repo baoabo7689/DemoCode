@@ -1,0 +1,35 @@
+.container {
+  color: #fff;
+
+  th,
+  td {
+    border-left: 1px solid rgba($color: #fff, $alpha: 0.1);
+
+    &:last-child {
+      border-right: 1px solid rgba($color: #fff, $alpha: 0.1);
+    }
+  }
+
+  td {
+    padding: 0.5rem;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+  th {
+    background-color: #660f10;
+    position: sticky;
+    top: 0;
+    border-bottom: 0;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid rgba($color: #fff, $alpha: 0.1);
+  }
+}
+
+.winning {
+  color: #ffff00;
+  font-weight: bold;
+}

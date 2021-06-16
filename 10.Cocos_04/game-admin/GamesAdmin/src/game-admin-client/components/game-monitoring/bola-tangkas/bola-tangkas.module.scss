@@ -1,0 +1,76 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  text-align: center;
+  font-size: 18px;
+  color: #f5f5f5;
+}
+
+.monitor {
+  border: 5px solid #660f10;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #41121280;
+  margin: 20px;
+  color: #f5f5f5;
+
+  .filter {
+    label {
+      margin-right: 10px;
+    }
+
+    input {
+      color: #f5f5f5;
+      background-color: #41121200;
+      border: none;
+      border-bottom: 1px solid #bbb;
+
+      &:focus {
+        outline: none;
+        border: 0;
+        border-bottom: 1px solid #ffb800;
+      }
+    }
+  }
+}
+
+.header {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.control-result-modal {
+  max-width: 550px;
+  justify-content: center;
+
+  & > div {
+    color: #333;
+    background: #ffe0c4;
+    border: solid 4px #7d4e24;
+    box-shadow: inset 0px 0px 30px 0px rgba(170, 78, 27, 0.6), 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    border-radius: 15px;
+    //background: linear-gradient(90deg, rgba(186, 97, 63, 1) 0%, rgba(186, 74, 133, 1) 100%);
+
+    .custom-modal-header {
+      border-bottom: none;
+      padding: 5px 15px 0;
+
+      span {
+        color: #b17817;
+      }
+    }
+
+    .custom-modal-footer {
+      border-top: none;
+      justify-content: center;
+    }
+  }
+}
+
+.exception-message {
+  color: white;
+}

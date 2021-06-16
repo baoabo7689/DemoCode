@@ -1,0 +1,59 @@
+﻿@using GamesAdmin.Core
+@using GamesAdmin.Core.Extensions;
+@using GamesAdmin.Site.Features.BolaConfig.ViewModels;
+
+@model ReportResultViewModel
+
+@{ var records = Model.Records.ToList();
+                var totalRow = records.Count; }
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="report-table">
+            <thead>
+                <tr>
+                    <th class="col-date text-center">Currency</th>
+                    <th class="col-date text-center">Stake</th>
+                    <th class="col-number text-center">Group Currency</th>
+                    <th class="col-number text-center">Enabled</th>
+                    <th class="col-number text-center">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < totalRow; i++)
+                {
+                    var record = records[i];
+
+                <tr>
+                    <td class="text-center">@record.Currency</td>
+                    <td class="text-center">
+                        @for (var j = 0; j < @record.Stakes.Count(); j++)
+                        {
+                <span>
+                    <a href="#" onclick="bolaConfig.showEditAmount('@record.Currency', '@record.Stakes[j]')">@record.Stakes[j]</a>
+                    @if (j < @record.Stakes.Count() - 1)
+                    {<span>,</span>}
+                </span>}
+
+                    </td>
+                    <td class="text-center">@record.GroupCurrency</td>
+                    <td class="text-center">
+                        <i class='@(record.IsEnable ? "icon-check" : "icon-cancel")'></i>
+                    </td>
+                    <td class="text-center">
+                        <button class="btn-edit" onclick="bolaConfig.showEditModal('@record.Currency')"><i class="icon-edit"></i></button>
+                    </td>
+                </tr>}
+            </tbody>
+            <tfoot>
+                @if (totalRow == 0)
+                {
+    <tr>
+        <td class="text-center" colspan="13">No data</td>
+    </tr>}
+            </tfoot>
+        </table>
+    </div>
+</div>
+

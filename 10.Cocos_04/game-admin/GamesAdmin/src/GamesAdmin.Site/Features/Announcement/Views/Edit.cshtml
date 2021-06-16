@@ -1,0 +1,85 @@
+﻿@{ Layout = null; }
+
+@using GamesAdmin.Site.Features.Announcement.ViewModels;
+@using GamesAdmin.Core.Enumeration;
+@using GamesAdmin.Core.Enumeration.Announcements;
+
+@model EditViewModel;
+
+@{ 
+    var languages = Enumeration.GetAll<AnnouncementLanguage>().ToList();
+}
+
+<div>
+    <div class="message-success hidden-cls" id="successMsg"><i class="icon-check"></i><span>Updated successfully</span></div>
+    <div class="message-error hidden-cls" id="failedMsg"><i class="icon-cancel"></i><span id="failedMsgContent">Error</span></div>
+
+    <form class="card-body form" asp-action="Edit" asp-controller="Announcement" method="post" id="editForm">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group row">
+            <div class="col-lg-12">
+                <label asp-for="Data.Title" class="control-label"></label>
+                @if (Model.IsNew)
+                {
+                    <input type="text" asp-for="Data.Title" class="form-control" />
+                }
+                else
+                {
+                    <input type="text" readonly hidden asp-for="Data.Id" />
+                    <input type="text" readonly asp-for="Data.Title" class="form-control" />
+                }
+
+                <span asp-validation-for="Data.Title" class="text-danger"></span>
+            </div>
+
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-lg-12">
+                <label asp-for="Data.MessageType" class="control-label"></label>
+                <select asp-for="Data.MessageType" required asp-items="Model.MessageTypeOptions" class="form-control"></select>
+            </div>
+        </div>
+        <fieldset>
+            <legend>Markets</legend>
+            @for (var j = 0; j < (Model.MarketChoices.Count / 4 + 1); j++)
+            {
+<div class="form-group row">
+    @for (var k = 0; k < 4; k++)
+    {
+        var index = j * 4 + k;
+        if (index < Model.MarketChoices.Count)
+        {
+<div class="col-lg-3">
+    <input type="checkbox" asp-for="@Model.MarketChoices[index].Enabled" />
+    <label class="control-label" asp-for="@Model.MarketChoices[index].Enabled">@Model.MarketChoices[index].Label</label>
+
+    <input type="text" hidden asp-for="@Model.MarketChoices[index].Id" />
+    <input type="text" hidden asp-for="@Model.MarketChoices[index].Label" />
+</div>}
+                }
+</div>}
+        </fieldset>
+        <br/>
+        @for(int i = 0; i < languages.Count; i++)
+        {
+            <div class="form-group row">
+                <div class="col-lg-12">
+                    <label class="control-label">@languages[i].DisplayName</label>
+                    <textarea type="text" asp-for="@Model.Data.Contents[languages[i].Value]" class="form-control"></textarea>
+                    <span asp-validation-for="@Model.Data.Contents[languages[i].Value]" class="text-danger"></span>
+                </div>
+            </div>
+        }
+        <br />
+        <div class="form-group row">
+            <div class="col-lg-6">
+                <input type="checkbox" asp-for="Data.Status" />
+                <label asp-for="Data.Status" class="control-label">Active</label>
+            </div>
+        </div>
+    </form>
+</div>

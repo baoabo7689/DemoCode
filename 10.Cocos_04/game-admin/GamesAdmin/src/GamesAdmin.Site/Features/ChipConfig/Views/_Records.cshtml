@@ -1,0 +1,63 @@
+﻿@using GamesAdmin.Core
+@using GamesAdmin.Core.Extensions;
+@using GamesAdmin.Site.Features.ChipConfig.ViewModels;
+
+@model ReportViewModel
+
+@{ var records = Model.Records.ToList();
+    var totalRow = records.Count; }
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="report-table">
+            <thead>
+                <tr>
+                    <th class="col-date text-center" rowspan="2" >Label</th>
+                    <th class="col-date text-center" rowspan="2" >Value</th>
+                    <th class="col-number text-center" colspan="4">Theme</th>                    
+                    <th class="col-number text-center" rowspan="2" >Enabled</th>
+                    <th class="text-center" rowspan="2" >Setting</th>
+                </tr>
+                <tr>
+                   
+                    <th class="col-number text-center">Background Color</th>
+                    <th class="col-number text-center">Border Color</th>
+                    <th class="col-number text-center">Center Color</th>
+                    <th class="col-number text-center">Label Color</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < totalRow; i++)
+                {
+                    var record = records[i];
+
+                <tr>
+                    <td class="text-center">@record.Chip.Label</td>
+                    <td class="text-center">@record.Chip.Value</td>
+                    <td class="text-center" style="color:  @record.TextBackgroundColor; background-color: @record.Chip.Theme.BackgroundColor">@record.Chip.Theme.BackgroundColor</td>
+                    <td class="text-center" style="color: @record.TextBorderColor; background-color: @record.Chip.Theme.BorderColor">@record.Chip.Theme.BorderColor</td>
+                    <td class="text-center" style="color: @record.TextCenterColor; background-color: @record.Chip.Theme.CenterColor">@record.Chip.Theme.CenterColor</td>
+                    <td class="text-center" style="color: @record.TextLabelColor; background-color: @record.Chip.Theme.LabelColor">@record.Chip.Theme.LabelColor</td>
+                    <td class="text-center">
+                        <i class='@(record.Chip.Enabled ? "icon-check" : "icon-cancel")'></i>                 
+                    </td>
+                    <td class="text-center">
+                        <button class="btn-edit" onclick="chipConfig.showEditModal('@record.Chip.Label')"><i class="icon-edit"></i></button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+            <tfoot>
+                @if (totalRow == 0)
+                {
+                    <tr>
+                        <td class="text-center" colspan="13">No data</td>
+                    </tr>
+                }
+            </tfoot>
+        </table>
+    </div>
+</div>
+

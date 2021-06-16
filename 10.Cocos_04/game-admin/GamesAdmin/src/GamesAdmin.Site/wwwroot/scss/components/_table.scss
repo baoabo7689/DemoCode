@@ -1,0 +1,27 @@
+﻿.table {
+    &.table-bordered thead th {
+        border-bottom-width: 2px;
+    }
+
+    .thead-light tr {
+        background: #1b55e2;
+    }
+
+    td, th {
+        padding: 1rem;
+        border-color: #ddd !important;
+        vertical-align: middle;
+    }
+
+    &.table-bordered {
+        border-color: #ddd;
+    }
+
+    .total {
+        background-color: #fdf6e0;
+
+        td {
+            font-weight: 600;
+        }
+    }
+}

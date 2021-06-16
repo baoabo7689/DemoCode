@@ -1,0 +1,17 @@
+.wrapper {
+  justify-content: center;
+}
+
+.card-container {
+  margin: 2px;
+}
+
+.highlight {
+  animation: shining 0.7s infinite;
+}
+
+@keyframes shining {
+  50% {
+    box-shadow: 0px 0px 5px 3px #fbff00;
+  }
+}

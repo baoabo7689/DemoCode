@@ -1,0 +1,117 @@
+[
+  {
+    "outputFile": "wwwroot/scss/pages/login.css",
+    "inputFile": "wwwroot/scss/pages/login.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/site.css",
+    "inputFile": "wwwroot/scss/pages/site.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/forecast.css",
+    "inputFile": "wwwroot/scss/pages/forecast.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/base/roboto.css",
+    "inputFile": "wwwroot/scss/base/roboto.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/base/material-icon.css",
+    "inputFile": "wwwroot/scss/base/material-icon.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/adjust-bot.css",
+    "inputFile": "wwwroot/scss/pages/adjust-bot.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/dashboard.css",
+    "inputFile": "wwwroot/scss/pages/dashboard.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/reports.css",
+    "inputFile": "wwwroot/scss/pages/reports.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/game-status.css",
+    "inputFile": "wwwroot/scss/pages/game-status.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/online-users.css",
+    "inputFile": "wwwroot/scss/pages/online-users.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/bola-report.css",
+    "inputFile": "wwwroot/scss/pages/bola-report.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/bola-config.css",
+    "inputFile": "wwwroot/scss/pages/bola-config.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/js/bola-config.es5.js",
+    "inputFile": "wwwroot/js/bola-config.js",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/js/bola-report.es5.js",
+    "inputFile": "wwwroot/js/bola-report.js",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/game-round-result.css",
+    "inputFile": "wwwroot/scss/pages/game-round-result.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/js/market.es5.js",
+    "inputFile": "wwwroot/js/market.js",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/market.css",
+    "inputFile": "wwwroot/scss/pages/market.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/chip-config.css",
+    "inputFile": "wwwroot/scss/pages/chip-config.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/daily-summary.css",
+    "inputFile": "wwwroot/scss/pages/daily-summary.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/announcement.css",
+    "inputFile": "wwwroot/scss/pages/announcement.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/js/announcement.es5.js",
+    "inputFile": "wwwroot/js/announcement.js",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/scss/pages/signing-credential.css",
+    "inputFile": "wwwroot/scss/pages/signing-credential.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/js/signing-credential.es5.js",
+    "inputFile": "wwwroot/js/signing-credential.js",
+    "sourceMap": false
+  }
+]

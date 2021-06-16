@@ -1,0 +1,96 @@
+﻿@using GamesAdmin.Site.Features.Announcement.ViewModels
+@using GamesAdmin.Core.Enumeration;
+@using GamesAdmin.Core.Enumeration.Announcements;
+
+@model ReportResultViewModel
+
+@{ 
+    var records = Model.Records.ToList();
+    var totalRow = records.Count;
+    var announcementLanguages = Enumeration.GetAll<AnnouncementLanguage>();
+}
+
+@{ 
+    var messageTypeMapper = new Dictionary<string, string>
+        {
+            {"newgame", "New Game" },
+            {"announcement", "Announcement" }
+        };
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="report-table">
+            <thead>
+                <tr>
+                    <th class="col-date text-center">ID</th>
+                    <th class="col-date text-center">Title</th>
+                    <th class="col-date text-center">Content</th>
+                    <th class="col-date text-center">Message Type</th>
+                    <th class="col-date text-center">Market</th>
+                    <th class="col-date text-center">Status</th>
+                    <th class="col-date text-center">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < totalRow; i++)
+                {
+                    var record = records[i];
+                    var contentRow = record.Contents.Where(content => content.Value != string.Empty).Count();
+                    contentRow = contentRow == 0 ? 1 : contentRow;
+    <tr>
+        <td class="text-center" rowspan="@contentRow">@(@i+1)</td>
+        <td class="text-center" rowspan="@contentRow">@record.Title</td>
+        <td>
+            @{ 
+                var firstContent = record.Contents.ElementAt(0);
+                if(firstContent.Value != string.Empty)
+                {
+                    <div class="content-box container">
+                    <div class="row text-left"><b>@announcementLanguages.Single(language => language.Value == firstContent.Key).DisplayName</b></div>
+                    <div class="row text-left">@firstContent.Value</div>
+                </div>
+                }
+                
+            }
+        </td>
+        <td class="text-center" rowspan="@contentRow">@messageTypeMapper[record.MessageType]</td>
+        <td class="text-center" rowspan="@contentRow">
+            @for (int j = 0; j < record.EnabledMarkets.ToList().Count; j++)
+            {@(record.EnabledMarkets.ElementAt(j) + (j == record.EnabledMarkets.ToList().Count - 1 ? string.Empty : ", "))}
+    </td>
+    <td class="text-center" rowspan="@contentRow">
+        <input type="checkbox" value="@record.Status" checked="@record.Status" onclick="announcementReport.showEnableDisable('@record.Status', '@record.Id', '@record.Title')" />
+    </td>
+    <td class="text-center" rowspan="@contentRow">
+        <button class="btn-edit" onclick="announcementReport.showEditModal('@record.Id')"><i class="icon-edit"></i></button>
+    </td>
+    </tr>
+            @for (int j = 1; j < record.Contents.Count; j++)
+            {
+                var content = record.Contents.ElementAt(j);
+                    @if (content.Value != string.Empty)
+                    {
+                        <tr>
+                            <td>
+                                <div class="content-box container">
+                                    <div class="row text-left"><b>@announcementLanguages.Single(language => language.Value == content.Key).DisplayName</b></div>
+                                    <div class="row text-left">@content.Value</div>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+            }
+    }
+            </tbody>
+            <tfoot>
+                @if (totalRow == 0)
+                {
+    <tr>
+        <td class="text-center" colspan="7">No data</td>
+    </tr>}
+            </tfoot>
+        </table>
+    </div>
+</div>

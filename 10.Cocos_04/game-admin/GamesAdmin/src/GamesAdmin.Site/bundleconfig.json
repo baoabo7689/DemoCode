@@ -1,0 +1,85 @@
+[
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/game-status.min.js",
+    "inputFiles": [
+      "wwwroot/js/game-status.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "wwwroot/scss/base/material-icon.min.css",
+      "wwwroot/scss/base/roboto.min.css",
+      "wwwroot/scss/pages/site.min.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/big-small-reports.min.css",
+    "inputFiles": [
+      "wwwroot/scss/pages/reports.min.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/adjust-bot.min.css",
+    "inputFiles": [
+      "wwwroot/scss/pages/adjust-bot.min.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/online-users.min.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.min.js",
+      "wwwroot/lib/data-tables/datatables.min.js",
+      "wwwroot/js/online-users.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/stick-header.min.js",
+    "inputFiles": [
+      "wwwroot/js/stick-header.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/report.min.js",
+    "inputFiles": [
+      "wwwroot/js/report.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/bola-config.min.js",
+    "inputFiles": [
+      "wwwroot/js/bola-config.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/bola-report.min.js",
+    "inputFiles": [
+      "wwwroot/js/bola-report.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/market.min.js",
+    "inputFiles": [
+      "wwwroot/js/market.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/chip-config.min.js",
+    "inputFiles": [
+      "wwwroot/js/chip-config.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/announcement.min.js",
+    "inputFiles": [
+      "wwwroot/js/announcement.js"
+    ]
+  }
+]

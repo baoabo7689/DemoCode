@@ -1,0 +1,40 @@
+﻿@using GamesAdmin.Site.Features.ClientSites.ViewModels;
+@model IEnumerable<ClientSiteViewModel>
+
+@{
+    ViewData["Title"] = "Client Sites";
+}
+
+<div class="col-md-12 card">
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>Client</th>
+                    <th>Site</th>
+                    <th>Game Client Url</th>
+                    <th>China Url</th>
+                    <th>Brand Name</th>
+                    <th>Valid Currencies</th>
+                    <th>Site Names</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ClientId</td>
+                        <td>@item.SiteId</td>
+                        <td>@item.GameClientUrl</td>
+                        <td>@item.ChinaUrl</td>
+                        <td>@item.BrandName</td>
+                        <td>@item.ValidCurrenciesText</td>
+                        <td>@item.SiteNameText</td>
+                        <td><a asp-action="Update" asp-route-clientId="@item.ClientId" asp-route-siteId="@item.SiteId"><i class="icon-edit"></i></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

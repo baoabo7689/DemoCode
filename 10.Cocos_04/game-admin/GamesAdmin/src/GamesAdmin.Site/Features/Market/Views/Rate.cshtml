@@ -1,0 +1,72 @@
+﻿@using GamesAdmin.Site.Features.Market.ViewModels
+@model MarketViewModel;
+
+@{ ViewData["Title"] = "Market Rate"; }
+
+@section Styles {
+    <link href="~/scss/pages/game-status.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/scss/pages/market.css" rel="stylesheet" asp-append-version="true" />
+}
+
+<div class="market-div">
+    <div class="message-success hidden-cls" id="updateStatusSuccess"><i class="icon-check"></i><span>Updated successfully</span></div>
+    <div class="message-error hidden-cls" id="updateStatusFailed"><i class="icon-cancel"></i><span>Error</span></div>
+</div>
+<div class="col-md-12 col-lg-12 game-status">
+    <table class="table table-bordered" id="report-table">
+        <thead>
+            <tr>
+                <th rowspan="2">Name</th>
+                <th rowspan="2">Rate</th>
+                <th class="col-status" rowspan="2">Is Base</th>
+                <th rowspan="2">Edit</th>
+            </tr>           
+        </thead>
+        <tbody>
+            @if (Model.Markets != null && Model.Markets.Any())
+            {                
+                @foreach (var market in Model.Markets)
+                {
+                    <tr>
+                        <td class="text-center" >@market.Name</td>
+                        <td class="text-center" >@market.Rate</td>  
+                        <td class="text-center">
+                            <i class='@(market.IsBase ? "icon-check" : "")'></i>
+                        </td>
+                        <td class="text-center" >
+                            <button class="btn-edit-rate" market-name="@market.Name"><i class="icon-edit"></i></button>                            
+                        </td>
+                    </tr>                    
+                 }
+            }
+
+            else
+            {
+                <tr>
+                    <td class="text-center" colspan="3">There is no information</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade market-modal" id="marketModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Setting: <span id="marketTitleName"></span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body market-details-content" id="marketDetails">
+                ...
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/market.js" asp-append-version="true"></script>
+}

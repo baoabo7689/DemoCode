@@ -1,0 +1,50 @@
+﻿@using System.Security.Claims;
+@model GamesAdmin.Site.Features.Dashboard.ViewModels.DashboardViewModel
+
+@section Styles {
+    <link href="~/scss/pages/dashboard.min.css" rel="stylesheet" asp-append-version="true" />
+}
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="stats row">
+    <div class="stats-item col-sm-6">
+        <div class="stats-container">
+            <div class="circle yellow">
+                <i class="icon-account-group icon"></i>
+            </div>
+            <div class="stats-detail">
+                <div class="number">
+                    <a asp-action="OnlineUsers" id="online-users">
+                        <span id="spinner" class="spinner-border">
+                        </span>
+                    </a>
+                </div>
+                <div>Real User</div>
+            </div>
+        </div>
+    </div>
+    @if (Context.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value == "admin")
+    {
+        <div class="stats-item col-sm-6">
+            <div class="stats-container">
+                <div class="circle yellow">
+                    <i class="icon-account-group icon"></i>
+                </div>
+                <div class="stats-detail">
+                    <div class="number">
+                        <a asp-action="BotUsers" id="online-users">Bots</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+@section Scripts
+{
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+}

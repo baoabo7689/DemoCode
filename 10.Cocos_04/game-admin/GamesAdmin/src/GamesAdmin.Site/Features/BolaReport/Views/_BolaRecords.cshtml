@@ -1,0 +1,73 @@
+﻿@using GamesAdmin.Core
+@using GamesAdmin.Core.Extensions;
+@using GamesAdmin.Site.Features.BolaReport.ViewModels;
+
+@model ReportResultViewModel
+
+@{
+    var records = Model.Records.ToList();
+    var totalRow = records.Count;
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="report-table">
+            <thead>
+                <tr>
+                    <th class="col-date text-center">Currency</th>
+                    <th class="col-date text-center">Stake</th>
+                    <th class="col-date text-center">Table Index</th>
+                    <th class="col-date text-center">Generate Time</th>
+                    <th class="col-date text-center">Detail Config</th>
+                    <th class="col-date text-center">Enabled</th>
+                    <th class="col-date text-center">Total Bet</th>
+                    <th class="col-number text-center">Total Payout</th>
+                    <th class="col-number text-center">Total Winloss</th>
+                    <th class="col-card text-center">Remaining Combinations</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < totalRow; i++)
+                {
+                    var record = records[i];
+
+                <tr>
+                    <td class="text-center">@record.Currency</td>
+                    <td class="text-center">@record.Stake</td>
+                    <td class="text-center">@record.TableIndex</td>
+                    <td class="text-center">@record.GenerateTime.ToLocalTime()</td>
+                    <td class="text-center">
+                        <a href="#" onclick="bolaReport.showConfig('@record.Currency', '@record.Stake', @record.TableIndex)">Config</a>
+                    </td>
+                    <td class="text-center">
+                        <input type="checkbox" value="@record.IsEnabled" checked="@record.IsEnabled" onclick="bolaReport.showEnableDisable('@record.IsEnabled', '@record.TableIndex')" />
+                    </td>
+                    <td class="text-right">@record.TotalBet.Format1()</td>
+                    <td class="text-right">@record.TotalPayout.Format1()</td>
+                    <td class="text-right">@record.TotalWinloss.Format1()</td>
+                    <td class="text-right">@record.RemainingCombination.Format0()</td>
+                </tr>
+                }
+            </tbody>
+            <tfoot>
+                @if (totalRow == 0)
+                {
+                    <tr>
+                        <td class="text-center" colspan="13">No data</td>
+                    </tr>
+                 }
+                else
+                {
+                    <tr class="total">
+                        <td class="text-right" colspan="6">Total</td>
+                        <td class="text-right">@records.Sum(x => x.TotalBet).Format1()</td>
+                        <td class="text-right">@records.Sum(x => x.TotalPayout).Format1()</td>
+                        <td class="text-right">@records.Sum(x => x.TotalWinloss).Format1()</td>
+                        <td class="text-right">@records.Sum(x => x.RemainingCombination).Format0()</td>
+                    </tr>
+                }
+            </tfoot>
+        </table>
+    </div>
+</div>

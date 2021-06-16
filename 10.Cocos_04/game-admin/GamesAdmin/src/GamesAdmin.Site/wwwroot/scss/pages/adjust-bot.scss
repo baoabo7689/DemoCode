@@ -1,0 +1,68 @@
+﻿// Adjust bot
+
+.adjust-bot-link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    .bot {
+        position: relative;
+        top: 4px;
+        left: -3px;
+        font-size: 1.8rem;
+    }
+}
+
+.adjust-bot-hours {
+    .modal-dialog {
+        max-width: 87rem;
+    }
+
+    .modal-body {
+        max-height: 50rem;
+        overflow: auto;
+    }
+
+    .ratio {
+        width: 5rem;
+        line-height: 1.5rem;
+        border-radius: .2rem;
+        border: 1px solid #ced4da;
+        text-align: center;
+    }
+
+    .table {
+        td {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            text-align: center;
+
+            &.ratio-cell {
+                text-align: left;
+            }
+        }
+    }
+
+    .options {
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+
+    .bot-number {
+        margin-top: 2px;
+        font-size: 1.1rem;
+        color: #6c757d;
+    }
+
+    .col-gmt {
+        width: 120px;
+    }
+    // invalid textbox
+    .input-validation-error {
+        border: 1px solid #dc3545;
+    }
+
+    .text-danger {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,64 @@
+﻿@using GamesAdmin.Core
+@using GamesAdmin.Core.Extensions;
+@using GamesAdmin.Site.Features.Report.ViewModels;
+
+@model BolaTangkasReportResultViewModel
+
+@{ 
+    var records = Model.Records.ToList();
+    var totalRow = records.Count;
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="report-table">
+            <thead>                
+                <tr>
+                    <th class="col-date">Date (GMT+7)</th>
+                    <th class="col-number">Username</th>
+                    <th class="col-number">Nickname</th>
+                    <th class="col-card">Cards</th>
+                    <th class="col-number">Result</th>
+                    <th class="col-number">Colokan</th>
+                    <th class="col-number">Bet</th>
+                    <th class="col-number">Stake</th>
+                    <th class="col-number">Win</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < totalRow; i++)
+                {
+                    var record = records[i];
+                    
+                <tr>
+                    <td class="text-center">@record.Time.ToString(Constants.DateTimeFormat)</td>
+                    <td class="text-center">@record.Username</td>
+                    <td class="text-center">@record.Nickname</td>
+                    <td class="text-center card-result">@Html.Raw(@String.Join(" <span class=\"gray-color\">-</span> ", @record.Cards.Select(c => String.Format("<span class=\"card-item {0} {1}\">{2}</span>", c.IsRedSuit ? "red-color" : "", c.IsHighLight ? "highlight" : "", c.Symbol)).ToList()))</td>
+                    <td class="text-center">@record.ResultTypeText</td>
+                    <td class="text-center">@record.ColokanCardText</td>
+                    <td class="text-right">@record.Bet.Format1()</td>
+                    <td class="text-right">@record.TotalBet.Format1()</td>
+                    <td class="text-right">@record.BetWin.Format1()</td>
+                </tr>
+                 }
+            </tbody>
+            <tfoot>
+                @if (totalRow == 0)
+                {
+                    <tr>
+                        <td class="text-center" colspan="13">No data</td>
+                    </tr>
+                 }
+                else
+                {
+                <tr class="total">
+                    <td colspan="6" class="text-right">Total</td>
+                    <td class="text-right">@records.Sum(x => x.Bet).Format1()</td>
+                    <td class="text-right">@records.Sum(x => x.TotalBet).Format1()</td>
+                    <td class="text-right">@records.Sum(x => x.BetWin).Format1()</td>
+                </tr>}
+            </tfoot>
+        </table>
+    </div>
+</div>

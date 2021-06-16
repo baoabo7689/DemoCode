@@ -1,0 +1,54 @@
+﻿@using GamesAdmin.Core
+@using GamesAdmin.Core.Extensions;
+@using GamesAdmin.Site.Features.RetrieveEndGameInfo.ViewModels;
+
+@model EndGameInfoViewResult
+
+@{ ViewData["Title"] = "End Game Info"; }
+
+@section Styles {
+    <link href="~/scss/pages/game-status.css" rel="stylesheet" asp-append-version="true" />
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="report-table">
+            <thead>
+                <tr>
+                    <th class="col-date text-center">Member Id</th>
+                    <th class="col-date text-center">Game Round Id</th>
+                    <th class="col-date text-center">Game Type</th>
+                    <th class="col-date text-center">Site Id</th>
+                    <th class="col-date text-center">Total Amount</th>
+                    <th class="col-date text-center">Total Win</th>
+                    <th class="col-number text-center">Valid Bet Amount</th>
+                    <th class="col-number text-center">End Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">@Model.Model.MemberId</td>
+                    <td class="text-center">@Model.Model.GameRoundId</td>
+                    <td class="text-center">@Model.Model.GameType</td>
+
+                    @if (Model.Result.ErrorCode == "0")
+                    {
+                        
+                        <td class="text-center">@Model.Model.SiteId</td>
+                        <td class="text-center">@Model.Result.TotalAmount.Format2()</td>
+                        <td class="text-center">@Model.Result.TotalWin.Format2()</td>
+                        <td class="text-center">@Model.Result.ValidBetAmount.Format2()</td>
+                        <td class="text-center">@Model.Result.EndTime</td> 
+                    }
+                    else
+                    {                        
+                        <td class="text-center" colspan="5">@(Model.Result.ErrorDescription + " ("+ Model.Result.ErrorCode+")")</td>
+                    }
+                </tr>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+</div>
+

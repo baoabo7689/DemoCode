@@ -1,0 +1,160 @@
+﻿@using System.Security.Claims;
+@using GamesAdmin.Site.Features._Shared.Components.ViewModels;
+@model MenuViewModel;
+
+<ul class="vertical-nav-menu">
+    <li class="menu-item">
+        <a asp-action="Index" asp-controller="GameSettings" class="add-new-game">
+            <i class="icon-poker-chip menu-icon"></i>
+            <span class="menu-name">Game Monitoring</span>
+        </a>
+    </li>
+    <li class="menu-item">
+        <a asp-action="GameSettings" asp-controller="GameSettings" class="add-new-game">
+            <i class="icon-card-game menu-icon"></i>
+            <span class="menu-name">Game Management</span>
+        </a>
+    </li>
+    <li class="menu-item">
+        <a asp-action="OnlineUsers" asp-controller="Dashboard">
+            <i class="icon-account-pin menu-icon"></i>
+            <span class="menu-name">Online User</span>
+        </a>
+    </li>
+
+
+    @if (Context.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value == "admin")
+    {
+        <li class="menu-item">
+            <a asp-action="Index" asp-controller="BolaReport">
+                <i class="icon-account-pin menu-icon"></i>
+                <span class="menu-name">Bola Tangkas Report</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a asp-action="Index" asp-controller="BolaConfig">
+                <i class="icon-account-pin menu-icon"></i>
+                <span class="menu-name">Bola Tangkas Config</span>
+            </a>
+        </li>
+    }
+
+    <li class="menu-item">
+        <a asp-action="Index" asp-controller="ChipConfig">
+            <i class="icon-account-pin menu-icon"></i>
+            <span class="menu-name">Chip Config</span>
+        </a>
+    </li>
+
+    <li class="menu-item">
+        <a asp-action="Index" asp-controller="Announcement">
+            <i class="icon-account-pin menu-icon"></i>
+            <span class="menu-name">Announcement</span>
+        </a>
+    </li>
+
+    @if (Context.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value == "admin")
+    {
+        <li class="menu-item">
+            <a asp-action="Add" asp-controller="GameSettings" class="add-new-game">
+                <i class="icon-note-add menu-icon"></i>
+                <span class="menu-name">Add new game</span>
+            </a>
+        </li>
+
+        <li class="menu-item">
+            <a asp-action="add" asp-controller="account">
+                <i class="icon-account-add menu-icon"></i>
+                <span class="menu-name">Generate user/bot</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a asp-action="revisebots" asp-controller="account">
+                <i class="icon-bot menu-icon"></i>
+                <span class="menu-name">Revise bots</span>
+            </a>
+        </li>
+    }
+
+    <li class="nav-heading">Game Result</li>
+    <li class="menu-item">
+        <a asp-action="Index" asp-controller="GameRoundResult" target="_blank">
+            <i class="icon-chart menu-icon"></i>
+            <span class="menu-name">Game Round Result</span>
+        </a>
+    </li>
+    <li class="menu-item">
+        <a asp-action="Index" asp-controller="GameTicketDetail">
+            <i class="icon-chart menu-icon"></i>
+            <span class="menu-name">Game Ticket Detail</span>
+        </a>
+    </li>
+
+    <li class="nav-heading">Markets</li>
+    @if (Context.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value == "admin")
+    {
+        <li class="menu-item">
+            <a asp-action="Add" asp-controller="Market">
+                <i class="icon-note-add menu-icon"></i>
+                <span class="menu-name">Add New Market</span>
+            </a>
+        </li>
+
+    }
+    <li class="menu-item">
+        <a asp-action="Index" asp-controller="Market">
+            <i class="icon-card-game menu-icon"></i>
+            <span class="menu-name">Market Management</span>
+        </a>
+    </li>
+    <li class="menu-item">
+        <a asp-action="Rate" asp-controller="Market">
+            <i class="icon-card-game menu-icon"></i>
+            <span class="menu-name">Market Rate</span>
+        </a>
+    </li>
+
+
+    @if (Context.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value == "admin")
+    {
+        <li class="nav-heading">Reports</li>
+        <li class="menu-item">
+            <a asp-action="Index" asp-controller="DailySummary">
+                <i class="icon-account-pin menu-icon"></i>
+                <span class="menu-name">Daily Summary</span>
+            </a>
+        </li>
+
+
+
+        <li class="nav-heading">Users</li>
+        <li class="menu-item">
+            <a asp-action="Index" asp-controller="User">
+                <i class="icon-account-group menu-icon"></i>
+                <span class="menu-name">Management</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a asp-action="Add" asp-controller="User">
+                <i class="icon-account-add menu-icon"></i>
+                <span class="menu-name">Add New User</span>
+            </a>
+        </li>
+
+        <li class="menu-item">
+            <a asp-action="Index" asp-controller="ClientSite">
+                <i class="icon-link menu-icon"></i>
+                <span class="menu-name">Client Sites</span>
+            </a>
+        </li>
+
+        <li class="nav-heading">Identity Server</li>
+        <li class="menu-item">
+            <a asp-action="Index" asp-controller="SigningCredential">
+                <i class="icon-account-group menu-icon"></i>
+                <span class="menu-name">Signing Credential</span>
+            </a>
+        </li>
+    }
+
+</ul>

@@ -1,0 +1,107 @@
+﻿@using GamesAdmin.Core
+@using GamesAdmin.Core.Extensions;
+@using GamesAdmin.Site.Features.Report.ViewModels
+
+@model OddEvenTurboReportResultViewModel
+
+@{
+    var evenRecords = Model.Records.Where(x => x.Select).ToList();
+    var oddRecords = Model.Records.Where(x => !x.Select).ToList();
+    var totalRow = evenRecords.Count > oddRecords.Count ? evenRecords.Count : oddRecords.Count;
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        @if (Model.RoundResult.Number != 0)
+        {
+            <h3 class="round-result">Round Result: <span class="result">@Model.RoundResult.Dice1 - @Model.RoundResult.Dice2 - @Model.RoundResult.Dice3</span> </h3>
+        }
+        <table class="table table-bordered table-hover" id="report-table">
+            <thead>
+                <tr>
+                    <th colspan="6" class="big-small-title">Odd</th>
+                    <th class="line-cell"></th>
+                    <th colspan="6" class="big-small-title">Even</th>
+                </tr>
+                <tr>
+                    <th class="col-date">Date (GMT+7)</th>
+                    <th>Username</th>
+                    <th class="col-nickname">Nickname</th>
+                    <th class="col-number">Stake</th>
+                    <th class="col-number">Refund</th>
+                    <th class="col-number">Win</th>
+                    <th class="line-cell"></th>
+                    <th class="col-date">Date (GMT+7)</th>
+                    <th>Username</th>
+                    <th class="col-nickname">Nickname</th>
+                    <th class="col-number">Stake</th>
+                    <th class="col-number">Refund</th>
+                    <th class="col-number">Win</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < totalRow; i++)
+                {
+                    var evenRecord = evenRecords.ElementAtOrDefault(i);
+                    var oddRecord = oddRecords.ElementAtOrDefault(i);
+                <tr>
+                    <td>@oddRecord?.Time.ToString(Constants.DateTimeFormat)</td>
+                    <td>@oddRecord?.Username</td>
+                    <td class="col-nickname">
+                        <a data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#modal .modal-body" data-ajax-success="showModal('#modal')"
+                           asp-action="GetOddEvenTurboBetHistory" asp-route-roundId="@Model.RoundResult.Number" asp-route-nickname="@oddRecord?.Nickname">
+                            @oddRecord?.Nickname
+                        </a>
+                    </td>
+                    <td class="text-right">@oddRecord?.Bet.Format1()</td>
+                    <td class="text-right">@oddRecord?.Back.Format1()</td>
+                    <td class="text-right">@oddRecord?.BetWin.Format1()</td>
+                    <td class="line-cell"></td>
+                    <td>@evenRecord?.Time.ToString(Constants.DateTimeFormat)</td>
+                    <td>@evenRecord?.Username</td>
+                    <td>
+                        <a data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#modal .modal-body" data-ajax-success="showModal('#modal')"
+                           asp-action="GetOddEvenTurboBetHistory" asp-route-roundId="@Model.RoundResult.Number" asp-route-nickname="@evenRecord?.Nickname">
+                            @evenRecord?.Nickname
+                        </a>
+                    </td>
+                    <td class="text-right">@evenRecord?.Bet.Format1()</td>
+                    <td class="text-right">@evenRecord?.Back.Format1()</td>
+                    <td class="text-right">@evenRecord?.BetWin.Format1()</td>
+
+
+                </tr>
+
+                }
+            </tbody>
+            <tfoot>
+                @if (totalRow == 0)
+                {
+                    <tr>
+                        <td class="text-center" colspan="13">No data</td>
+                    </tr>
+                }
+                else
+                {
+            <tr class="total">
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td class="text-right">@oddRecords.Sum(x => x.Bet).Format1()</td>
+                <td class="text-right">@oddRecords.Sum(x => x.Back).Format1()</td>
+                <td class="text-right">@oddRecords.Sum(x => x.BetWin).Format1()</td>
+                <td class="line-cell"></td>
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td class="text-right">@evenRecords.Sum(x => x.Bet).Format1()</td>
+                <td class="text-right">@evenRecords.Sum(x => x.Back).Format1()</td>
+                <td class="text-right">@evenRecords.Sum(x => x.BetWin).Format1()</td>
+
+
+            </tr>
+                }
+            </tfoot>
+        </table>
+    </div>
+</div>

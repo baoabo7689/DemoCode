@@ -1,0 +1,130 @@
+﻿@{ Layout = null; }
+
+@using GamesAdmin.Site.Features.BolaConfig.ViewModels;
+@model EditAmountViewModel;
+
+<div>
+    <div class="message-success hidden-cls" id="successMsg"><i class="icon-check"></i><span>Updated successfully</span></div>
+    <div class="message-error hidden-cls" id="failedMsg"><i class="icon-cancel"></i><span>Error</span></div>
+
+    <form class="edit-amount-body form" asp-action="EditAmount" asp-controller="BolaConfig" method="post" id="editForm">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div>
+            <div>
+                <div class="form-group row">
+                    <div class="col-lg-6 currency-field">
+                        <label asp-for="Currency" class="control-label"></label>
+                        <input type="text" required asp-for="Currency" class="form-control" readonly />
+                        <span asp-validation-for="Currency" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6 amount-field">
+                        <label asp-for="Amount" class="control-label"></label>
+                        <input type="text" required asp-for="Amount" class="form-control" readonly />
+                        <span asp-validation-for="Amount" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row-options">
+
+                    @if (Model.LeftConfigs.Count > 0)
+                    {
+                        <div class="col-lg-6">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="name-col">Id</th>
+                                        <th class="num-col">Odds</th>
+                                        <th class="num-col">Count</th>
+                                        <th class="percent-col">Turnover Percent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (var i = 0; i < Model.LeftConfigs.Count; i++)
+                                    {
+
+                                        <tr>
+                                            <td>
+                                                <input type="text" readonly class="form-control" value="@UpperFirstLetter(Model.LeftConfigs[i].Id)" />
+                                                <input type="text" readonly hidden asp-for="@Model.LeftConfigs[i].Id" class="form-control" />
+                                                <span asp-validation-for="@Model.LeftConfigs[i].Id" class="text-danger"></span>
+                                            </td>
+                                            <td>
+                                                <input type="text" readonly asp-for="@Model.LeftConfigs[i].Odds" class="form-control" />
+                                                <span asp-validation-for="@Model.LeftConfigs[i].Odds" class="text-danger"></span>
+                                            </td>
+                                            <td>
+                                                <input type="text" required asp-for="@Model.LeftConfigs[i].Count" class="form-control" />
+                                                <span asp-validation-for="@Model.LeftConfigs[i].Count" class="text-danger"></span>
+                                            </td>
+                                            <td>
+                                                <input type="text" required asp-for="@Model.LeftConfigs[i].TurnoverPercent" class="form-control" />
+                                                <span asp-validation-for="@Model.LeftConfigs[i].TurnoverPercent" class="text-danger"></span>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+
+                    @if (Model.RightConfigs.Count > 0)
+                    {
+                        <div class="col-lg-6">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="name-col">Id</th>
+                                        <th class="num-col">Odds</th>
+                                        <th class="num-col">Count</th>
+                                        <th class="percent-col">Turnover Percent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (var i = 0; i < Model.RightConfigs.Count; i++)
+                                    {
+
+
+                                        <tr>
+                                            <td>
+                                                <input type="text" readonly class="form-control" value="@UpperFirstLetter(Model.RightConfigs[i].Id)" />
+                                                <input type="text" readonly hidden asp-for="@Model.RightConfigs[i].Id" class="form-control" />
+                                                <span asp-validation-for="@Model.RightConfigs[i].Id" class="text-danger"></span>
+                                            </td>
+                                            <td>
+                                                <input type="text" readonly asp-for="@Model.RightConfigs[i].Odds" class="form-control" />
+                                                <span asp-validation-for="@Model.RightConfigs[i].Odds" class="text-danger"></span>
+                                            </td>
+                                            <td>
+                                                <input type="text" required asp-for="@Model.RightConfigs[i].Count" class="form-control" />
+                                                <span asp-validation-for="@Model.RightConfigs[i].Count" class="text-danger"></span>
+                                            </td>
+                                            <td>
+                                                <input type="text" required asp-for="@Model.RightConfigs[i].TurnoverPercent" class="form-control" />
+                                                <span asp-validation-for="@Model.RightConfigs[i].TurnoverPercent" class="text-danger"></span>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@functions{
+    public string UpperFirstLetter(string text)
+    {
+        if (string.IsNullOrEmpty(text))
+        {
+            return string.Empty;
+        }
+
+        char[] letters = text.ToCharArray();
+        letters[0] = char.ToUpper(letters[0]);
+        return new string(letters);
+    }
+}

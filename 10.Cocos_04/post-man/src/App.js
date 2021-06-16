@@ -28,8 +28,6 @@ class App extends React.PureComponent {
       appConfigs.socketOptions
     );
 
-    socket.on('result2', (data) => this.displayResultObject(data));
-
     socket.emit('signin', {
       username: 'admin_1',
       ss: 'l6q6opiOm6wVU7qOhhwknF8PNGnl39Ce_admin_1',
@@ -48,7 +46,18 @@ class App extends React.PureComponent {
 
     socket.on('BauCua', (data) => {
       console.log(data);
+
+      if (!!data.endBet) {
+        this.displayResult(data);
+      }
     });
+  }
+
+  displayResult(data) {
+    var text = Object.keys(data)
+      .map((k) => `\r  "${k}": "${data[k]}",`)
+      .join(',');
+    this.setState({ responseData: `{${text}\r}` });
   }
 
   displayResultObject(data) {

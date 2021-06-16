@@ -1,0 +1,52 @@
+﻿@using GamesAdmin.Core
+@using GamesAdmin.Core.Extensions;
+@using GamesAdmin.Site.Features.DailySummary.ViewModels;
+
+@model ResultViewModel
+
+@{ var records = Model.Records.ToList();
+                var totalRow = records.Count; }
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="report-table">
+            <thead>
+                <tr>
+                    <th class="col-date text-center">Currency</th>
+                    <th class="col-date text-center">Tickets</th>
+                    <th class="col-date text-center">Stake</th>
+                    <th class="col-date text-center">Payout</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < totalRow; i++)
+                {
+                    var record = records[i];
+
+                <tr>
+                    <td class="text-right">@record.Currency</td>
+                    <td class="text-right">@record.TicketCount.Format0()</td>
+                    <td class="text-right">@record.Stake.Format1()</td>
+                    <td class="text-right">@record.Payout.Format1()</td>
+                </tr>
+    }
+            </tbody>
+            <tfoot>
+                @if (totalRow == 0)
+                {
+    <tr>
+        <td class="text-center" colspan="13">No data</td>
+    </tr> }
+                else
+                {
+            <tr class="total">
+                <td class="text-right">Total</td>
+                <td class="text-right">@records.Sum(x => x.TicketCount).Format0()</td>
+                <td class="text-right">@records.Sum(x => x.Stake).Format1()</td>
+                <td class="text-right">@records.Sum(x => x.Payout).Format1()</td>
+            </tr>}
+            </tfoot>
+        </table>
+    </div>
+</div>

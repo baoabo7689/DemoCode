@@ -1,0 +1,60 @@
+.result-updater {
+  justify-content: center;
+
+  & > div {
+    color: #333;
+    background: #ffe0c4;
+    border: solid 4px #7d4e24;
+    box-shadow: inset 0px 0px 30px 0px rgba(170, 78, 27, 0.6), 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    border-radius: 15px;
+
+    .custom-modal-header {
+      border-bottom: none;
+      padding: 5px 15px 0;
+
+      span {
+        color: #b17817;
+      }
+    }
+
+    .custom-modal-footer {
+      border-top: none;
+      justify-content: center;
+    }
+
+    .action-group {
+      border-top: 0;
+    }
+  }
+
+  .row {
+    justify-content: center;
+    text-align: center;
+
+    .check-block {
+      display: inline-block;
+      width: 120px;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px 0;
+    }
+  }
+
+  .custom-button {
+    background: #b17817;
+    border-color: #b17817;
+    font-weight: bold;
+  }
+
+  .custom-button:hover {
+    background: #b17817ef;
+  }
+
+  .errors {
+    color: yellow;
+    font-weight: bold;
+    font-size: 20px;
+    justify-content: center;
+    padding-top: 10px;
+  }
+}

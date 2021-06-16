@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="SonarQube - Game Admin Nexcel CSharp" ToolsVersion="16.0">
+  <Include Path="..\..\.sonarlint\l3-game-admincsharp.ruleset" Action="Default" />
+</RuleSet>

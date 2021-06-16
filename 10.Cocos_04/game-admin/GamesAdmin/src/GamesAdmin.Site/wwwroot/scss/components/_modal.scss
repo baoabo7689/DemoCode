@@ -1,0 +1,50 @@
+﻿.modal {
+    .modal-header {
+        background: #f8f9fa;
+    }
+
+    .modal-header {
+        padding: 1.2rem 1.4rem;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .modal-title {
+        margin-bottom: 0;
+        line-height: 1.5;
+        font-size: 1.8rem;
+    }
+
+    .close {
+        font-size: 2.5rem;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    .modal-footer > :not(:last-child) {
+        margin-right: 1rem;
+    }
+
+    .modal-content {
+        border-radius: .5rem;
+    }
+
+    .modal-body {
+        position: static;
+        padding: 1.5rem;
+    }
+
+    .modal-footer {
+        border-top: 0;
+        padding: 1.5rem;
+    }
+
+    .button-group-footer {
+        text-align: right;
+
+        .btn:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+}

@@ -1,0 +1,1 @@
+﻿stickHeader.stick('.inner-content', 'table#report-table', 120, -20);

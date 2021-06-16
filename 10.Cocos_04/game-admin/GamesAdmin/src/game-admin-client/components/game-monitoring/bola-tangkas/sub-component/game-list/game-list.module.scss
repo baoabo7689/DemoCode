@@ -1,0 +1,32 @@
+.wrapper {
+  border: 5px solid #660f10;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #41121280;
+}
+
+.game-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 650px;
+  padding: 5px 10px;
+
+  &::-webkit-scrollbar-track {
+    background-color: #333;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: #333;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border: 2px solid #bbb;
+  }
+}
+
+.col-title {
+  font-size: 14px;
+  font-weight: 700;
+}

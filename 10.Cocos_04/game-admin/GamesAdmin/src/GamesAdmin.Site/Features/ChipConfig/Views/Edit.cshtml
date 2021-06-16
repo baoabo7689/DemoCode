@@ -1,0 +1,72 @@
+﻿@{ Layout = null; }
+
+@using GamesAdmin.Site.Features.ChipConfig.ViewModels;
+@model EditViewModel;
+
+<div>
+    <div class="message-success hidden-cls" id="successMsg"><i class="icon-check"></i><span>Updated successfully</span></div>
+    <div class="message-error hidden-cls" id="failedMsg"><i class="icon-cancel"></i><span id="failedMsgContent">Error</span></div>
+
+    <form class="card-body form" asp-action="Edit" asp-controller="ChipConfig" method="post" id="editForm">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group row">
+            <div class="col-lg-6">
+                <label asp-for="Data.Label" class="control-label"></label>
+                @if (Model.IsNew)
+                {
+                    <input type="text" asp-for="Data.Label" class="form-control" />
+                }
+                else
+                {
+                    <input type="text" readonly asp-for="Data.Label" class="form-control" />
+                }
+
+                <span asp-validation-for="Data.Label" class="text-danger"></span>
+            </div>
+            <div class="col-lg-6">
+                <label asp-for="Data.Value" class="control-label"></label>
+                <input type="number"  asp-for="Data.Value" class="form-control" />
+                <span asp-validation-for="Data.Value" class="text-danger"></span>
+            </div>
+        </div>
+
+        <fieldset>
+            <legend>Theme</legend>
+            <div class="form-group row">
+                <div class="col-lg-6">
+                    <label asp-for="Data.Theme.BackgroundColor" class="control-label"></label>
+                    <input type="text" asp-for="Data.Theme.BackgroundColor" class="form-control" />
+                    <span asp-validation-for="Data.Theme.BackgroundColor" class="text-danger"></span>
+                </div>
+                <div class="col-lg-6">
+                    <label asp-for="Data.Theme.BorderColor" class="control-label"></label>
+                    <input type="text" asp-for="Data.Theme.BorderColor" class="form-control" />
+                    <span asp-validation-for="Data.Theme.BorderColor" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-lg-6">
+                    <label asp-for="Data.Theme.CenterColor" class="control-label"></label>
+                    <input type="text" asp-for="Data.Theme.CenterColor" class="form-control" />
+                    <span asp-validation-for="Data.Theme.CenterColor" class="text-danger"></span>
+                </div>
+                <div class="col-lg-6">
+                    <label asp-for="Data.Theme.LabelColor" class="control-label"></label>
+                    <input type="text" asp-for="Data.Theme.LabelColor" class="form-control" />
+                    <span asp-validation-for="Data.Theme.LabelColor" class="text-danger"></span>
+                </div>
+            </div>
+
+        </fieldset>
+        
+        <br />
+        <div class="form-group row">
+            <div class="col-lg-6">
+                <input type="checkbox" asp-for="Data.Enabled" />
+                <label asp-for="Data.Enabled" class="control-label">Is Enabled</label>
+            </div>
+        </div>
+    </form>
+</div>

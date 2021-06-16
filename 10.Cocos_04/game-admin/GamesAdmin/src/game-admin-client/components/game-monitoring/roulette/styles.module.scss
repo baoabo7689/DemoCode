@@ -1,0 +1,52 @@
+.result {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 5px solid #ee9b22;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 85px;
+  font-size: 60px;
+  font-weight: 700;
+  margin: 1px;
+  color: #fff;
+
+  &.red {
+    background-color: #d01616;
+  }
+
+  &.black {
+    background-color: black;
+  }
+
+  &.green {
+    background-color: green;
+  }
+}
+
+.timer {
+  margin-right: 30px;
+  text-align: center;
+}
+
+.total-bet {
+  justify-content: space-around;
+}
+
+.betlist-title {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  span {
+    width: 100%;
+  }
+}
+
+.game-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}

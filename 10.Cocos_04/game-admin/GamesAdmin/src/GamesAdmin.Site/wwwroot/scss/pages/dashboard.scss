@@ -1,0 +1,64 @@
+﻿@import "../base/variables";
+@import "../components/customize-datatable";
+
+.stats {   
+    margin: 0 0 2rem;
+}
+
+.stats-item {
+    padding: 0;
+
+    &:first-child {
+        padding-right: 3rem;
+    }
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+
+    &.yellow {
+        background-color: #f7b924;
+
+        .icon {
+            color: $text-color;
+        }
+    }
+
+    &.green {
+        background-color: #3ac47d;
+
+        .icon {
+            color: #fff;
+        }
+    }
+
+    .icon {
+        width: 2.4rem;
+    }
+}
+
+.stats-detail {
+    margin-left: 2rem;
+
+    .number {
+        font-size: 4rem;
+        display: block;
+        line-height: 1;
+        color: #495057;
+        font-weight: bold;
+    }
+}

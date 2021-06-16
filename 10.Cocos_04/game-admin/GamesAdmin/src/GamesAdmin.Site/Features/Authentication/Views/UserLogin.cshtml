@@ -1,0 +1,46 @@
+﻿@model GamesAdmin.Site.Features.Authentication.ViewModel.LoginViewModel
+
+@{
+    ViewData["Title"] = "User Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="icon" href="favicon.ico">
+    <link href="~/scss/base/roboto.min.css" rel="stylesheet" />
+    <link href="~/scss/pages/login.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="~/images/Saba3.png" class="img" alt="Saba Club Admin Site" />
+        </div>
+        <form asp-action="Login" class="block form-login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-box">
+                <input asp-for="UserName" class="input-text" placeholder="Username" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-box">
+                <input type="password" asp-for="Password" class="input-text" placeholder="Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div>
+                <button class="btn-submit">Login</button>
+            </div>
+        </form>
+    </div>    
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
+

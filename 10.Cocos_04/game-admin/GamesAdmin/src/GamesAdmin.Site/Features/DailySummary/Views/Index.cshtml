@@ -1,0 +1,40 @@
+﻿@using GamesAdmin.Site.Features.DailySummary.ViewModels
+@model QueryViewModel
+@{ ViewData["Title"] = "Daily Summary"; }
+
+@section Styles {
+    <link href="~/scss/pages/daily-summary.min.css" rel="stylesheet" asp-append-version="true" />
+}
+<form class="form filter bola-report" data-ajax="true" data-ajax-method="GET" asp-action="GetReport" 
+      data-ajax-mode="replace" data-ajax-update="#report-result"
+      data-ajax-loading="#spinner" id="bolaReportForm"
+      method="get">
+    <div class="form-row align-items-center">
+        <div class="col-auto">
+            <label asp-for="SummarizedDate" class="control-label">Date </label>
+            <input asp-for="SummarizedDate" class="form-control" />
+        </div>
+        <div class="col-auto">
+            <label asp-for="IsCash" class="control-label">Is Cash </label>
+            <input asp-for="IsCash" class="form-control" />
+        </div>
+
+        <div class="col-auto mt-5">
+            <button type="submit" class="btn-submit">Submit</button>
+            <div id="spinner" class="spinner-border" style="display: none">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="daily-summary">
+    <div id="report-result" class="col-sm-12 report-container">
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.js"></script>
+    
+}

@@ -1,0 +1,190 @@
+@{ Layout = null; }
+
+@using GamesAdmin.Site.Features.GameMarket.ViewModels;
+@model EditViewModel;
+
+@{ ViewData["Title"] = Model.DisplayName; }
+
+@section Styles {
+    <link href="~/css/adjust-bot.min.css" rel="stylesheet" asp-append-version="true" />
+}
+
+<div class="setting-model">
+    
+        <div class="message-success hidden-cls" id="successMsg"><i class="icon-check"></i><span>Updated successfully</span></div> 
+        <div class="message-error hidden-cls" id="failedMsg"><span id="failedMsgContent">Error</span></div> 
+
+        <form class="card-body form" asp-action="Update" asp-controller="GameMarket" method="post" id="gameForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div><b>Markets</b></div>
+
+            @for (var i = 0; i < Model.GameSetting.GameMarkets.Count; i++)
+            {
+                <br />
+                <fieldset>
+                    <legend>@Model.GameSetting.GameMarkets[i].MarketName</legend>
+                    <input type="hidden" asp-for="@Model.GameSetting.GameMarkets[i].MarketName" />
+                    <input type="hidden" asp-for="@Model.GameSetting.GameMarkets[i].MarketId" />
+
+                    <div class="form-group">
+                        <div>
+                            <input type="checkbox" asp-for="GameSetting.GameMarkets[i].Enabled" />
+                            <label asp-for="GameSetting.GameMarkets[i].Enabled" class="control-label"></label>
+                        </div>
+                        <span asp-validation-for="GameSetting.GameMarkets[i].Enabled" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-lg-3">
+                            <label asp-for="GameSetting.GameMarkets[i].MinBet" class="control-label"></label>
+                            <input type="number" asp-for="GameSetting.GameMarkets[i].MinBet" class="form-control" />
+                            <span asp-validation-for="GameSetting.GameMarkets[i].MinBet" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-3">
+                            <label asp-for="GameSetting.GameMarkets[i].MaxBet" class="control-label"></label>
+                            <input type="number" asp-for="GameSetting.GameMarkets[i].MaxBet" class="form-control" />
+                            <span asp-validation-for="GameSetting.GameMarkets[i].MaxBet" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-3">
+                            <label asp-for="GameSetting.GameMarkets[i].IconSize" class="control-label"></label>
+                            <select asp-for="GameSetting.GameMarkets[i].IconSize" required asp-items="Model.IconSizeOptions" class="form-control"></select>
+                        </div>
+                        <div class="col-lg-3">
+                            <label asp-for="GameSetting.GameMarkets[i].SortOrder" class="control-label"></label>
+                            <input type="number" asp-for="GameSetting.GameMarkets[i].SortOrder" class="form-control" />
+                            <span asp-validation-for="GameSetting.GameMarkets[i].SortOrder" class="text-danger"></span>
+                        </div>
+                    </div>
+                   
+
+                    @if(!@Model.IsNotUseChip){
+                        <fieldset>
+                            <legend>Chips</legend>
+                            @for (var j = 0; j < (Model.GameSetting.GameMarkets[i].EnabledChips.Count / 6 + 1); j++)
+                            {
+                                <div class="form-group row">
+                                    @for (var k = 0; k < 6; k++)
+                                    {
+                                        var index = j * 6 + k;
+                                        if (index < Model.GameSetting.GameMarkets[i].EnabledChips.Count)
+                                        {
+                                            var displayName = Model.GameSetting.GameMarkets[i].EnabledChips[index].Label;
+                                            <div class="col-lg-2">
+                                                <input type="checkbox" asp-for="@Model.GameSetting.GameMarkets[i].EnabledChips[index].Enabled"  />
+                                                <label class="control-label" asp-for="@Model.GameSetting.GameMarkets[i].EnabledChips[index].Enabled" >@displayName</label>                                            
+                                            
+                                                <input type="text" hidden asp-for="@Model.GameSetting.GameMarkets[i].EnabledChips[index].Id"  />
+                                                <input type="text" hidden asp-for="@Model.GameSetting.GameMarkets[i].EnabledChips[index].Label"  />
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            }
+                        </fieldset>
+                    }
+                    <br />
+
+                    @if (Model.GameSetting.GameMarkets[i].DisplayMaxBetChoices)
+                    {
+                        <fieldset>
+                        <legend>Bet Choices</legend>
+                        @for (var j = 0; j < (Model.GameSetting.GameMarkets[i].BetChoiceBetSettings.Count / 6 + 1); j++)
+                        {
+                            <div class="form-group row">
+                                @for (var k = 0; k < 6; k++)
+                                {
+                                    var index = j * 6 + k;
+                                    if (index < Model.GameSetting.GameMarkets[i].BetChoiceBetSettings.Count)
+                                    {
+                                        var displayName = Model.GameSetting.GameMarkets[i].BetChoiceBetSettings[index].DisplayName;
+                                        var maxBet = Model.GameSetting.GameMarkets[i].BetChoiceBetSettings[index].MaxBet;
+                                        <div class="col-lg-2">
+                                            <label class="control-label">@displayName</label>
+                                            <input type="text" hidden asp-for="@Model.GameSetting.GameMarkets[i].BetChoiceBetSettings[index].Name" class="form-control" />
+                                            <input type="number" asp-for="@Model.GameSetting.GameMarkets[i].BetChoiceBetSettings[index].MaxBet" class="form-control" />
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        }
+                        </fieldset>
+                    }
+                </fieldset>
+              }
+
+
+            <br />
+            @if (!Model.GameSetting.DisabledShowBot)
+            {
+                <div><b>Bot Settings</b></div>
+                <br />
+
+                <div class="form-group row">
+                    <div class="col-lg-6">
+                        <label asp-for="GameSetting.MinBet" class="control-label"></label>
+                        <input type="number" asp-for="GameSetting.MinBet" class="form-control" />
+                        <span asp-validation-for="GameSetting.MinBet" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6">
+                        <label asp-for="GameSetting.BotMaxBet" class="control-label"></label>
+                        <input type="number" asp-for="GameSetting.BotMaxBet" class="form-control" />
+                        <span asp-validation-for="GameSetting.BotMaxBet" class="text-danger"></span>
+                    </div>
+                 </div>
+
+                 @if (Model.DisplayBotMaxBetChoices)
+                    {
+                        <fieldset>
+                        <legend>Bot Max Bet Choices</legend>
+                        @for (var j = 0; j < (Model.GameSetting.BotMaxBetChoices.Count / 6 + 1); j++)
+                        {
+                            <div class="form-group row">
+                                @for (var k = 0; k < 6; k++)
+                                {
+                                    var index = j * 6 + k;
+                                    if (index < Model.GameSetting.BotMaxBetChoices.Count)
+                                    {
+                                        var displayName = Model.GameSetting.BotMaxBetChoices[index].DisplayName;
+                                        var maxBet = Model.GameSetting.BotMaxBetChoices[index].MaxBet;
+                                        <div class="col-lg-2">
+                                            <label class="control-label">@displayName</label>
+                                            <input type="text" hidden asp-for="@Model.GameSetting.BotMaxBetChoices[index].Name" class="form-control" />
+                                            <input type="number" asp-for="@Model.GameSetting.BotMaxBetChoices[index].MaxBet" class="form-control" />
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        }
+                        </fieldset>
+                        <br />
+                    }
+                 
+
+                <div class="form-group">
+                    <div>
+                        <input type="checkbox" asp-for="GameSetting.BotEnabled" />
+                        <label asp-for="GameSetting.BotEnabled" class="control-label"></label>
+                    </div>
+                    <span asp-validation-for="GameSetting.BotEnabled" class="text-danger"></span>
+                </div>
+            }
+            
+            @if (Model.GameSetting.EnabledDelayStartTime)
+            {
+                <br />
+                <div class="form-group row">
+                    <div class="col-lg-6">
+                        <b><label asp-for="GameSetting.DelayStartTime" class="control-label"></label></b>
+                        <input type="number" asp-for="GameSetting.DelayStartTime" class="form-control" />
+                        <span asp-validation-for="GameSetting.DelayStartTime" class="text-danger"></span>
+                    </div>                    
+                 </div>
+                <br />
+            }
+
+            <input type="hidden" asp-for="@Model.GameSetting.GameName" />
+            <input type="hidden" asp-for="@Model.GameSetting.GameId" />
+        </form> 
+</div>
+
+

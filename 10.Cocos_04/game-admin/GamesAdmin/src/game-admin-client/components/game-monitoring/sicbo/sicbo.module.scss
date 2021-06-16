@@ -1,0 +1,41 @@
+.game-control-panel {
+  width: 350px;
+
+  & > div {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: #411212;
+    border: 5px solid #660f10;
+    border-radius: 20px;
+    z-index: 99;
+    padding: 5px;
+  }
+
+  div[class^="dice_dice"] {
+    margin: 0;
+  }
+}
+
+.sicbo-container {
+  max-width: 100%;
+  padding: 0;
+}
+
+.row-style {
+  justify-content: center;
+
+  div {
+    width: 250px;
+  }
+}
+
+.sicbo-timmer {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 35%;
+  flex-basis: 35%;
+  justify-content: space-around;
+  align-items: center;
+}

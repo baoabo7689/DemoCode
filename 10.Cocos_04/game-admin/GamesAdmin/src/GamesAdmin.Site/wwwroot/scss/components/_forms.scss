@@ -1,0 +1,82 @@
+﻿.form {
+    .form-control {
+        border-radius: .5rem;
+        outline: initial !important;
+        box-shadow: none !important;
+        font-size: 1.4rem;
+        padding: 0.8rem 1rem;
+        line-height: 1;
+        background: #fff;
+        color: #3a3a3a;
+        border: 1px solid #ced4da;
+        height: auto;
+    }
+
+    .form-control:disabled,
+    .form-control[readonly] {
+        color: #6c757d;
+        background-color: #e9ecef;
+    }
+
+    .form-group {
+        margin-bottom: 1.6rem;
+    }
+
+    .field-validation-error {
+        margin: 1rem 0;
+    }
+
+
+    &.filter {
+        display: table;
+        background: #fff;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: .5rem;
+        border: 1px solid #dee2e6;
+    }
+
+    legend {
+        width: auto;
+        padding: 0 8px;
+        font-weight: bold;
+    }
+
+    fieldset {
+        padding: 3px 20px;
+        border: 1px solid #ced4da;
+    }
+}
+
+%message {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    width: calc(100% - 20px);
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    margin: 2rem 3rem 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    z-index: 2000;
+
+    > i {
+        margin-right: 10px;
+    }
+}
+.message-success {
+    @extend %message;
+    border: 1px solid #3ac47d;
+    border-left: 5px solid;
+    color: #3ac47d;
+    background: #D6FFEA;
+}
+
+.message-error {
+    @extend %message;
+    border: 1px solid #EC3642;
+    border-left: 5px solid;
+    color: #EC3642;
+    background: #FDE0E2;
+}
+

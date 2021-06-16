@@ -1,0 +1,116 @@
+﻿@import "../base/variables";
+@import "../components/tab";
+
+.form {
+    .form-check {
+        padding-left: 2rem;
+    }
+
+    .form-check-input {
+        margin-left: -1.8rem;
+    }
+
+    .form-row > [class*=col-] {
+        padding-right: 0.8rem;
+        padding-left: 0.8rem;
+    }
+
+    .round-id {
+        width: 10rem;
+    }
+}
+
+.report-container {
+    margin-top: 1rem;
+    padding: 0;
+
+    .table {
+        background-color: #fff;
+
+        th {
+            text-align: center;
+            background: #1b55e2;
+            color: white;
+        }
+    }
+
+    .col-date {
+        width: 92px;
+        text-align: center;
+    }
+
+    .col-nickname {
+        width: 19.1rem;
+    }
+
+    .col-card {
+        width: 18rem;
+    }
+
+    .col-number {
+        width: 8.4rem;
+    }
+
+    .big-small-title {
+        text-transform: uppercase;
+        font-size: 2rem;
+    }
+
+    .line-cell {
+        width: .4rem;
+        background-color: #ddd;
+        padding: 0;
+    }
+
+    .card-result {
+        font-weight: bold;
+        padding: 0;
+
+        .card-item {
+            padding: 1px;
+            border: solid 1px lightgray;
+            border-radius: 2px;
+        }
+    }
+
+    .red-color {
+        color: red;
+    }
+
+    .gray-color {
+        color: gray;
+    }
+
+    .highlight {
+        background: yellow;
+    }
+}
+
+.round-result {
+    line-height: 3rem;
+    font-size: 1.6rem;
+
+    .result {
+        font-weight: bold;
+        color: #3ac47d;
+    }
+}
+
+// Custumize UI for select 2
+.select2-container--default .select2-selection--single {
+    height: 3.5rem;
+    border-color: #ced4da;
+    border-radius: 0.5rem;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 3.3rem;
+}
+
+.select2-container--open .select2-dropdown {
+    width: 12rem !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 3.4rem;
+}

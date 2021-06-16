@@ -1,0 +1,30 @@
+﻿@using GamesAdmin.Site.Features.Users.ViewModels;
+@model IndexViewModel;
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+
+<div class="col-md-12 col-lg-6 card">
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>Username</th>
+                    <th>IsAdmin</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Users)
+                {
+                    <tr>
+                        <td>@item.Username</td>
+                        <td>@item.IsAdmin</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

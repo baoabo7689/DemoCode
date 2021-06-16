@@ -1,0 +1,7 @@
+variables:
+    PROJECT_NAME: l3-Game-API
+
+include:
+  - project: "ci/repos-ci/nex3_l3_game_api"
+    ref: master
+    file: "gitlab-ci.yml"

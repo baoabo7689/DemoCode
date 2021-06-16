@@ -1,0 +1,8 @@
+variables:
+    PROJECT_NAME: l3-Game-Admin    
+    SOLUTION_NAME: ./GamesAdmin/GamesAdmin.sln
+
+include:
+  - project: "ci/repos-ci/nex3_l3_admin_site"
+    ref: master
+    file: "gitlab-ci.yml"

@@ -1,0 +1,85 @@
+﻿@using GamesAdmin.Site.Features.BolaReport.ViewModels
+@model BolaReportViewModel
+@{ ViewData["Title"] = "Bola Tangkas Report"; }
+
+@section Styles {
+    <link href="~/scss/pages/bola-report.min.css" rel="stylesheet" asp-append-version="true" />
+}
+<form class="form filter bola-report" data-ajax="true" data-ajax-method="GET" asp-action="GetReport" data-ajax-mode="replace" data-ajax-update="#report-result"
+      data-ajax-loading="#spinner" id="bolaReportForm"
+      method="get">
+    <div class="form-row align-items-center">
+        <div class="col-auto">
+            <label asp-for="Currency" class="control-label">Currency </label>
+            <select name="Currency" required asp-items="Model.CurrencyOptions" class="form-control"></select>
+        </div>
+        <div class="col-auto">
+            <label asp-for="Stake" class="control-label"></label>
+            <select name="Stake" required asp-items="Model.StakeOptions" class="form-control"></select>
+        </div>
+        <div class="col-auto">
+            <label asp-for="Status" class="control-label"></label>
+            <select name="Status" required asp-items="Model.StatusOptions" class="form-control"></select>
+        </div>
+
+        <div class="col-auto mt-5">
+            <button type="submit" class="btn-submit">Submit</button>
+            <div id="spinner" class="spinner-border" style="display: none">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="bola-report-result">
+    <div id="report-result" class="col-sm-12 report-container">
+    </div>
+</div>
+
+<div class="modal fade config-modal" id="configModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Config</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body details-content" id="editdetails">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-gray" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade game-modal" id="enableModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmation<span id="reloadTitle"></span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body reload-content-body">
+                <div class="message-success hidden-cls" id="updateMsgSuccess"><i class="icon-check"></i><span>Updated successfully!</span></div>
+                <div class="message-error hidden-cls" id="updateMsgFailed"><i class="icon-cancel"></i><span>Error</span></div>
+                <div id="reloadContent" class="reload-content"></div>
+                <input hidden id="enableParam" />
+                <input hidden id="tableIndexParam" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-gray" onclick="bolaReport.cancelEnableDisable()">Cancel</button>
+                <button type="button" class="btn btn-submit" id="confirmBtn" onclick="bolaReport.submitEnableDisable()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/js/bola-report.min.js" asp-append-version="true"></script>
+}
