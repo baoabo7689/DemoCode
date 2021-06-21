@@ -1,0 +1,4 @@
+C:\Program Files\Notepad++\notepad++.exe
+C:\Program Files\Mozilla Firefox\firefox.exe
+C:\Program Files\Google\Chrome\Application\chrome.exe
+D:\Nexcel\Legion\lap\Fanex.Athena.sln

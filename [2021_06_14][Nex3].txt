@@ -317,6 +317,54 @@ remove
 debugger;
 
 
+"games/bau-cua/views/BauCua", "BauCuaMini",
+D:\Nexcel\Nex3\game-client\assets\_new-assets\games\bau-cua-mini\view-models\BauCuaMini.js
+initFunc ? initFunc(gameComponent) : gameComponent.init(this);
+gameComponent.openGame && gameComponent.openGame();
+cc.RedT
+
+
+MainGame.js
+cc.RedT.reconnect();
+getEnvironmentConfig
+getUserClientInstance
+BaseController.js
+cc.RedT = baseController;
+
+
+
+AuthenticationTasks.ts
+getGameSettings
+storeCurrencySettings
+
+
+D:\Nexcel\Nex3\game-client\assets\_new-assets\games\bau-cua-mini\view-models\BauCuaMini.js
+datCuoc
+if (!!p.g) {
+	Game(client, p.g);
+}
+
+if (!!data.baucua) {
+	baucua(client, data.baucua);
+}  
+
+
+
+https://git3.nexdev.net/indo-market/game-services/fish-prawn-crab-service
+git3/integrate-service-bc-mini
+NewSocketMiniGameBaseJs
+this._super("FishPrawnCrabPro");
+
+
+
+
+
+
+
+
+
+
+
 ---------------------------------------------------------------------------------	
 
 mongodb://lmn_backend:LmnBackend@10.18.200.80:47101
@@ -362,6 +410,18 @@ Khi Login Session >> authenticate >> get balance >>
 
 onAuthorized
     "BaseUrl": "http://localhost:8868/"
+	
+	
+	
+	
+	
+	
+	checklist để test game nhe
+	https://docs.google.com/spreadsheets/d/1EntpfZnCXUiSdzg5yopUjGBn5oXVDSg9ZfkSKNXhqgU/edit#gid=539178316
+	
+	
+	
+	
 
 ---------------------------------------------------------------------------------	
 

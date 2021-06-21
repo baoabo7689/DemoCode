@@ -1,0 +1,9 @@
+File structure: one line contains program path, one line contains program params.
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Ssms.exe
+-S 10.18.200.215 -U accteam -P @dragon# -nosplash
+C:\Windows\explorer.exe
+D:\Nexcel\Nex3
+C:\Windows\explorer.exe
+D:\MyTools\Notes
+C:\Windows\explorer.exe
+D:\Nexcel\Nex3\01.Setup

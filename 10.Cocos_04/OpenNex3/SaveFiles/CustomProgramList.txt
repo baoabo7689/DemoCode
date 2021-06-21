@@ -1,0 +1,15 @@
+File structure: one line contains program path, one line contains program params.
+C:\Windows\explorer.exe
+D:\Nexcel\Nex3
+C:\Windows\explorer.exe
+D:\MyTools\Notes
+C:\Windows\explorer.exe
+D:\Nexcel\Nex3\01.Setup
+"C:\Users\louis.nguyen\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+D:\Nexcel\Nex3\game-server
+"C:\Users\louis.nguyen\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+D:\Nexcel\Nex3\game-client
+"C:\Users\louis.nguyen\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+D:\Nexcel\Nex3\game-services\fish-prawn-crab-service
+C:\CocosCreator_2.2.2\CocosCreator.exe
+D:\Nexcel\Nex3\game-client
