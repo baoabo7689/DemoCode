@@ -355,9 +355,104 @@ git3/integrate-service-bc-mini
 NewSocketMiniGameBaseJs
 this._super("FishPrawnCrabPro");
 
+http://localhost:8085
+debugger;
+events.bet
+
+
+"localhost:7456": "l3-api-proxy.nexdev.net",
+proxyRoute: "/local3/fishprawncrabpro/socket.io",
+
+WebSocket connection to 'ws://localhost:8085/local3/fishprawncrabpro/socket.io/?EIO=3&transport=websocket' failed: 
+'ws://localhost:8085/user/baucua/?EIO=3&transport=websocket' failed: 
+
+
+SeparatedBauCua: {
+	id: 32,
+	name: "BauCua",
+	messageObject: "BauCua",
+	serverConfigName: "BauCua",
+	server: {
+	  namespace: "/user/baucua",
+	  endpoints: {
+		dev: {
+		  "localhost:7456": "localhost:8085",
+		  proxyRoute: "/socket.io",
+		},
+	  },
+	},
+},
+
+"cc.Prefab in "resources/game-icons/SeparatedBauCua/big" does not exist."
+
+  BauCua: {
+    id: 3,
+    name: "BauCua",
+    messageObject: "BauCua",
+    serverConfigName: "BauCua",
+    server: {
+      namespace: "/user/baucua",
+      endpoints: {
+        dev: {
+          "localhost:7456": "localhost:8085",
+          proxyRoute: "/socket.io",
+        },
+      },
+    },
+  },
+
+42/user/baucua,["signin",{"isAuthenticated":true,"username":"gamesimulator_807629","language":"en-US","session":"626767d9-b2e8-4a36-b0b5-dd118304de44","currency":"IN","expiredIn":"2021-06-21T10:35:36.9879808+07:00","isSSO":true,"ss":"626767d9-b2e8-4a36-b0b5-dd118304de44","time":"2021-06-21T10:35:36.9879808+07:00"}]
+{
+  isAuthenticated: true,
+  username: 'gamesimulator_807629',
+  language: 'en-US',
+  session: '626767d9-b2e8-4a36-b0b5-dd118304de44',
+  currency: 'IN',
+  expiredIn: '2021-06-21T10:40:19.0670851+07:00',
+  isSSO: true,
+  ss: '626767d9-b2e8-4a36-b0b5-dd118304de44',
+  time: '2021-06-21T10:40:19.0670851+07:00'
+}
+
+
+timeInterval
+DataObserver
+openBauCua()
+const isGameIconNotExcluded = excludedIconGames.findIndex((excludedGame) => excludedGame === game.gameId) === -1;
+https://527ed6c32fde46519ed0669c861cdf44@sentryuat.sabagame.com/139
+
+
+this.connection.emit(events.getGameConfigs);
+datCuoc: function (e, linhVat)	
+this.configName = name.toLowerCase();	
+	
+	
+	
+console.log(userSession)
+console.log(userInfo)
+
+connection.on("signedIn", (data: any) => {
+	resolve(data);
+});
 
 
 
+{cuoc: 10, red: true, linhVat: "4"}
+resultMapper: { stag: 0, gourd: 1, rooster: 2, fish: 3, crab: 4, prawn: 5 },
+{endBet: -1, betChoice: "small", notice: "SB1905"}
+D:\Nexcel\Nex3\game-services\fish-prawn-crab-service\node_modules\sc-game-base\src\core\routers\base-socket-router.js
+this.connection.emit(events.bet, { betChoice: "small", amount: 100 });
+export default {
+    cannotPlaceBet: "SB1906",
+    placeBetNextRound: "SB1905",
+    minBet: "SB1909",
+    maxBet: "SB1911",
+    notEnoughMoney: "SB1907",
+    maxBetForChoice: "SB1910",
+    invalidBet: "SB1935",
+    youOrOtherLoggedInToThisAccount: "SB0003",
+    notEnoughScoin: "SB1908",
+};
 
 
 
@@ -370,10 +465,17 @@ this._super("FishPrawnCrabPro");
 mongodb://lmn_backend:LmnBackend@10.18.200.80:47101
 >> mem_auths
 	http://localhost:7456/?token=626767d9-b2e8-4a36-b0b5-dd118304de44
+	{ token: "626767d9-b2e8-4a36-b0b5-dd118304de44" }
 >> users
 	{ "local.username": "gamesimulator_807629" }
+	
 >> userSession
 { ssoToken: "626767d9-b2e8-4a36-b0b5-dd118304de44" }	
+{ memberId: 807629 }
+
+>> userinfos
+{ name: "Louis.Nguyen06" }
+{ UID: 5 }
 
 
 
@@ -414,6 +516,9 @@ onAuthorized
 	
 	
 	
+	loadingMessage
+	http://localhost:7780/api/gameSettings
+	
 	
 	
 	checklist để test game nhe
@@ -421,18 +526,100 @@ onAuthorized
 	
 	
 	
-	
 
 ---------------------------------------------------------------------------------	
 
+https://docs.google.com/spreadsheets/d/1vRz5Qt4eN-jYhkqb9lge51wn7MxeN7JzSr38KGcPFJ0/edit#gid=539178316
+
+localhost:7779/game-admin/monitor.html?game=baucua&v=1624498095330
+localhost:7779/game-admin/monitor.html?game=baccarat&v=1624499212851
+http://l3-admin-3.nexdev.net/game-admin/monitor.html?game=baccarat&v=1624499212851
+http://l3-admin-3.nexdev.net/game-admin/monitor.html?game=baucua&v=1624498095330
 
 
-	
-	
-	
-	
-	
+http://localhost:8868
 
+
+console.log(token)
+D:\Nexcel\Nex3\game-services\fish-prawn-crab-service\node_modules\sc-api-client\src\index.js
+const token = await this.getBearerToken();
+autoUpdateToken
+D:\Nexcel\Nex3\game-services\fish-prawn-crab-service\node_modules\sc-base-apis\src\api-client.js (1 hit)
+await apiClient.autoUpdateToken();
+{
+  grant_type: 'client_credentials',
+  client_id: 'game-server',
+  client_secret: 'gameserver@20luminet&'
+}	
+	
+	8c070bc9-87da-4d58-81dc-a721e40823ef
+	
+http://auth.lumigame.com
+Url {
+  protocol: 'http:',
+  slashes: true,
+  auth: null,
+  host: 'auth.lumigame.com',
+  port: null,
+  hostname: 'auth.lumigame.com',
+  hash: null,
+  search: null,
+  query: null,
+  pathname: '/',
+  path: '/',
+  href: 'http://auth.lumigame.com/'
+}
+
+[
+  '/.well-known/oauth-authorization-server',
+  '/.well-known/openid-configuration'
+]
+http://auth.lumigame.com/.well-known/openid-configuration
+http://auth.lumigame.com/.well-known/oauth-authorization-server
+console.log(this.configs.authUrl)
+console.log(issuer)
+
+
+ console.log(`${apiUrl}${action}`)
+game-services
+apiUrl: "http://l3-api-proxy.nexdev.net/local1/game-api",
+authUrl: "http://l3-auth-1.nexdev.net",
+		
+		
+		
+		
+table 
+_ones
+_tmpones
+
+
+
+---------------------------------------------------------------------------------	
+
+cc.director.loadScene("sessiontimeout");
+
+http://localhost:7456/?token=626767d9-b2e8-4a36-b0b5-dd118304de44
+
+https://git3.nexdev.net/indo-market/core-packages/nex3-game-base
+http://npm.lumigame.com/-/web/detail/@nex3/nex3-game-base
+https://github.com/semantic-release/semantic-release
+fix => lên minor version => ví dụ 1.0.1 > 1.0.2
+feat => lên major version => 1.1.0 > 1.2.0
+
+
+this.localPhien
+
+Ba Huy, [24.06.21 13:12]
+bên game client dùng branch này
+Ba Huy, [24.06.21 13:12]
+git3/create-nickname-and-change-language
+Ba Huy, [24.06.21 13:13]
+làm cái này thì mình không còn care vụ authentication nữa nhe, vì verify session sẽ gọi thẳng qua game user ở LOCAL2
+
+
+
+
+---------------------------------------------------------------------------------	
 
 
 

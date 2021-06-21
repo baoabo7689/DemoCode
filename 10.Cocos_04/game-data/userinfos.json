@@ -1,0 +1,38 @@
+[{
+  "_id": {
+    "$oid": "60cc05e46f067b88cca81643"
+  },
+  "name": "Louis.Nguyen06",
+  "UID": 5,
+  "__v": 0,
+  "avatar": "",
+  "avatarId": 16,
+  "cmt": "",
+  "currency": "IN",
+  "email": "",
+  "hu": 0,
+  "huXu": 0,
+  "id": "60cad7a0a016fc10f73746e6",
+  "inRoom": false,
+  "isCash": false,
+  "joinedOn": {
+    "$date": "2021-06-18T02:33:08.391Z"
+  },
+  "ketSat": 0,
+  "lastVip": 0,
+  "otpFirst": false,
+  "red": 2000,
+  "redLost": 30,
+  "redPlay": 60,
+  "redWin": 30,
+  "security": {
+    "login": 0
+  },
+  "thuong": 0,
+  "type": false,
+  "vip": 0,
+  "xu": 0,
+  "xuLost": 0,
+  "xuPlay": 0,
+  "xuWin": 0
+}]
