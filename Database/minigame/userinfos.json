@@ -1,0 +1,186 @@
+[{
+  "_id": {
+    "$oid": "60a73815ad2ce00a9057a1cb"
+  },
+  "name": "Adrianne81991",
+  "UID": 1,
+  "__v": 0,
+  "avatar": "",
+  "avatarId": 4,
+  "cmt": "",
+  "currency": "IN",
+  "email": "",
+  "hu": 0,
+  "huXu": 0,
+  "id": "60a73810563cf2e836b87a37",
+  "inRoom": false,
+  "isCash": false,
+  "joinedOn": {
+    "$date": "2021-05-21T04:33:25.423Z"
+  },
+  "ketSat": 0,
+  "lastVip": 0,
+  "otpFirst": false,
+  "red": 2000,
+  "redLost": 0,
+  "redPlay": 0,
+  "redWin": 0,
+  "security": {
+    "login": 0
+  },
+  "thuong": 0,
+  "type": false,
+  "vip": 0,
+  "xu": 0,
+  "xuLost": 0,
+  "xuPlay": 0,
+  "xuWin": 0
+},{
+  "_id": {
+    "$oid": "60a74154dee0fe538c6b9a9c"
+  },
+  "name": "Jubilee40338",
+  "UID": 2,
+  "__v": 0,
+  "avatar": "",
+  "avatarId": 16,
+  "cmt": "",
+  "currency": "IN",
+  "email": "",
+  "hu": 0,
+  "huXu": 0,
+  "id": "60a73d4f5963a95a6136a29f",
+  "inRoom": false,
+  "isCash": false,
+  "joinedOn": {
+    "$date": "2021-05-21T05:12:52.550Z"
+  },
+  "ketSat": 0,
+  "lastVip": 0,
+  "otpFirst": false,
+  "red": 1960,
+  "redLost": 40,
+  "redPlay": 40,
+  "redWin": 0,
+  "security": {
+    "login": 0
+  },
+  "thuong": 0,
+  "type": false,
+  "vip": 0,
+  "xu": 0,
+  "xuLost": 0,
+  "xuPlay": 0,
+  "xuWin": 0
+},{
+  "_id": {
+    "$oid": "60a78a8559172f6140ea51be"
+  },
+  "name": "Kaine86972",
+  "UID": 3,
+  "__v": 0,
+  "avatar": "",
+  "avatarId": 15,
+  "cmt": "",
+  "currency": "IN",
+  "email": "",
+  "hu": 0,
+  "huXu": 0,
+  "id": "60a78a7e20494517d7c12ea6",
+  "inRoom": false,
+  "isCash": false,
+  "joinedOn": {
+    "$date": "2021-05-21T10:25:09.658Z"
+  },
+  "ketSat": 0,
+  "lastVip": 0,
+  "otpFirst": false,
+  "red": 1990,
+  "redLost": 10,
+  "redPlay": 10,
+  "redWin": 0,
+  "security": {
+    "login": 0
+  },
+  "thuong": 0,
+  "type": false,
+  "vip": 0,
+  "xu": 0,
+  "xuLost": 0,
+  "xuPlay": 0,
+  "xuWin": 0
+},{
+  "_id": {
+    "$oid": "60cad7a59fa7961a4c0e4f10"
+  },
+  "name": "Louis.Nguyen",
+  "UID": 4,
+  "__v": 0,
+  "avatar": "",
+  "avatarId": 12,
+  "cmt": "",
+  "currency": "IN",
+  "email": "",
+  "hu": 0,
+  "huXu": 10000,
+  "id": "60cad7a0a016fc10f73746e6",
+  "inRoom": false,
+  "isCash": false,
+  "joinedOn": {
+    "$date": "2021-06-17T05:03:33.366Z"
+  },
+  "ketSat": 0,
+  "lastVip": 0,
+  "otpFirst": false,
+  "red": 2025,
+  "redLost": 0,
+  "redPlay": 0,
+  "redWin": 0,
+  "security": {
+    "login": 0
+  },
+  "thuong": 0,
+  "type": false,
+  "vip": 0,
+  "xu": 0,
+  "xuLost": 0,
+  "xuPlay": 0,
+  "xuWin": 0
+},{
+  "_id": {
+    "$oid": "60cc05e46f067b88cca81643"
+  },
+  "name": "Louis.Nguyen06",
+  "UID": 5,
+  "__v": 0,
+  "avatar": "",
+  "avatarId": 16,
+  "cmt": "",
+  "currency": "IN",
+  "email": "",
+  "hu": 0,
+  "huXu": 0,
+  "id": "60cada162a10b177e9af9310",
+  "inRoom": false,
+  "isCash": false,
+  "joinedOn": {
+    "$date": "2021-06-18T02:33:08.391Z"
+  },
+  "ketSat": 0,
+  "lastVip": 0,
+  "otpFirst": false,
+  "red": 2035,
+  "redLost": 220,
+  "redPlay": 470,
+  "redWin": 310,
+  "security": {
+    "login": 0
+  },
+  "thuong": 0,
+  "type": false,
+  "vip": 0,
+  "xu": 0,
+  "xuLost": 0,
+  "xuPlay": 0,
+  "xuWin": 0
+}]

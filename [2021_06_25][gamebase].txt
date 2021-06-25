@@ -1,0 +1,241 @@
+
+
+---------------------------
+/user/gameName 
+this.socketClient.on("bet", this.handlePlaceBet.bind(this));
+payload = { 
+	amount, 
+	betChoice, // 1 trong các giá trị ["stag", "gourd", "rooster", "fish", "crab", "prawn"];
+	freeBet, // true/false
+	username // ghi log 
+}
+
+Result nếu có lỗi:
+this.publisher.publishToUser(player.UID, { endBet: -1, betChoice, notice: failedCriterion.notice });
+
+
+---------------------------
+this.socketClient.on("signin", this.handleSignIn.bind(this));
+payload = {
+	ss, // session key 
+	username	
+}
+
+Result nếu có lỗi 
+socketClient.emit("message", { unauthorized: true });
+socketClient.emit("message", { notPermittedToPlay: true, gameId });
+
+
+Result nếu success 
+socketClient.emit("signedIn");
+
+
+Kèm theo nếu api lấy được bet limit thì có thêm event 
+socketClient.emit("message", { userStakeLevel });
+ 
+ 
+---------------------------
+this.socketClient.on("inGame", this.handleInGame.bind(this));
+payload = {
+	username // ghi log 
+}
+
+Result 
+realPlayer.socketClient.emit(this.definition.name, { remainingTime, um: disabled, um_message: this.gameData.umMessages });
+realPlayer.socketClient.emit(gameName, {
+	gameConfigs,
+	roundHistory,
+	ownBets,
+	totalBets,
+	user,
+});
+
+
+---------------------------
+this.socketClient.on("getHistory", this.handleGetHistory.bind(this));
+payload = {
+	page, // index from 1
+	username // ghi log 
+}
+
+Result 
+this.socketClient.emit(this.definition.name, { history: { betLogs, page, pageSize, total } });
+
+
+---------------------------
+this.socketClient.on("disconnect", this.handleDisconnect.bind(this));
+payload = {
+	username // ghi log 
+}
+
+
+---------------------------
+/admin/gameName 
+this.socketClient.on("message", this.handleMessage.bind(this));
+payload.authentication = {
+	jwt,
+};
+
+payload = {
+	baucua: {
+		set_result: {
+			roundId,
+			result
+		}
+	}	
+}
+
+payload = {
+	baucua: {
+		get_new
+	}	
+}
+
+---------------------------
+this.socketClient.on("disconnect", this.handleDisconnect.bind(this));
+
+
+Result events 
+this.socketClient.emit("message", { unauth: { message: "Unauthorized!" } });
+
+
+
+
+
+---------------------------
+"/api/onlineusers"
+Không cần payload 
+Result 
+res.send(onlineUsers);
+---------------------------
+"/api/history"
+const { session, page, pageSize } = req.body;
+Result 
+res.send(result);
+
+---------------------------
+"/api/metrics"
+const { secretKey } = req.query;
+Result 
+res.send({ error: true });
+hoặc 
+res.send({ error: false });
+
+
+
+
+
+
+---------------------------
+Event tự gọi
+View bên tab F12 > Network 
+this.socketClient.emit(gameName, data);
+
+this.publishToAllUsers({ gameConfigs: configs, remainingTime });
+this.publishToAllAdmins({ remainingTime, roundId });
+this.publishToAllUsers({ remainingTime: this.gameData.remainingTime });
+this.publishToAllUsers({ um: true, um_message: disabledMessage });
+this.publishToAllAdmins({ um: true, um_message: disabledMessage });
+this.publishToAllUsers({ finish: roundResult });
+this.publishToAllAdmins({ finish: roundResult });
+this.publishToAllUsers({ totalBets: this.gameData.totalBets });
+this.publishToAllAdmins({ inGame });
+this.publishToUser(userId, { { winningByChoices: betResult.winningByChoices } });
+
+
+this.publishToAllUsers({ gameConfigs: configs, remainingTime });
+this.publishToAllAdmins({ remainingTime, roundId });
+this.publishToAllUsers({ remainingTime: this.gameData.remainingTime });
+
+
+
+
+this.publishToAllUsers({ totalBets: this.gameData.totalBets }); // gọi interval
+this.publishToAllUsers({ finish: roundResult }); // finish 1 round
+this.publishToAllUsers({ remainingTime: this.gameData.remainingTime }); // start new round
+ 
+
+---------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,132 @@
+[{
+  "_id": {
+    "$oid": "5e7c74db95d41d71bc7be794"
+  },
+  "siteId": "game-server",
+  "clientId": "game-server",
+  "clientSecret": "gameserver@20luminet&",
+  "gameClientUrl": "http://ha.nexdev.net:7891",
+  "validCurrencies": null
+},{
+  "_id": {
+    "$oid": "5e7c74f795d41d71bc7be795"
+  },
+  "siteId": "api",
+  "clientId": "api",
+  "clientSecret": "api@20luminet&",
+  "gameClientUrl": "http://ha.nexdev.net:7891",
+  "validCurrencies": null
+},{
+  "_id": {
+    "$oid": "5e83fe003fcd575e9c658d9b"
+  },
+  "siteId": "admin-api",
+  "clientId": "admin-api",
+  "clientSecret": "adminapi@20luminet&",
+  "gameClientUrl": "http://ha.nexdev.net:7891",
+  "validCurrencies": null
+},{
+  "_id": {
+    "$oid": "5e8ff5aa3a5ed85a649e9d6d"
+  },
+  "siteId": "gamesimulator",
+  "clientId": "gamesimulator",
+  "clientSecret": "gamesimulator@20luminet&",
+  "gameClientUrl": "http://l3-games-3.nexdev.net/",
+  "validCurrencies": [
+    "UUS",
+    "IN",
+    "IND",
+    "IDD",
+    "IDR",
+    "DDD",
+    "THB",
+    "TB",
+    "$US",
+    "NTD",
+    "YEN",
+    "IRR",
+    "UT"
+  ],
+  "chinaUrl": "http://test-china.net/"
+},{
+  "_id": {
+    "$oid": "5f3b73d7586e4913dccd86b4"
+  },
+  "siteId": "api2",
+  "clientId": "api2",
+  "clientSecret": "api@20luminet&",
+  "gameClientUrl": "http://ha.nexdev.net:8654/"
+},{
+  "_id": {
+    "$oid": "5f3b73e5586e4913dccd86b5"
+  },
+  "siteId": "admin-api2",
+  "clientId": "admin-api2",
+  "clientSecret": "adminapi@20luminet&",
+  "gameClientUrl": "http://ha.nexdev.net:8654/"
+},{
+  "_id": {
+    "$oid": "5f3c8e04744b0e6424593441"
+  },
+  "siteId": "game-server2",
+  "clientId": "game-server2",
+  "clientSecret": "gameserver@20luminet&",
+  "gameClientUrl": "http://ha.nexdev.net:8654/"
+},{
+  "_id": {
+    "$oid": "5f51b9c431e76133c0cbb64a"
+  },
+  "siteId": "gamesimulator2",
+  "clientId": "gamesimulator2",
+  "clientSecret": "gamesimulator@20luminet&",
+  "gameClientUrl": "http://l3-games-3.nexdev.net/",
+  "validCurrencies": [
+    "UUS",
+    "IN",
+    "IND",
+    "IDD",
+    "IDR",
+    "DDD",
+    "THB",
+    "TB",
+    "$US",
+    "NTD",
+    "YEN",
+    "IRR",
+    "UT"
+  ],
+  "chinaUrl": null
+},{
+  "_id": {
+    "$oid": "5fc76bfe0e27ec2cac972248"
+  },
+  "siteId": "game-services",
+  "clientId": "game-services",
+  "clientSecret": "gameservices@20luminet&",
+  "gameClientUrl": "http://l3-games-3.nexdev.net/",
+  "validCurrencies": [
+    "UUS",
+    "IN",
+    "IND",
+    "IDD",
+    "IDR",
+    "DDD",
+    "THB",
+    "TB",
+    "$US",
+    "NTD",
+    "YEN",
+    "IRR",
+    "UT"
+  ],
+  "chinaUrl": null
+},{
+  "_id": {
+    "$oid": "5fd058adb78ef35af00ce13d"
+  },
+  "siteId": "user-api",
+  "clientId": "user-api",
+  "clientSecret": "user-api@20luminet&",
+  "gameClientUrl": "NA"
+}]

@@ -466,12 +466,59 @@ mongodb://lmn_backend:LmnBackend@10.18.200.80:47101
 >> mem_auths
 	http://localhost:7456/?token=626767d9-b2e8-4a36-b0b5-dd118304de44
 	{ token: "626767d9-b2e8-4a36-b0b5-dd118304de44" }
+	
+	http://localhost:7456/?token=9187aa02-9678-4a97-b5b2-52bb2c738f2c
+	http://localhost:7456/?token=fdecdd49-3ff6-49cf-b871-1baef5cd635a&gameId=0
+	
+	
+	
+	browserUserAgent, token, time
+	console.log(navigator.userAgent)
+	token em xài link này lấy nè
+	http://l3-lobby-3.nexdev.net/signin
+
+	mà anh tạo 1 cái rùi a159483d-5a8d-4be4-bd9d-b3f28b8887a8
+	
+	
+	{ token: "44c93f14-92a9-4bd4-b2d5-09168e6d3d73" }
+
+
+
+
 >> users
 	{ "local.username": "gamesimulator_807629" }
 	
 >> userSession
 { ssoToken: "626767d9-b2e8-4a36-b0b5-dd118304de44" }	
 { memberId: 807629 }
+
+
+{ ssoToken: "23cb3d0c-41b9-4b68-9402-2da5e9996e91" }
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+	http://localhost:7456/?token=23cb3d0c-41b9-4b68-9402-2da5e9996e91
+
+do Local 2 trỏ vào 3
+
+
+
+{ token: "fd821173-ba5f-45cb-b108-d7054126f54c" }
+10.23.10.29
+{ ssoToken: "23cb3d0c-41b9-4b68-9402-2da5e9996e91" }	
+60d9493c4d4c397cb491556c
+60cad7a0a016fc10f73746e6
+http://localhost:7456?token=227485ec-aeb2-4a48-917b-b9ef5c4fe481&gameId=0
+
+
+http://localhost:7456?token=626767d9-b2e8-4a36-b0b5-dd118304de44&gameId=0
+
+
+	{ token: "227485ec-aeb2-4a48-917b-b9ef5c4fe481" }
+	
+	
+	$"{ClientId}_{MemberId}";
+	gamesimulator_807629
+	
+	
 
 >> userinfos
 { name: "Louis.Nguyen06" }
@@ -607,6 +654,9 @@ fix => lên minor version => ví dụ 1.0.1 > 1.0.2
 feat => lên major version => 1.1.0 > 1.2.0
 
 
+http://npm.lumigame.com
+npm install @nex3/nex3-game-base
+
 this.localPhien
 
 Ba Huy, [24.06.21 13:12]
@@ -615,11 +665,115 @@ Ba Huy, [24.06.21 13:12]
 git3/create-nickname-and-change-language
 Ba Huy, [24.06.21 13:13]
 làm cái này thì mình không còn care vụ authentication nữa nhe, vì verify session sẽ gọi thẳng qua game user ở LOCAL2
+gameUserUrl: "http://l3-user-2.nexdev.net",
 
 
 
 
 ---------------------------------------------------------------------------------	
+
+https://irian.to/blogs/what-are-cjs-amd-umd-and-esm-in-javascript/
+https://programmer.help/blogs/the-difference-between-commonjs-and-es6-module.html
+Difference between CommonJs and ES6 Module
+1. CommonJs exports a copy of variables, and ES6 Module exports the binding of variables (export default is special)
+2. CommonJs is a single value export, and ES6 Module can export multiple
+3. CommonJs is a dynamic syntax that can be written in judgment, while ES6 Module static syntax can only be written in the top level
+4. This of CommonJs is the current module, and this of ES6 Module is undefined
+
+
+https://www.programmersought.com/article/60574711226/
+The module import and export syntax of the two is different, commonjs is module.exports, exports export, require import; ES6 is export export, import import.
+Commonjs loads modules at runtime, and ES6 determines module dependencies during static compilation.
+ES6 will raise all imports to the top during compilation, and commonjs will not raise require.
+What commonjs exports is a copy of the value. Once the value is modified internally, it will not be synchronized to the outside. ES6 is an exported reference, internal modifications can be synchronized to the outside.
+The top-level this in commonjs points to the module itself, while the top-level this in ES6 points to undefined.
+Then some top-level variables in commonjs no longer exist in ES6:
+
+
+
+https://eloquentjavascript.net/10_modules.html
+https://exploringjs.com/es6/ch_modules.html
+
+
+
+---------------------------------------------------------------------------------	
+
+
+gameUserUrl: "http://l3-user-3.nexdev.net", // LOCAL 2
+về local 1
+
+http://localhost:7456/?token=626767d9-b2e8-4a36-b0b5-dd118304de44
+
+
+
+
+sessiontimeout
+data.isSessionExpired
+_onSocketData
+cc.RedT = baseController;
+
+isSessionExpired
+
+http://localhost:7456?token=44c93f14-92a9-4bd4-b2d5-09168e6d3d73&gameId=0
+http://l3-lobby-2.nexdev.net/signin
+
+{
+  a: '46f8d5cc-7b40-4902-8677-466c36d92e88',
+  b: 'gamesimulator_807629',
+  c: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36'
+}
+
+autoTriggerSignInTimeout
+
+{ memberId: 807629 }
+626767d9-b2e8-4a36-b0b5-dd118304de44
+
+http://localhost:7456?token=fb898196-f4df-4951-9c67-dbc87515ec87&gameId=0
+
+42/user/baucua,["message",{"unauthorized":true}]
+
+
+http://localhost:7456?token=fb898196-f4df-4951-9c67-dbc87515ec87&gameId=0
+
+
+member.member_auths
+{ memberId: 807629 }
+chọn 1 row: đổi Id
+
+10.23.10.29
+D9H7nGVB
+
+config hiện tại:  "localhost:7456": "l3-api-proxy.nexdev.net/local3/game-server", // LOCAL 2 không work
+
+Giờ em làm theo steps sau thử
+
+Build lại game-client 
+
+Connect db local2
+Chọn 1 memberId trong member_auths rồi view data { memberId: xxx }
+
+Vào http://l3-lobby-2.nexdev.net/signin
+lấy token (fill Id, ...., cho đúng, lưu ý chọn Local Host)
+
+Update file config của game client: "localhost:7456": "localhost:8080"
+
+Start: D:\Nexcel\Nex3\game-server trên máy local 
+(Trong mongo local phải có usersession của memberId đã chọn)
+
+
+
+---------------------------------------------------------------------------------	
+
+
+
+
+
+
+
+
+
+
+
 
 
 

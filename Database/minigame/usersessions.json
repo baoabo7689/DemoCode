@@ -1,0 +1,121 @@
+[{
+  "_id": {
+    "$oid": "60a73810563cf2e836b87a38"
+  },
+  "ssoToken": "152639de-f869-4780-b474-2c01e5794cfa",
+  "sessionId": "a53273a0-3c68-4c1c-8b52-d45bdad1a499",
+  "owSeq": "n,m,Nex3",
+  "username": "gamesimulator_3183462",
+  "memberId": 3183462,
+  "ssoTime": {
+    "$date": "2021-05-21T04:33:20.124Z"
+  },
+  "recheckInTime": {
+    "$date": "2021-05-21T04:41:31.415Z"
+  },
+  "ip": "::1",
+  "browserUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36",
+  "siteId": "4100300",
+  "userId": "60a73810563cf2e836b87a37",
+  "language": "en-US",
+  "currency": "IN",
+  "clientId": "gamesimulator",
+  "memberName": "B1QMw52B",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60a73d4f5963a95a6136a2a0"
+  },
+  "ssoToken": "9a96bbc5-807e-470a-be1a-20b35627f629",
+  "sessionId": "c3c76ea0-07ac-4be3-b75d-15c83aefc59f",
+  "owSeq": "n,m,Nex3",
+  "username": "gamesimulator_3680881",
+  "memberId": 3680881,
+  "ssoTime": {
+    "$date": "2021-05-21T04:55:43.676Z"
+  },
+  "recheckInTime": {
+    "$date": "2021-05-21T05:11:18.648Z"
+  },
+  "ip": "127.0.0.1",
+  "browserUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0",
+  "siteId": "4100300",
+  "userId": "60a73d4f5963a95a6136a29f",
+  "language": "en-US",
+  "currency": "IN",
+  "clientId": "gamesimulator",
+  "memberName": "pWioinZ6",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60a7412d5963a95a6136a2a1"
+  },
+  "ssoToken": "d06a14bf-cda6-422d-a423-59ff3ab7f96c",
+  "sessionId": "24b3cd10-3964-4a3f-b209-85456187cf9f",
+  "owSeq": "n,m,Nex3",
+  "username": "gamesimulator_3680881",
+  "memberId": 3680881,
+  "ssoTime": {
+    "$date": "2021-05-21T05:12:13.735Z"
+  },
+  "recheckInTime": {
+    "$date": "2021-05-21T06:38:53.624Z"
+  },
+  "ip": "127.0.0.1",
+  "browserUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0",
+  "siteId": "4100300",
+  "userId": "60a73d4f5963a95a6136a29f",
+  "language": "en-US",
+  "currency": "IN",
+  "clientId": "gamesimulator",
+  "memberName": "pWioinZ6",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60a78a7e20494517d7c12ea7"
+  },
+  "ssoToken": "1c183c8e-7d9f-47f2-8ec6-0fb2a8f3603e",
+  "sessionId": "b9002dc8-4c3d-44c4-8f8a-dc50b17dba99",
+  "owSeq": "n,m,Nex3",
+  "username": "gamesimulator_8365914",
+  "memberId": 8365914,
+  "ssoTime": {
+    "$date": "2021-05-21T10:25:02.891Z"
+  },
+  "recheckInTime": {
+    "$date": "2021-05-21T10:43:03.144Z"
+  },
+  "ip": "127.0.0.1",
+  "browserUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0",
+  "siteId": "4100300",
+  "userId": "60a78a7e20494517d7c12ea6",
+  "language": "en-US",
+  "currency": "IN",
+  "clientId": "gamesimulator",
+  "memberName": "Jr94VeGu",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60cad7a0a016fc10f73746e7"
+  },
+  "ssoToken": "626767d9-b2e8-4a36-b0b5-dd118304de44",
+  "sessionId": "626767d9-b2e8-4a36-b0b5-dd118304de44",
+  "owSeq": "n,m,Nex3",
+  "username": "gamesimulator_807629",
+  "memberId": 807629,
+  "ssoTime": {
+    "$date": "2025-06-21T05:03:28.121Z"
+  },
+  "recheckInTime": {
+    "$date": "2021-06-25T08:35:22.460Z"
+  },
+  "ip": "::1",
+  "browserUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36",
+  "siteId": "4100300",
+  "userId": "60cad7a0a016fc10f73746e6",
+  "language": "en-US",
+  "currency": "IN",
+  "clientId": "gamesimulator",
+  "memberName": "D9H7nGVB",
+  "__v": 0
+}]
