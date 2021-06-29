@@ -154,6 +154,8 @@ this.publishToAllUsers({ totalBets: this.gameData.totalBets }); // gọi interva
 this.publishToAllUsers({ finish: roundResult }); // finish 1 round
 this.publishToAllUsers({ remainingTime: this.gameData.remainingTime }); // start new round
  
+publishEnablingGameStatus
+
 
 ---------------------------
 

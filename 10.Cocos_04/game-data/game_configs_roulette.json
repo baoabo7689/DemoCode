@@ -1,0 +1,62 @@
+[{
+  "_id": {
+    "$oid": "5f559a51f197b952ec8ceaf1"
+  },
+  "time": {
+    "$date": "2021-05-31T07:14:19.357Z"
+  },
+  "__v": 0,
+  "name": "roulette",
+  "enabled": true,
+  "botenabled": false,
+  "minbet": 1,
+  "maxbet": 2000,
+  "maxbot": 0,
+  "disabledround": null,
+  "bot_minbet": 0,
+  "bot_maxbet": 500,
+  "hour_maxbot": [
+    0.002,
+    0.002,
+    0.002,
+    0.002,
+    0,
+    0,
+    0.002,
+    0.002,
+    0.002,
+    0,
+    0,
+    0,
+    0.002,
+    0.0021,
+    0.002,
+    0.002,
+    0.002,
+    0.002,
+    0.002,
+    0.002,
+    0.002,
+    0.002,
+    0.002,
+    0.002
+  ],
+  "disabled_message": "This game is under maintenance, it will be back shortly.",
+  "choices_maxbet": {
+    "bigSmall": 200,
+    "oddEven": 200,
+    "redBlack": 200,
+    "dozen": 200,
+    "column": 200,
+    "line": 120,
+    "fourNumbers": 80,
+    "corner": 80,
+    "triangle": 60,
+    "street": 60,
+    "split": 40,
+    "straightUp": 20
+  },
+  "odds": {},
+  "delayStartTime": 0,
+  "enableFreeBet": false
+}]

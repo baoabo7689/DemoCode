@@ -1,0 +1,373 @@
+[{
+  "_id": {
+    "$oid": "5f559aa5f197b952ec8ceaf2"
+  },
+  "time": {
+    "$date": "2021-06-25T10:49:45.651Z"
+  },
+  "__v": 0,
+  "gameId": 21,
+  "gameName": "roulette",
+  "markets": [
+    {
+      "marketId": "5f3ca0f4a4935e64fb407d84",
+      "enabled": false,
+      "minBet": 10,
+      "maxBet": 20000,
+      "iconSize": "small",
+      "sortOrder": 0,
+      "maxBetChoices": [
+        {
+          "name": "bigSmall",
+          "maxBet": 20000
+        },
+        {
+          "name": "oddEven",
+          "maxBet": 20000
+        },
+        {
+          "name": "redBlack",
+          "maxBet": 20000
+        },
+        {
+          "name": "dozen",
+          "maxBet": 20000
+        },
+        {
+          "name": "column",
+          "maxBet": 20000
+        },
+        {
+          "name": "line",
+          "maxBet": 12000
+        },
+        {
+          "name": "fourNumbers",
+          "maxBet": 8000
+        },
+        {
+          "name": "corner",
+          "maxBet": 8000
+        },
+        {
+          "name": "triangle",
+          "maxBet": 6000
+        },
+        {
+          "name": "street",
+          "maxBet": 6000
+        },
+        {
+          "name": "split",
+          "maxBet": 4000
+        },
+        {
+          "name": "straightUp",
+          "maxBet": 2000
+        }
+      ],
+      "enabledChips": []
+    },
+    {
+      "marketId": "5f3a0c3ea4935e64fb406b33",
+      "enabled": false,
+      "minBet": 10,
+      "maxBet": 15000,
+      "iconSize": "small",
+      "sortOrder": 0,
+      "maxBetChoices": [
+        {
+          "name": "bigSmall",
+          "maxBet": 10000
+        },
+        {
+          "name": "oddEven",
+          "maxBet": 10000
+        },
+        {
+          "name": "redBlack",
+          "maxBet": 10000
+        },
+        {
+          "name": "dozen",
+          "maxBet": 10000
+        },
+        {
+          "name": "column",
+          "maxBet": 10000
+        },
+        {
+          "name": "line",
+          "maxBet": 12000
+        },
+        {
+          "name": "fourNumbers",
+          "maxBet": 8000
+        },
+        {
+          "name": "corner",
+          "maxBet": 8000
+        },
+        {
+          "name": "triangle",
+          "maxBet": 6000
+        },
+        {
+          "name": "street",
+          "maxBet": 6000
+        },
+        {
+          "name": "split",
+          "maxBet": 4000
+        },
+        {
+          "name": "straightUp",
+          "maxBet": 1000
+        }
+      ],
+      "enabledChips": []
+    },
+    {
+      "marketId": "5f85201ce9878500013425f6",
+      "enabled": false,
+      "minBet": 1,
+      "maxBet": 2000,
+      "iconSize": "small",
+      "sortOrder": 5,
+      "maxBetChoices": [
+        {
+          "name": "bigSmall",
+          "maxBet": 20000
+        },
+        {
+          "name": "oddEven",
+          "maxBet": 20000
+        },
+        {
+          "name": "redBlack",
+          "maxBet": 20000
+        },
+        {
+          "name": "dozen",
+          "maxBet": 20000
+        },
+        {
+          "name": "column",
+          "maxBet": 20000
+        },
+        {
+          "name": "line",
+          "maxBet": 12000
+        },
+        {
+          "name": "fourNumbers",
+          "maxBet": 8000
+        },
+        {
+          "name": "corner",
+          "maxBet": 8000
+        },
+        {
+          "name": "triangle",
+          "maxBet": 6000
+        },
+        {
+          "name": "street",
+          "maxBet": 6000
+        },
+        {
+          "name": "split",
+          "maxBet": 4000
+        },
+        {
+          "name": "straightUp",
+          "maxBet": 2000
+        }
+      ],
+      "enabledChips": [
+        "5f3e37c8edd6f0775d89a658",
+        "5f3f91cbedd6f0775d89a65b",
+        "5f3f9138edd6f0775d89a659",
+        "5f45c92a748d4265509fed81",
+        "5f3f919cedd6f0775d89a65a"
+      ]
+    },
+    {
+      "marketId": "5f3a0c47a4935e64fb406b34",
+      "enabled": false,
+      "minBet": 10,
+      "maxBet": 20000,
+      "iconSize": "big",
+      "sortOrder": 99,
+      "maxBetChoices": [
+        {
+          "name": "bigSmall",
+          "maxBet": 20000
+        },
+        {
+          "name": "oddEven",
+          "maxBet": 20000
+        },
+        {
+          "name": "redBlack",
+          "maxBet": 20000
+        },
+        {
+          "name": "dozen",
+          "maxBet": 20000
+        },
+        {
+          "name": "column",
+          "maxBet": 20000
+        },
+        {
+          "name": "line",
+          "maxBet": 12000
+        },
+        {
+          "name": "fourNumbers",
+          "maxBet": 8000
+        },
+        {
+          "name": "corner",
+          "maxBet": 8000
+        },
+        {
+          "name": "triangle",
+          "maxBet": 6000
+        },
+        {
+          "name": "street",
+          "maxBet": 6000
+        },
+        {
+          "name": "split",
+          "maxBet": 4000
+        },
+        {
+          "name": "straightUp",
+          "maxBet": 2000
+        }
+      ],
+      "enabledChips": []
+    },
+    {
+      "marketId": "5f3a0adfa4935e64fb406b32",
+      "enabled": false,
+      "minBet": 10,
+      "maxBet": 20000,
+      "iconSize": "small",
+      "sortOrder": 10,
+      "maxBetChoices": [
+        {
+          "name": "bigSmall",
+          "maxBet": 20000
+        },
+        {
+          "name": "oddEven",
+          "maxBet": 20000
+        },
+        {
+          "name": "redBlack",
+          "maxBet": 20000
+        },
+        {
+          "name": "dozen",
+          "maxBet": 20000
+        },
+        {
+          "name": "column",
+          "maxBet": 20000
+        },
+        {
+          "name": "line",
+          "maxBet": 12000
+        },
+        {
+          "name": "fourNumbers",
+          "maxBet": 8000
+        },
+        {
+          "name": "corner",
+          "maxBet": 8000
+        },
+        {
+          "name": "triangle",
+          "maxBet": 6000
+        },
+        {
+          "name": "street",
+          "maxBet": 6000
+        },
+        {
+          "name": "split",
+          "maxBet": 4000
+        },
+        {
+          "name": "straightUp",
+          "maxBet": 2000
+        }
+      ],
+      "enabledChips": []
+    },
+    {
+      "marketId": "5f5708f2510a70497853b250",
+      "enabled": false,
+      "minBet": 10,
+      "maxBet": 20000,
+      "iconSize": "small",
+      "sortOrder": 0,
+      "maxBetChoices": [
+        {
+          "name": "bigSmall",
+          "maxBet": 20000
+        },
+        {
+          "name": "oddEven",
+          "maxBet": 20000
+        },
+        {
+          "name": "redBlack",
+          "maxBet": 20000
+        },
+        {
+          "name": "dozen",
+          "maxBet": 20000
+        },
+        {
+          "name": "column",
+          "maxBet": 20000
+        },
+        {
+          "name": "line",
+          "maxBet": 12000
+        },
+        {
+          "name": "fourNumbers",
+          "maxBet": 8000
+        },
+        {
+          "name": "corner",
+          "maxBet": 8000
+        },
+        {
+          "name": "triangle",
+          "maxBet": 6000
+        },
+        {
+          "name": "street",
+          "maxBet": 6000
+        },
+        {
+          "name": "split",
+          "maxBet": 4000
+        },
+        {
+          "name": "straightUp",
+          "maxBet": 2000
+        }
+      ],
+      "enabledChips": []
+    }
+  ]
+}]

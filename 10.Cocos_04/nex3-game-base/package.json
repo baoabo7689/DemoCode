@@ -1,0 +1,49 @@
+{
+    "name": "@nex3/nex3-game-base",
+    "version": "1.0.3",
+    "description": "base classes for nex3 game services.",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "reg": "npm set registry http://npm.lumigame.com",
+        "semantic-release": "semantic-release"
+    },
+    "author": "NEX3",
+    "devDependencies": {
+        "@commitlint/cli": "^9.1.2",
+        "@commitlint/config-conventional": "^9.1.2",
+        "@semantic-release/changelog": "^5.0.1",
+        "@semantic-release/commit-analyzer": "^8.0.1",
+        "@semantic-release/git": "^9.0.0",
+        "@semantic-release/gitlab": "^6.0.4",
+        "@semantic-release/npm": "^7.0.5",
+        "@semantic-release/release-notes-generator": "^9.0.1",
+        "husky": "^4.2.5",
+        "install": "^0.13.0",
+        "sc-semantic-release": "^1.2.0",
+        "semantic-release": "^17.2.1"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "dependencies": {
+        "@nex3/market-management": "^1.6.0",
+        "@nex3/translation": "^1.8.2",
+        "sc-base-apis": "^1.7.0",
+        "sc-base-database": "^1.4.0",
+        "sc-common": "^1.7.0",
+        "sc-game-base": "^1.22.4-beta.5"
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "release": {
+        "extends": [
+            "sc-semantic-release"
+        ]
+    }
+}

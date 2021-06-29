@@ -1,6 +1,6 @@
 {
   "userServicesTest": "http://localhost:3014",
-  "userServices": "http://localhost:8085/user/baucua",
+  "userServices": "http://localhost:8085/user/roulette",
   "adminServices": "http://localhost:3011/admin/bbgame",
   "socketOptions": {
     "pingInterval": 60000,

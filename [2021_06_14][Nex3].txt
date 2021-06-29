@@ -764,6 +764,454 @@ Start: D:\Nexcel\Nex3\game-server trên máy local
 
 ---------------------------------------------------------------------------------	
 
+Review Game-Server
+require("./app/Cron/baucua")(redT); // Chạy game Bầu Cua
+require("./app/Controllers/game/baucua/cuoc").initUserQueueProcessing(redT);	
+https://git3.nexdev.net/indo-market/game-services/fish-prawn-crab-service/-/pipelines
+	
+	
+	
+	
+	
+yarn add mocha@9.0.1
+
+http://l3-api-proxy.nexdev.net/local2/fishprawncrab/
+
+https://git3.nexdev.net/indo-market/game-services/roulette-service
+157063-SeparateGameService
+Game-server: remove old game 
+// require("./app/Controllers/game/roulette/game-handlers/init")(redT);
+// require("./app/Controllers/game/roulette/game-handlers/place-bet").proceedBetQueue(redT);
+
+
+Game-Admin: add odds config 
+
+
+{ gameId: 21 }
+{ marketName: "5f3ca0f4a4935e64fb407d84" }
+{ _id: "5f3ca0f4a4935e64fb407d84" }
+
+{ _id: ObjectId("5f3a0adfa4935e64fb406b32") }
+{ _id: ObjectId("5f3ca0f4a4935e64fb407d84") }
+
+
+{ _id: ObjectId("5f3ca0f4a4935e64fb407d84") }
+{ _id: ObjectId("5f3a0c3ea4935e64fb406b33") }
+{ _id: ObjectId("5f85201ce9878500013425f6") }
+{ _id: ObjectId("5f3a0c47a4935e64fb406b34") }
+{ _id: ObjectId("5f3a0adfa4935e64fb406b32") }
+{ _id: ObjectId("5f5708f2510a70497853b250") }
+
+
+yarn add @nex3/translation@1.8.2
+yarn add sc-common@1.7.0
+yarn add sc-game-base@1.22.4-beta.5
+yarn add socket.io@2.3.0
+
+
+"test": "mocha --es-module-specifier-resolution=node 'test/**/*.js'"
+https://sentryuat.sabagame.com/luminet/l3-game-services-local/
+https://git3.nexdev.net/indo-market/core-packages
+
+yarn add  @nex3/nex3-game-base@1.0.2
+
+
+Remove Member/GetBetLimit
+
+
+console.log("S2");
+// lỗi composeBetAmountValidationCriteria
+
+
+
+@nex3/market-controller.market.3
+	
+	
+	
+	
+yarn add @nex3/market-management@1.6.0
+yarn add @nex3/nex3-game-base@1.0.2
+yarn add @nex3/translation@1.8.2
+yarn add chai@4.3.4
+yarn add chance@1.1.7
+yarn add mocha@9.0.1
+yarn add nodemon@2.0.4
+yarn add random@2.2.0
+yarn add random-js@2.1.0
+yarn add sc-common@1.7.0
+yarn add sc-game-base@1.22.4-beta.5
+yarn add socket.io@2.3.0
+	
+	MongooseError buffering timeout 
+	
+	url: 'http://l3-api-proxy.nexdev.net/local1/game-api/Member/Balance',
+	
+        console.log(this.gameData.ingame[name]);
+{
+  name: 'Louis.Nguyen',
+  currency: 'UUS',
+  system: undefined,
+  betTracks: { fish: 10 },
+  betQueue: []
+}
+
+  console.log(this.gameData.realPlayers[this.socketClient.id])
+
+console.log(betInfo)
+{
+  amount: 10,
+  gameId: 3,
+  gameRoundId: 72,
+  choiceId: 4,
+  freeBet: false,
+  clientSentTime: 2021-06-29T07:54:33.309Z
+}
+
+validateBalance
+{ failure: true, notice: { errorCode: 'SB1907' } }
+{
+  timeStamp: '2021-06-29T08:10:48.7504475+00:00',
+  result: {
+    balance: 0,
+    seq: 'c0b4c899-4491-4208-b582-7611763ef140',
+    errorCode: 0,
+    errorMessage: null,
+    errorDescription: ''
+  }
+}
+
+
+60b59b7199689558aced0329
+console.log(apiResult)
+
+{
+  amount: 10,
+  gameId: 3,
+  gameRoundId: 119,
+  choiceId: 4,
+  freeBet: false,
+  clientSentTime: 2021-06-29T08:54:58.492Z
+}
+
+
+
+
+
+user-signin-consumer.js
+UserSignInConsumer
+
+
+{ name: "roulette" }
+{ gameName: "roulette" }
+ const maxBetPerChoice = configs.maxBetChoices[betChoice] || 0;
+
+Louis Nguyen, [21.06.21 15:45]
+export default {
+    cannotPlaceBet: "SB1906",
+    placeBetNextRound: "SB1905",
+    minBet: "SB1909",
+    maxBet: "SB1911",
+    notEnoughMoney: "SB1907",
+    maxBetForChoice: "SB1910",
+    invalidBet: "SB1935",
+    youOrOtherLoggedInToThisAccount: "SB0003",
+    notEnoughScoin: "SB1908",
+};
+
+Lấy Odds Configs của Roulette
+publishEnablingGameStatus
+this.publishToAllUsers({ gameConfigs: configs, remainingTime });
+D:\Nexcel\Nex3\game-services\fish-prawn-crab-service\node_modules\sc-game-base\src\core\crons\base-game-cron.js 
+GameStatusPublisher
+console.log(this.gameData)
+auth > ingame > placebet > settle > outgame nhe
+this.socketClient.on("inGame", this.handleInGame.bind(this));
+
+ 
+D:\Nexcel\Nex3\game-services\fish-prawn-crab-service\node_modules\sc-game-base\src\core\crons\process-bet-queue.js
+notifyPlacingBetResult
+player.UID
+export default class ProcessBetQueue extends Core.Crons.ProcessBetQueue 
+
+
+notice
+yarn add  @nex3/nex3-game-base@1.0.2
+
+D:\Nexcel\Nex3\game-services\nex3-game-base
+npm unpublish --force @nex3/nex3-game-base-test
+
+npm publish --registry http://npm.lumigame.com http://npm.lumigame.com
+
+
+npm unpublish --force @nex3/nex3-game-base@1.0.6-beta.8
+yarn add @nex3/nex3-game-base-test
+
+
+yarn add @nex3/translation@1.8.2
+yarn add sc-game-base@1.22.4-beta.8
+yarn add sc-common@1.7.0
+
+
+yarn remove @nex3/nex3-game-base
+
+yarn remove @nex3/nex3-game-base-test
+yarn add @nex3/nex3-game-base-test
+
+yarn remove @nex3/nex3-game-base-test
+
+yarn remove @nex3/nex3-game-base
+yarn add @nex3/nex3-game-base@1.1.3-beta.1
+
+
+yarn add @nex3/nex3-game-base@1.0.6-beta.6
+
+yarn remove random
+yarn add random@2.2.0
+
+
+
+npm install @nex3/nex3-game-base
+
+157063-SeparateServices
+
+yarn add @nex3/user-client@1.5.0
+
+
+
+
+https://drive.google.com/drive/u/1/folders/1Ntb1oInfeDqAO7bz9cMG0Qe3r0kgA5su
+https://nextjs.org/
+Game Admin > Online User: Add game BauCua 
+Game Service > Ticket History [CustId]
+	Game Admin > Game Ticket Detail 
+	Repo game-round-result 
+	
+	Game Admin > Game Round Detail 
+	Game Admin > Game Monitoring
+	https://nextjs.org/docs/getting-started
+
+
+https://meet.google.com/itt-tgra-pah
+
+        console.log("validateBetRequest");
+        console.log(amount);
+        console.log(betChoice);
+{ split: [ { '12-15': 10 } ] }
+console.log(payload.betChoices);
+console.log("composeValidationCriteria");
+       
+	   
+	   
+	   buffering timed out after 10000ms MongooseError: 
+	   MongoError
+    console.log(Util.cacheKeys.gameMarket(gameId));
+    console.log(GameMarketRepository.getByGameId(gameId));
+	   
+	getGameMarketConfig  
+	getByGameId
+	
+	
+	
+	notEnoughMoney
+	process-bet-queue.js
+	composeBetAmountValidationCriteria
+	notice: { errorCode: helpers.noticeHelper.notEnoughMoney }
+	MongooseError: Operation `game_markets.findOne()` buffering timed out after 10000ms
+	   
+	   
+	isValidForBet
+	   
+	   const data = {
+        amount: 10,
+        //  betChoice: 'fish',
+        betChoices: {
+          split: {
+            '12-15': 10,
+          },
+        },
+        freeBet: false,
+      };
+	validateBetRequest
+Warning: Accessing non-existent property 'MongoError' of module exports inside circular dependency
+yarn add mongoose@5.11.15 
+
+	mongoose-legacy-pluralize
+	mongodb
+	MongoError
+	>> xóa node_module trong @nex3/market-management
+	tmpBets
+	tempBetsRepository
+	betLogsRepository
+	
+	this.gameData.realPlayers[this.socketClient.id]
+	this.gameData.realPlayers
+	
+	const minBet = Math.max(player.profile.minBet || 0, configs.minBet || 0);
+	const maxBet = Math.min(player.profile.maxBet || 0, configs.maxBet || 0);
+	userInfo = {minBet, maxBet}
+		
+		
+	Dragon Tiger: Review
+	Implement verify session, use common api place-bet & add config
+	
+
+http://localhost:7779/getodds/roulette
+157063-OnlineUser-ResultDetail
+
+http://localhost:7779/Dashboard/OnlineUsers
+D:\Nexcel\Nex3\game-admin\GamesAdmin\src\GamesAdmin.Site\Features\Dashboard\Views
+http://localhost:7779/Dashboard/GetOnlineUsers?Game=baucua&IncludeUUS=false&X-Requested-With=XMLHttpRequest&_=1625197153605
+GetOnlineUsersOnGame
+appSettings.GameServers.Main.Api
+
+
+http://localhost:7779/GameTicketDetail
+http://l3-result-2.nexdev.net/en-US/GameTicket/CfDJ8F4Y0QDtXs1Jjj64JunRpW4cDGVvftZyy1bduvtKwO57wSRE1DYrHuCdej00L-4BJwiBq8OWteM1BDcy63mDboMXzhKY9jjemB0njE65UbR7tv57qTrbAh2MGNV-QyiUkdpC0r_tRmYK8_JBYpF1E2UUgKfOyxZPfX7RLKrK2wVNev_p3Jj823V3iJeUf_RG-pg6pywwUoPAFy3XWrTo938
+ResultUrl
+TicketDetailUrl
+http://localhost:7781/
+http://localhost:7781/en-US/GameTicket/CfDJ8MC-4EfZ0yFCobVrRxbFjdWRWKc7I7tiTLjMauYMKy5vgBUNEMOLDZPWLtpQFLfahSstMnprz1lvdkkJmHQLQnd3wx54JgW7IZXPkadkU4Ladf_-eQ4iIRUEhCadJHkReKcGVutOupAMdkkLITIzXiyyKYJ09jDw5bH8HnDzW4S8pSS8jTGPC4sTbig3A0KeeaooEDKm4wz4XMpbK9GiANY
+
+
+1
+542
+{ id: 542 }
+0,4,3
+fish: 20
+
+http://localhost:7779/RetrieveEndGameInfo/RetrieveEndGame
+GetSiteIdRequest
+IRetrieveEndGameInfoApi
+appSettings.ApiHost
+{ phien: 542 }
+http://localhost:7779/RetrieveEndGameInfo/RetrieveEndGame
+services.AddSingleton(RestService.For<IGameApi>(appSettings.GameApi.GameApiUrl));
+"GameApiUrl": "http://l3-api-proxy.nexdev.net/local2/game-api"
+CallRetrieveEndGameInfo
+D:\Nexcel\Nex3\game-api
+D:\Nexcel\Nex3\game-server-api
+{ phien: 542, siteId: '4100300', memberId: 1, thanhtoan: true }
+roulette_ones => sum totalAmount 
+const choices = ["stag", "gourd", "rooster", "fish", "crab", "prawn"];
+
+Odds của roulette_ones => game_configs.odds
+
+	
+http://localhost:7779/GameRoundResult
+http://localhost:7781/en-US/GameRoundResult/GetData?draw=1&columns%5B0%5D%5Bdata%5D=0&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=true&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=1&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=false&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=2&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=false&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&start=0&length=50&search%5Bvalue%5D=&search%5Bregex%5D=false&gameType=FishPrawnCrab&roundId=&date=2021-07-02&userTimeZone=Asia%2FBangkok&_=1625213871223
+
+
+
+	Game Monitoring
+	localhost:7779/game-admin/monitor.html?game=roulette&v=1625214750927
+	IGameServerApi
+	services.AddSingleton(RestService.For<IGameServerApi>(appSettings.GameServers.Main.Api, refitSettings));
+           
+http://l3-admin-2.nexdev.net/game-admin/monitor.html?game=baccarat&v=1625215631786
+ws://l3-api-proxy.nexdev.net/local2/game-server/admin
+
+D:\Nexcel\Nex3\game-admin\GamesAdmin\src\game-admin-client
+		
+		
+	npx browserslist@latest --update-db
+
+
+C:\Users\louis.nguyen\AppData\Local\Temp\
+C:\Users\louis.nguyen\AppData\Local\Temp\WebCompiler1.12.394\node_modules
+
+HttpContext.Response.Cookies.Append("binarygames-server-endpoint-route", appSettings.GameServers.OddEvenTurbo.SocketRoute ?? string.Empty);
+          
+
+
+	FishPrawnCrab
+		
+		http://localhost:7779/Authentication/Login
+		
+		
+HttpContext.Response.Cookies.Append("bau-cua-server-endpoint", appSettings.GameServers.FishPrawnCrab.Socket);
+HttpContext.Response.Cookies.Append("bau-cua-server-endpoint-route", appSettings.GameServers.FishPrawnCrab.SocketRoute ?? string.Empty);
+       	
+		getRouteForBinaryGame
+		
+		
+		http://l3-api-proxy.nexdev.net/local2/fishprawncrab/
+		getSocketInfo
+		http://localhost:7000
+		 webpack://[name]_[chunkhash]/webpack/bootstrap
+		http://localhost:7000/monitor
+		yarn install 
+		
+		http://localhost:7000/monitor.html?game=baccarat&v=1625215631786
+		
+		
+
+Node Error: resolve-url-loader: CSS error
+node_modules/resolve-url-loader >> index.js
+and under var options change removeCR from "false" to "true".
+
+
+    debugger;
+	import _ from "lodash";
+	getGameInfoByGameId
+	
+	
+      const gameId = "3";
+      const gameName = "baucua";
+	
+	http://localhost:8080
+	http://localhost:7000/?game=baucua&v=1625308860919&gameId=3
+	
+	http://localhost:8085
+	NEXT_PUBLIC_BAU_CUA_SERVER_ENDPOINT=l3-api-proxy.nexdev.net/local2/admin/baucua
+	NEXT_PUBLIC_BAU_CUA_SERVER_PROXY_ROUTE=/local2/fishprawncrab/socket.io
+
+
+    console.log(process.env.NEXT_PUBLIC_ENV === "local");
+	
+	onReceiveMessage
+	game-monitoring
+	
+
+
+
+export từ game-admin-client => game-admin 
+	http://localhost:7000/?game=baucua&v=1625308860919
+
+	http://localhost:7000/?game=roulette
+
+
+
+---------------------------------------------------------------------------------	
+
+Bet = 0 => 5
+Round Result = phẳng ra 
+[choices_maxbet => bot???]
+
+=> Sửa 
+game-markets >> maxBetChoices 
+game-configs >> choices_maxBet 
+
+Delete Branch
+D:\Nexcel\Nex3\game-round-result\GameRoundResult
+D:\Nexcel\Nex3\game-server-api
+
+
+
+get_new => 
+{
+	roundId: lastRound.id + 1,
+	result: lastRound.result,
+	settlementResult: lastRound.settlementResult,
+	remainingTime: this.gameData.remainingTime,
+}
+
+
+set_result => 
+adminClient: set_dice
+
+publishRoundResult
+RunningRoundInfoPublisher
+{ inGame }
 
 
 
@@ -771,6 +1219,307 @@ Start: D:\Nexcel\Nex3\game-server trên máy local
 
 
 
+---------------------------------------------------------------------------------	
+https://mongoosejs.com/docs/tutorials/lean.html
+
+
+game-round-result
+game-server-api
+game-admin 
+
+Hiện tại thì
+Game-Admin >> Game Ticket Detail >> Retrieve End Game Info 
+D:\Nexcel\Nex3\game-server-api
+stake: { $sum: { $sum: ['$0', '$1', '$2', '$3', '$4', '$5'] } }
+
+
+Game-Admin >> Game Ticket Detail 
+D:\Nexcel\Nex3\game-round-result\GameRoundResult
+FishPrawnCrabBet xài betchoice = 0 => 5 
+
+
+Nên nếu mình update bet choice => phải sửa chỗ view 2 cái này 
+=> lúc view ticket cũ sẽ không được 
+
+betList.redCa.total
+
+set_result: {
+	roundId: this.state.roundNumber,
+	result: {
+		
+	}
+}
+
+console.log(existingBetFilter);
+
+
+Ba Huy, [06.07.21 09:25]
+bây h trong flow place bet
+
+Ba Huy, [06.07.21 09:25]
+mình đang muốn remove cái flow check balance
+https://tel.meet/itt-tgra-pah?hs=5
+
+
+
+---------------------------------------------------------------------------------	
+
+https://docs.google.com/spreadsheets/d/1fVvhNY-qeE_MWkUkeVsdI7fUVT2ouacpEjZQwNWcOZM/edit#gid=1954300305
+
+https://portainer.nexdev.net/#!/home
+1234aaAA
+https://git3.nexdev.net/indo-market/game-services/sedie-service/-/jobs/180390
+Docker 
+
+
+
+Ba Huy, [06.07.21 17:52]
+hi Louis , Dwight , anh David - Nexcel
+Ba Huy, [06.07.21 17:53]
+cái phần ingame, thấy lúc nào cũng phải đi query 100 round history, có cách nào enhance bằng cách chỉ query 1 lần lúc user đầu tiên vào game, và cache trong memory
+Ba Huy, [06.07.21 17:53]
+settle thì mình thêm mới 1 round và remove round 101
+Ba Huy, [06.07.21 17:53]
+=> performance sẽ tăng rất là nhiều lúc user ingame
+
+
+numberOfRoundHistory
+game-settings
+
+
+roundQuery
+FishPrawnCrabRoundQuery extends Core.QueryApis.RoundQuery
+this.roundsRepository
+
+=> mỗi khi settle round mới thì push vào 
+const newRound = await this.roundsRepository.create
+
+this.gameData = this.container.resolve(this.dependencies.gameData);
+inGameConsumer
+base-socket-router.js
+handleInGame
+emit("inGame")
+SettleGameRoundConsumer
+
+npm install chance@1.1.7
+npm install random@2.2.0
+npm install random-js@2.1.0
+
+---------------------------------------------------------------------------------	
+
+can i delete npm-cache
+
+
+D:\Nexcel\Nex3\game-services\fish-prawn-crab-service
+docker build -t baucuaservice .
+docker run -d -p 8085:8085 --name baucuaservice2 baucuaservice
+docker run --network="host" -d -p 8085:8085 --name baucuaservice2 baucuaservice
+
+localhost:8087
+Connect to MongoDB failed MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+Setting db:27017 in the connection string and restart: always on the rest-api-node makes sure that you connect to the correct IP and makes sure that the node server keeps on trying to connect to your db. This worked for me!
+
+
+
+The gotcha here is - if a container listens on 127.0.0.1, then the host can't map ports to it.
+You need to listen on 0.0.0.0 or similar, and then the -p can reach the container's interface.
+https://stackoverflow.com/questions/43800164/connecting-to-local-mongodb-from-docker-container
+mongodb://CONTAINER-NAME:port
+The Docker client will default to connecting to unix:///var/run/docker.sock on Linux, and tcp://127.0.0.1:2376 on Windows.
+docker run -d -it -p 27017:27017 mongo
+
+192.168.0.102
+
+docker rmi $(docker images -a -q)
+docker pull mongo
+docker image ls
+
+docker rmi baucuaservice
+docker build -t baucuaservice .
+docker run -d -p 8085:8085 --name baucuaservice2 baucuaservice
+
+
+5336203
+775086
+
+TableUserSignInPublisher
+socketClient.emit("message", { um_message: umMessages, um: true });
+TableInGameConsumer
+realPlayer.socketClient.emit(this.definition.name, { remainingTime, um: disabled, um_message: umMessages });
+this.gameData
+const disabledMessage = this.gameData.umMessages ?? {};
+this.gameData.umMessages =
+	(await this.notificationRepository.findOne({ gameName: configName, displayKind: 2 }, "messages").lean().exec())?.messages ?? {};
+Notifications
+notification
+
+notifications
+gameName: "BauCua" 
+displayKind: 2
+messages: "UM Time"
+
+
+=>
+game_configs >> disabled_message
+um_message: this.gameData.gameConfigs.disabled_message
+
+base-game-cron.js
+publishDisableGameStatus
+
+nex3-game-base\crons\game-cron.js
+export default class TableGameCron extends BaseGameCron
+
+
+---------------------------------------------------------------------------------	
+
+
+Ba Huy, [08.07.21 14:38]
+http://npm.lumigame.com/-/web/detail/sc-game-base/v/1.24.1-beta.4
+
+Ba Huy, [08.07.21 14:39]
+trong package này có remove vụ get balance lúc place bet
+
+Ba Huy, [08.07.21 14:39]
+có time thì upgrade package thử có dùng đc không nhe
+
+npm install sc-game-base@1.22.4-beta.5
+
+
+yarn remove @nex3/nex3-game-base
+yarn add @nex3/nex3-game-base@1.0.6-beta.8
+
+https://meet.google.com/itt-tgra-pah
+
+
+
+{ name: "baccarat" }
+
+bên game admin check thử game nào chưa có cái log này thì add vào giúp nhe
+https://sentryuat.sabagame.com/luminet/l3-game-admin-site-local/issues/4262900/events/b96b9267e486441ab7aff71c6336c8ee/
+Ba Huy, [09.07.21 11:05]
+còn có rồi thì thôi
+
+Ba Huy, [09.07.21 11:05]
+mỗi lần change odd mình sẽ log error nha
+
+Ba Huy, [09.07.21 11:05]
+để tránh trường hợp vô tình update trên PRO mình có thể aware
+
+
+http://l3-api-proxy.nexdev.net/local2/roulette/
+http://l3-api-proxy.nexdev.net/local2/roulette/
+
+local2: {
+  ssl: false,
+  hostNames: {
+	"l3-games-2.nexdev.net": "l3-api-proxy.nexdev.net/local2/game-server",
+  },
+  sentryUrl: "https://66a70037f7b94a9398b51b1a7b8e379a@sentryuat.sabagame.com/140",
+  gameUserUrl: "http://l3-user-2.nexdev.net",
+},
+
+	
+	
+.useSocketIO(gameServerUrl, gameName, onConnectFailed, gameServerProxyRoute)
+
+.useSocketIO("http://l3-user-2.nexdev.net", gameName, onConnectFailed, gameServerProxyRoute)
+
+ return `${protocol}${ssl ? "s" : ""}://${hostName}${path}`;
+ 
+
+ 
+http://l3-api-proxy.nexdev.net/user/roulette
+/local2/roulette/socket.io
+ 
+this.socket = SocketIOClient("http://l3-api-proxy.nexdev.net/user/roulette", {
+  transports: ["websocket"],
+  upgrade: false,
+  path: "/local2/roulette/socket.io",
+  forceNew: true,
+});
+
+{ ssoToken: "626767d9-b2e8-4a36-b0b5-dd118304de44" }
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+
+60cad7a0a016fc10f73746e6 => userinfo
+5ec5f4c7d2b6eb3714eb044d
+winningPlayers
+collectRoundResult
+
+
+gamesimulator_807629
+{ "local.username": "gamesimulator_807629" }
+{ "username": "gamesimulator_807629" }
+Id: 807629
+
+
+
+table-game-cron.js
+this.gameData.winningPlayers = {};
+console.log(payload)
+
+
+getStatistics
+
+getHistory
+payload.page, this.definition.historyPageSize
+
+
+
+npm unpublish --force @nex3/nex3-game-base@1.1.3-beta.5
+npm publish --registry http://npm.lumigame.com --tag beta
+
+yarn remove @nex3/nex3-game-base
+yarn add @nex3/nex3-game-base@1.1.3-beta.5
+
+
+https://sentryuat.sabagame.com/luminet/l3-fish-prawn-crab-service-loc/issues/4269545/?referrer=webhooks_plugin
+https://sentryuat.sabagame.com/luminet/l3-game-services-local/
+refreshbalance
+>> game-server 
+UserBetResultPublisher extends BaseEventPublisher
+await this.mainServiceCommunicator.post("refreshBalance", { uid: userId });
+endpoint: refreshBalance
+
+authenticationConfigs
+
+http://localhost:7000/?game=baucua&v=1624498095330
+
+
+npm install @sentry/node@5.19.1
+npm uninstall @sentry/node@5.19.1
+yarn test-coverage
+npm install jest-when
+
+
+table-place-bet-publisher.js 
+notifyPlacingBetResult
+generatePlacingBetResult
+
+npm install sc-game-base@1.24.1-beta.7
+yarn add sc-game-base@1.24.1-beta.7
+
+
+yarn test-coverage
+
+---------------------------------------------------------------------------------	
+
+
+RoundId: 586036
+settleBets
+
+Cannot read property of undefined
+
+
+        console.log(newBots);
+
+        console.log(this.botsInRoom);
+                    console.log(payload);
+      
+getBotCurrency
+
+---------------------------------------------------------------------------------	
 
 
 

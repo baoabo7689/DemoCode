@@ -24,12 +24,17 @@ class App extends React.PureComponent {
 
   sendRequest() {
     const socket = socketIOClient(
-      appConfigs.userServices,
-      appConfigs.socketOptions
+      'http://l3-api-proxy.nexdev.net/user/roulette',
+      {
+        transports: ['websocket'],
+        upgrade: false,
+        path: '/local2/roulette/socket.io',
+        forceNew: true,
+      }
     );
 
     socket.emit('signin', {
-      username: 'admin_1',
+      username: 'gamesimulator_807629',
       ss: 'l6q6opiOm6wVU7qOhhwknF8PNGnl39Ce_admin_1',
     });
 
@@ -38,10 +43,15 @@ class App extends React.PureComponent {
         amount: 10,
         betChoice: 'fish',
         freeBet: false,
+        // roundId: 7,
       };
 
       // socket.emit(this.state.methodName, this.state.requestData);
       socket.emit(this.state.methodName, data);
+      socket.emit('getGameConfigs');
+      socket.emit('inGame');
+
+      socket.emit('getStatistics', {});
     });
 
     socket.on('BauCua', (data) => {
@@ -50,6 +60,10 @@ class App extends React.PureComponent {
       if (!!data.endBet) {
         this.displayResult(data);
       }
+    });
+
+    socket.on('Roulette', (data) => {
+      console.log(data);
     });
   }
 

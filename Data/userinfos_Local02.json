@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "60cad7a0a016fc10f73746e6"
+  },
+  "time": {
+    "$date": {
+      "$numberLong": "-62135596800000"
+    }
+  },
+  "__v": 0,
+  "id": "60cad7a0a016fc10f73746e6",
+  "avatar": null,
+  "joinedOn": {
+    "$date": "2020-05-21T03:25:59.058Z"
+  },
+  "email": null,
+  "cmt": null,
+  "red": 4557.600000000019,
+  "ketSat": 0,
+  "xu": 0,
+  "redWin": 2928778.900000119,
+  "redLost": 3011994,
+  "redPlay": 13788618,
+  "xuWin": 0,
+  "xuLost": 0,
+  "xuPlay": 0,
+  "thuong": 0,
+  "vip": 0,
+  "lastVip": 0,
+  "hu": 0,
+  "huXu": 0,
+  "type": true,
+  "otpFirst": false,
+  "avatarId": 25,
+  "currency": null,
+  "name": "Louis.Nguyen06",
+  "UID": 20021,
+  "security": null,
+  "inRoom": false,
+  "inGameRoom": "",
+  "patternId": 0
+}]
