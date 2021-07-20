@@ -6,4 +6,4 @@ D:\MyTools\Notes
 C:\Windows\explorer.exe
 D:\Nexcel\Nex3\01.Setup
 "C:\Users\louis.nguyen\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-D:\Nexcel\Nex3\game-services\fish-prawn-crab-service
+D:\Nexcel\Luminet\game-client-mobi-l1

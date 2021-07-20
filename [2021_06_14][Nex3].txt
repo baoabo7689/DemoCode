@@ -1486,6 +1486,10 @@ authenticationConfigs
 
 http://localhost:7000/?game=baucua&v=1624498095330
 
+http://localhost:7000/?game=roulette&v=1624498095330
+
+
+
 
 npm install @sentry/node@5.19.1
 npm uninstall @sentry/node@5.19.1

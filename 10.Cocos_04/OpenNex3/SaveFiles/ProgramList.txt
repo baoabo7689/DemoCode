@@ -1,5 +1,4 @@
 C:\Program Files\Notepad++\notepad++.exe
 C:\Program Files\Mozilla Firefox\firefox.exe
 C:\Program Files\Google\Chrome\Application\chrome.exe
-D:\Nexcel\Nex3\game-admin\GamesAdmin\GamesAdmin.sln
 C:\Users\louis.nguyen\AppData\Local\MongoDBCompass\MongoDBCompass.exe
