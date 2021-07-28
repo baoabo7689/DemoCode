@@ -1,9 +1,11 @@
 File structure: one line contains program path, one line contains program params.
 C:\Windows\explorer.exe
-D:\Nexcel\Nex3
+D:\Nexcel\Luminet
 C:\Windows\explorer.exe
 D:\MyTools\Notes
 C:\Windows\explorer.exe
 D:\Nexcel\Nex3\01.Setup
 "C:\Users\louis.nguyen\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 D:\Nexcel\Luminet\game-client-mobi-l1
+"C:\Users\louis.nguyen\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+D:\Nexcel\Nex3\01.Setup\DemoCode\10.Cocos_04\post-man

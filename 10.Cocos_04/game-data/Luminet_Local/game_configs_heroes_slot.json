@@ -1,0 +1,176 @@
+[{
+  "_id": {
+    "$oid": "605c572f03f11041c04308d6"
+  },
+  "time": {
+    "$date": "2021-02-23T10:10:58.283Z"
+  },
+  "__v": 0,
+  "type": 2,
+  "name": "heroesslot",
+  "enabled": true,
+  "botenabled": false,
+  "minbet": 0,
+  "maxbet": 0,
+  "disabledround": 38461,
+  "bot_maxbet": 10,
+  "hour_maxbot": [
+    0.003,
+    0.003,
+    0.003,
+    0.003,
+    0.003,
+    0.003,
+    0.003,
+    0.003,
+    0.003,
+    0.003,
+    0.003,
+    0.003,
+    0.003,
+    0.003,
+    0.003,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "disabled_message": "Game đang được bảo trì, vui lòng quay lại sau 10 phút.",
+  "choices_maxbet": null,
+  "odds": null,
+  "delayStartTime": 0,
+  "enableFreeBet": false,
+  "slotsConfig": {
+    "mode": 3,
+    "bigWinRatio": 2.5,
+    "stakeLevels": [
+      {
+        "stake": 0.1,
+        "jackpot": 0,
+        "botRatio": 0.4
+      },
+      {
+        "stake": 1,
+        "jackpot": 0,
+        "botRatio": 0.4
+      },
+      {
+        "stake": 5,
+        "jackpot": 0,
+        "botRatio": 0.2
+      }
+    ],
+    "icons": [
+      [
+        null,
+        null,
+        0,
+        2,
+        5,
+        10
+      ],
+      [
+        null,
+        null,
+        0,
+        5,
+        10,
+        25
+      ],
+      [
+        null,
+        null,
+        0,
+        5,
+        25,
+        50
+      ],
+      [
+        null,
+        null,
+        0,
+        10,
+        30,
+        150
+      ],
+      [
+        null,
+        null,
+        0,
+        12,
+        45,
+        275
+      ],
+      [
+        null,
+        null,
+        0,
+        16,
+        60,
+        375
+      ],
+      [
+        null,
+        null,
+        0,
+        20,
+        75,
+        500
+      ],
+      [
+        null,
+        null,
+        0,
+        3,
+        6,
+        18
+      ],
+      [
+        null,
+        null,
+        0,
+        3,
+        4,
+        5
+      ],
+      [
+        null,
+        null,
+        8,
+        50,
+        1000,
+        8000
+      ],
+      [
+        null,
+        null,
+        4,
+        25,
+        100,
+        5000
+      ]
+    ],
+    "bonus": {
+      "min": 8,
+      "max": 28
+    },
+    "jackpot": {
+      "enabled": false,
+      "excludeUUS": false,
+      "winningRatio": 0,
+      "playerContributionRatio": 0,
+      "botContributionRatio": 0
+    }
+  },
+  "siteExclusions": [
+    "test",
+    "SKy"
+  ],
+  "smartBotEnabled": false,
+  "smartBotGroupRatio": 0
+}]

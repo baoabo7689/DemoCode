@@ -1,0 +1,372 @@
+[{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde090"
+  },
+  "c": 0,
+  "f": "GD",
+  "m": "NapThe"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde092"
+  },
+  "c": 701173,
+  "f": "id",
+  "m": "BauCua_phien"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde091"
+  },
+  "c": 479755,
+  "f": "id",
+  "m": "TaiXiu_phien"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0a0"
+  },
+  "c": 2093,
+  "f": "UID",
+  "m": "UserInfo"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0a4"
+  },
+  "c": 32,
+  "f": "id",
+  "m": "Candy_red"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0a1"
+  },
+  "c": 0,
+  "f": "GD",
+  "m": "Bank_history"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0a5"
+  },
+  "c": 0,
+  "f": "id",
+  "m": "LongLan_xu"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0b3"
+  },
+  "c": 2,
+  "f": "id",
+  "m": "Mini3Cay_xu"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0c2"
+  },
+  "c": 167,
+  "f": "id",
+  "m": "BigBabol_red"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0c4"
+  },
+  "c": 0,
+  "f": "id",
+  "m": "VuongQuocRed_xu"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde094"
+  },
+  "c": 0,
+  "f": "id",
+  "m": "Candy_xu"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0c3"
+  },
+  "c": 270,
+  "f": "id",
+  "m": "CaoThap_red"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0cc"
+  },
+  "c": 69,
+  "f": "id",
+  "m": "VuongQuocRed_red"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0a3"
+  },
+  "c": 0,
+  "f": "id",
+  "m": "CaoThap_xu"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0cd"
+  },
+  "c": 0,
+  "f": "id",
+  "m": "Poker_xu"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0d3"
+  },
+  "c": 0,
+  "f": "GD",
+  "m": "MuaThe"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0b2"
+  },
+  "c": 0,
+  "f": "id",
+  "m": "mPoker_xu"
+},{
+  "_id": {
+    "$oid": "5e5a1f9863d1ff66e4bde0d5"
+  },
+  "c": 829,
+  "f": "id",
+  "m": "Mini3Cay_red"
+},{
+  "_id": {
+    "$oid": "5e5a1f9863d1ff66e4bde0d7"
+  },
+  "c": 0,
+  "f": "id",
+  "m": "Poker_red"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0c1"
+  },
+  "c": 0,
+  "f": "id",
+  "m": "ChuyenRed"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde093"
+  },
+  "c": 116,
+  "f": "id",
+  "m": "AngryBirds_red"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0a2"
+  },
+  "c": 0,
+  "f": "id",
+  "m": "BigBabol_xu"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0b1"
+  },
+  "c": 3,
+  "f": "id",
+  "m": "MuaXu"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0c0"
+  },
+  "c": 833079,
+  "f": "id",
+  "m": "XocXoc_phien"
+},{
+  "_id": {
+    "$oid": "5e5a1f9763d1ff66e4bde0c5"
+  },
+  "c": 261,
+  "f": "id",
+  "m": "LongLan_red"
+},{
+  "_id": {
+    "$oid": "5e5a1f9863d1ff66e4bde0d6"
+  },
+  "c": 0,
+  "f": "id",
+  "m": "AngryBirds_xu"
+},{
+  "_id": {
+    "$oid": "5e5a1f9863d1ff66e4bde0d4"
+  },
+  "c": 4334,
+  "f": "id",
+  "m": "mPoker_red"
+},{
+  "_id": {
+    "$oid": "5e96b2355e448509ce2cb629"
+  },
+  "c": 698458,
+  "f": "id",
+  "m": "TXTurbo_phien"
+},{
+  "_id": {
+    "$oid": "5e9abe177bf8bc5bc54d941c"
+  },
+  "c": 711384,
+  "f": "id",
+  "m": "ChanLeTurbo_phien"
+},{
+  "_id": {
+    "$oid": "5e9abe19c6fb045bdcea6d15"
+  },
+  "c": 234788,
+  "f": "id",
+  "m": "ChanLe_phien"
+},{
+  "_id": {
+    "$oid": "5ea2aaba12a8d935b05b7c6e"
+  },
+  "c": 696818,
+  "f": "id",
+  "m": "MiniDragonTiger_phien"
+},{
+  "_id": {
+    "$oid": "5eb5198852a38a5416f4db7a"
+  },
+  "c": 623126,
+  "f": "id",
+  "m": "KenoProMax_phien"
+},{
+  "_id": {
+    "$oid": "5ecc9d070e15576581423afd"
+  },
+  "c": 602059,
+  "f": "id",
+  "m": "MiniSedie_phien"
+},{
+  "_id": {
+    "$oid": "5ede26a92287102ec51c1b76"
+  },
+  "c": 480773,
+  "f": "id",
+  "m": "baccarat_phien"
+},{
+  "_id": {
+    "$oid": "5ee6e56ab01cc33ee9060e09"
+  },
+  "c": 585816,
+  "f": "id",
+  "m": "KenoMax_phien"
+},{
+  "_id": {
+    "$oid": "5ee6e56ab01cc33ee9060e0e"
+  },
+  "c": 877208,
+  "f": "id",
+  "m": "KenoNorth_phien"
+},{
+  "_id": {
+    "$oid": "5ee6e56ab01cc33ee9060e0b"
+  },
+  "c": 877473,
+  "f": "id",
+  "m": "KenoEast_phien"
+},{
+  "_id": {
+    "$oid": "5ee6e56ab01cc33ee9060e10"
+  },
+  "c": 877261,
+  "f": "id",
+  "m": "KenoSouth_phien"
+},{
+  "_id": {
+    "$oid": "5ee6e56ab01cc33ee9060e0c"
+  },
+  "c": 585814,
+  "f": "id",
+  "m": "KenoMini2_phien"
+},{
+  "_id": {
+    "$oid": "5ee6e56ab01cc33ee9060e0a"
+  },
+  "c": 877356,
+  "f": "id",
+  "m": "KenoWest_phien"
+},{
+  "_id": {
+    "$oid": "5ee6e56ab01cc33ee9060e0f"
+  },
+  "c": 585955,
+  "f": "id",
+  "m": "KenoMax2_phien"
+},{
+  "_id": {
+    "$oid": "5ee6e56ab01cc33ee9060e0d"
+  },
+  "c": 585962,
+  "f": "id",
+  "m": "KenoMini_phien"
+},{
+  "_id": {
+    "$oid": "5f2cb9382053491aa345b983"
+  },
+  "c": 338826,
+  "f": "id",
+  "m": "Roulette_phien"
+},{
+  "_id": {
+    "$oid": "5f474b3e54662e7d05d1caf8"
+  },
+  "c": 1446,
+  "f": "id",
+  "m": "Spin_result"
+},{
+  "_id": {
+    "$oid": "5f5ef1c74440943affe87643"
+  },
+  "c": 382266,
+  "f": "id",
+  "m": "VipSeDie_phien"
+},{
+  "_id": {
+    "$oid": "5f7c35489d5e3ee976b8fab7"
+  },
+  "c": 462520,
+  "f": "id",
+  "m": "SpecialSeDie_phien"
+},{
+  "_id": {
+    "$oid": "5f8d3b4d28b7d5b7c4e3892d"
+  },
+  "c": 6182,
+  "f": "id",
+  "m": "BlackJack_phien"
+},{
+  "_id": {
+    "$oid": "5fa4eb9080a1b308ccc8b4af"
+  },
+  "c": 237546,
+  "f": "id",
+  "m": "VipFishPrawnCrab_phien"
+},{
+  "_id": {
+    "$oid": "5fb773742531f77781b60c9d"
+  },
+  "c": 242503,
+  "f": "id",
+  "m": "SicBo_phien"
+},{
+  "_id": {
+    "$oid": "5fc4947146309446b88130a4"
+  },
+  "c": 181631,
+  "f": "id",
+  "m": "VipBaccarat_phien"
+},{
+  "_id": {
+    "$oid": "600539f4795f1922f3130b77"
+  },
+  "c": 179138,
+  "f": "id",
+  "m": "VipSedieWar_phien"
+},{
+  "_id": {
+    "$oid": "605c45a28a075f52d53f15fe"
+  },
+  "c": 16,
+  "f": "id",
+  "m": "FourGuardians_freespin"
+},{
+  "_id": {
+    "$oid": "605c45a28a075f808f3f15ff"
+  },
+  "c": 38473,
+  "f": "id",
+  "m": "FourGuardians_round"
+}]

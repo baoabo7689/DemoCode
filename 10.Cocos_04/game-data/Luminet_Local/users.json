@@ -1,0 +1,123 @@
+[{
+  "_id": {
+    "$oid": "60a73810563cf2e836b87a37"
+  },
+  "local": {
+    "_id": {
+      "$oid": "000000000000000000000000"
+    },
+    "username": "gamesimulator_3183462",
+    "password": "103ce028-dc59-445e-b890-a30fa42530c1",
+    "regDate": {
+      "$date": "2021-05-21T04:33:20.056Z"
+    },
+    "memberId": 3183462,
+    "memberName": "B1QMw52B",
+    "clientId": "gamesimulator",
+    "currency": "IN",
+    "isCash": false
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60a73d4f5963a95a6136a29f"
+  },
+  "local": {
+    "_id": {
+      "$oid": "000000000000000000000000"
+    },
+    "username": "gamesimulator_3680881",
+    "password": "fa74a38d-e228-4761-ac2d-09a2b75d4ce5",
+    "regDate": {
+      "$date": "2021-05-21T04:55:43.575Z"
+    },
+    "memberId": 3680881,
+    "memberName": "pWioinZ6",
+    "clientId": "gamesimulator",
+    "currency": "IN",
+    "isCash": false
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60a78a7e20494517d7c12ea6"
+  },
+  "local": {
+    "_id": {
+      "$oid": "000000000000000000000000"
+    },
+    "username": "gamesimulator_8365914",
+    "password": "be85366a-6301-4742-8d65-b29a5536d075",
+    "regDate": {
+      "$date": "2021-05-21T10:25:02.791Z"
+    },
+    "memberId": 8365914,
+    "memberName": "Jr94VeGu",
+    "clientId": "gamesimulator",
+    "currency": "IN",
+    "isCash": false
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60cad7a0a016fc10f73746e6"
+  },
+  "local": {
+    "_id": {
+      "$oid": "000000000000000000000000"
+    },
+    "username": "gamesimulator_7561977",
+    "password": "a3adb81c-49b8-4ea7-8a94-832a755f4d55",
+    "regDate": {
+      "$date": "2021-06-17T05:03:28.048Z"
+    },
+    "memberId": 7561977,
+    "memberName": "D9H7nGVB",
+    "clientId": "gamesimulator",
+    "currency": "IN",
+    "isCash": false
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60cada162a10b177e9af9310"
+  },
+  "local": {
+    "_id": {
+      "$oid": "000000000000000000000000"
+    },
+    "username": "gamesimulator_807629",
+    "password": "6a2e46a7-1621-4b1c-b0ad-6f996bff7974",
+    "regDate": {
+      "$date": "2021-06-17T05:13:58.711Z"
+    },
+    "memberId": 807629,
+    "memberName": "JMO0iPCt",
+    "clientId": "gamesimulator",
+    "currency": "IN",
+    "isCash": false,
+    "brandName": null
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b59b7199689558aced0329"
+  },
+  "local": {
+    "_id": {
+      "$oid": "000000000000000000000000"
+    },
+    "username": "gamesimulator_8076292",
+    "password": "6a2e46a7-1621-4b1c-b0ad-6f996bff7974",
+    "regDate": {
+      "$date": "2021-06-17T05:13:58.711Z"
+    },
+    "memberId": 807629,
+    "memberName": "JMO0iPCt",
+    "clientId": "gamesimulator",
+    "currency": "IN",
+    "isCash": false,
+    "brandName": null
+  },
+  "__v": 0
+}]

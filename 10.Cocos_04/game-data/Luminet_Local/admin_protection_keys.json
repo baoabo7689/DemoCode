@@ -1,0 +1,6 @@
+[{
+  "_id": {
+    "$oid": "60a2434d7696c23a48f56993"
+  },
+  "Xml": "<key id=\"4b54892a-2878-4ff9-9066-9debc830fd4d\" version=\"1\"><creationDate>2021-05-17T10:19:57.5680392Z</creationDate><activationDate>2021-05-17T10:19:57.5190299Z</activationDate><expirationDate>2021-08-15T10:19:57.5190299Z</expirationDate><descriptor deserializerType=\"Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.15.0, Culture=neutral, PublicKeyToken=adb9793829ddae60\"><descriptor><encryption algorithm=\"AES_256_CBC\" /><validation algorithm=\"HMACSHA256\" /><masterKey p4:requiresEncryption=\"true\" xmlns:p4=\"http://schemas.asp.net/2015/03/dataProtection\"><!-- Warning: the key below is in an unencrypted form. --><value>UEccCWJwX4i7EMGHHUh0uBT9P5qMi0ta5i/jcvpmO7rRSuJmSTp6OvS7E25lfQhRApXziVzAgR1ISF4TLc0vSw==</value></masterKey></descriptor></descriptor></key>"
+}]

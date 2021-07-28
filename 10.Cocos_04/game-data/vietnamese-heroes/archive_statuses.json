@@ -1,0 +1,9 @@
+[{
+  "_id": {
+    "$oid": "60ae0e517dfd1fa0fc8ddfe2"
+  },
+  "name": "vietnameseheroes",
+  "lastArcId": {
+    "_rounds": 1
+  }
+}]

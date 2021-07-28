@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "5e89278ef729d97d926b76f3"
+  },
+  "time": {
+    "$date": "2020-04-05T00:34:22.454Z"
+  },
+  "__v": 0,
+  "username": "superadmin",
+  "password": "$2a$12$co9r8FdspojNDFCr4phbIePJOFKO8m.pGiWkm4q13IymVNXHJTuDe",
+  "isadmin": true
+},{
+  "_id": {
+    "$oid": "5e89331d060c4d2b75d3a9ba"
+  },
+  "time": {
+    "$date": "2020-04-05T01:23:41.051Z"
+  },
+  "__v": 0,
+  "username": "admin",
+  "password": "$2a$12$1y86uDJFWFvf6vH9o1OleOCLvDyEQsxgL1tqavgju6NUoKuJYkGF6",
+  "isadmin": false
+},{
+  "_id": {
+    "$oid": "5e8eb9c662bfa36b90ff1771"
+  },
+  "time": {
+    "$date": "2020-04-09T05:59:34.752Z"
+  },
+  "__v": 0,
+  "username": "Mikjey",
+  "password": "$2a$12$W6EHI3PtSQPY3yXb8uJ7A.96mLZJZa53/TVBOiIral599QXIVXVoi",
+  "isadmin": false
+}]
