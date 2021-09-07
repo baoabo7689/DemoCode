@@ -1,0 +1,47 @@
+[{
+  "_id": {
+    "$oid": "5ee70a3373e500234642e8c7"
+  },
+  "time": {
+    "$date": "2020-12-17T02:41:18.471Z"
+  },
+  "__v": 0,
+  "type": 0,
+  "name": "kenoeast",
+  "enabled": true,
+  "botenabled": false,
+  "minbet": 1,
+  "maxbet": 2000,
+  "disabledround": 850343,
+  "bot_maxbet": 10,
+  "hour_maxbot": [],
+  "disabled_message": "Game đang được bảo trì, vui lòng quay lại sau 10 phút.",
+  "choices_maxbet": {
+    "big": 2000,
+    "small": 2000,
+    "even": 2000,
+    "odd": 2000,
+    "earth": 500,
+    "fire": 1500,
+    "gold": 500,
+    "water": 2000,
+    "wood": 1500
+  },
+  "odds": {
+    "big": 1.96,
+    "small": 1.96,
+    "even": 1.96,
+    "odd": 1.96,
+    "earth": 9.2,
+    "fire": 4.6,
+    "gold": 9.2,
+    "water": 2.4,
+    "wood": 4.6
+  },
+  "delayStartTime": 10,
+  "enableFreeBet": false,
+  "slotsConfig": null,
+  "siteExclusions": null,
+  "smartBotEnabled": false,
+  "smartBotGroupRatio": 0
+}]

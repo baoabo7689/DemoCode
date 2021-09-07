@@ -1,6 +1,6 @@
 {
   "userServicesTest": "http://localhost:3014",
-  "userServices": "http://localhost:5000/user/vietnameseheroes",
+  "userServices": "http://localhost:8084/user/specialsedie",
   "adminServices": "http://localhost:3011/admin/bbgame",
   "socketOptions": {
     "pingInterval": 60000,

@@ -24,18 +24,18 @@ class App extends React.PureComponent {
 
   sendRequest() {
     const socket = socketIOClient(
-      'http://l1-proxy.lumigame.com/user/heroesslot',
+      'https://l1-proxy.lumigame.com/user/kenomax',
       {
         transports: ['websocket'],
         upgrade: false,
-        path: '/heroesslot/socket.io',
+        path: '/minikeno/socket.io',
         forceNew: true,
       }
     );
 
     socket.emit('signin', {
-      username: 'gamesimulator_2148557',
-      ss: 'lXtCebybTd2JAXa6uT3hQqk12T9S637V_gamesimulator_2148557',
+      username: 'admin_1',
+      ss: 'l6q6opiOm6wVU7qOhhwknF8PNGnl39Ce_admin_1',
     });
 
     socket.on('signedIn', () => {
@@ -46,7 +46,7 @@ class App extends React.PureComponent {
         // roundId: 7,
       };
 
-      // socket.emit(this.state.methodName, data);
+      //  socket.emit(this.state.methodName, data);
       socket.emit('getGameConfigs');
       socket.emit('inGame');
 
