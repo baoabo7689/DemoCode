@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "5f472b3500c5e01fc4fde8ca"
+  },
+  "time": {
+    "$date": "2020-09-08T03:53:17.521Z"
+  },
+  "__v": 0,
+  "type": 0,
+  "name": "luckywheel",
+  "enabled": true,
+  "botenabled": false,
+  "minbet": 1,
+  "maxbet": 1,
+  "disabledround": null,
+  "bot_maxbet": 10,
+  "hour_maxbot": [],
+  "disabled_message": "Game đang được bảo trì, vui lòng quay lại sau 10 phút.",
+  "choices_maxbet": {},
+  "odds": {},
+  "delayStartTime": 0,
+  "enableFreeBet": false,
+  "slotsConfig": null,
+  "siteExclusions": null,
+  "smartBotEnabled": false,
+  "smartBotGroupRatio": 0
+}]

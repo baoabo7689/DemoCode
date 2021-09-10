@@ -1,16 +1,17 @@
-import React from 'react';
-import './App.scss';
-import socketIOClient from 'socket.io-client';
-import appConfigs from './configs';
+import React from "react";
+import "./App.scss";
+import socketIOClient from "socket.io-client";
+import appConfigs from "./configs";
 
 class App extends React.PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      methodName: 'bet',
+      methodName: "bet",
       requestData: `{\r  "key": "value" \r}`,
-      responseData: 'Result',
+      responseData: "Result",
+      socket: null,
     };
   }
 
@@ -23,37 +24,18 @@ class App extends React.PureComponent {
   }
 
   sendRequest() {
+    //  this.postRequest();
     const socket = socketIOClient(
-      'https://l1-proxy.lumigame.com/user/kenomax',
-      {
-        transports: ['websocket'],
-        upgrade: false,
-        path: '/minikeno/socket.io',
-        forceNew: true,
-      }
+      appConfigs.userServices,
+      appConfigs.socketOptions
     );
 
-    socket.emit('signin', {
-      username: 'admin_1',
-      ss: 'l6q6opiOm6wVU7qOhhwknF8PNGnl39Ce_admin_1',
+    socket.emit("signin", {
+      username: "admin_1",
+      ss: "l6q6opiOm6wVU7qOhhwknF8PNGnl39Ce_admin_1",
     });
 
-    socket.on('signedIn', () => {
-      const data = {
-        amount: 10,
-        betChoice: 'fish',
-        freeBet: false,
-        // roundId: 7,
-      };
-
-      //  socket.emit(this.state.methodName, data);
-      socket.emit('getGameConfigs');
-      socket.emit('inGame');
-
-      socket.emit('getStatistics', {});
-    });
-
-    socket.on('BauCua', (data) => {
+    socket.on("BauCua", (data) => {
       console.log(data);
 
       if (!!data.endBet) {
@@ -61,15 +43,32 @@ class App extends React.PureComponent {
       }
     });
 
-    socket.on('Roulette', (data) => {
+    socket.on("Roulette", (data) => {
       console.log(data);
     });
+
+    this.setState({ socket });
+  }
+
+  inGame() {
+    this.state.socket.emit("inGame");
+  }
+
+  postRequest() {
+    const http = new XMLHttpRequest();
+    const url = "http://l1-result1.lumigame.com/GameTicket/GetAccessUrl";
+    http.open("POST", url);
+    http.send();
+
+    http.onreadystatechange = (e) => {
+      console.log(http.responseText);
+    };
   }
 
   displayResult(data) {
     var text = Object.keys(data)
       .map((k) => `\r  "${k}": "${data[k]}",`)
-      .join(',');
+      .join(",");
     this.setState({ responseData: `{${text}\r}` });
   }
 
@@ -77,34 +76,35 @@ class App extends React.PureComponent {
     var result = JSON.parse(data);
     var text = Object.keys(result)
       .map((k) => `\r  "${k}": "${result[k]}",`)
-      .join(',');
+      .join(",");
     this.setState({ responseData: `{${text}\r}` });
   }
 
   render() {
     return (
       <div>
-        <div className='group'>
+        <div className="group">
           <label>Method </label>
           <input
-            className='label'
-            type='text'
+            className="label"
+            type="text"
             value={this.state.methodName}
             onChange={(e) => this.changeMethod(e)}
           ></input>
           <button onClick={() => this.sendRequest()}>Send</button>
+          <button onClick={() => this.inGame()}>inGame</button>
         </div>
-        <div className='group'>
+        <div className="group">
           <textarea
-            className='request-data'
+            className="request-data"
             onChange={(e) => this.changeRequestData(e)}
             value={this.state.requestData}
           ></textarea>
         </div>
-        <div className='group'>
+        <div className="group">
           <textarea
-            className='response-data'
-            disabled='disabled'
+            className="response-data"
+            disabled="disabled"
             value={this.state.responseData}
           ></textarea>
         </div>

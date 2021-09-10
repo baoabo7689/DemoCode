@@ -1,6 +1,6 @@
 {
   "userServicesTest": "http://localhost:3014",
-  "userServices": "http://localhost:8084/user/specialsedie",
+  "userServices": "http://localhost:5005/user/hilo",
   "adminServices": "http://localhost:3011/admin/bbgame",
   "socketOptions": {
     "pingInterval": 60000,
@@ -8,4 +8,4 @@
     "transports": ["websocket"],
     "allowUpgrades": false
   }
-}
+} 
