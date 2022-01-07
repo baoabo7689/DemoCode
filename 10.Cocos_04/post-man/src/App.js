@@ -25,13 +25,18 @@ class App extends React.PureComponent {
   }
 
   sendRequest() {
-    //  this.postRequest();
-    const socket = socketIOClient("https://l1-proxy.lumigame.com/user/hilo", {
+    //this.postRequest();
+
+    const socket = socketIOClient("http://localhost:8003/user/taixiu", {
       transports: ["websocket"],
       upgrade: false,
-      path: "/hilo/socket.io",
-      forceNew: true,
-      parser: customParser,
+      path: "",
+      forceNew: false,
+      //   parser: customParser,
+      auth: {
+        username: "admin_1",
+        ss: "l6q6opiOm6wVU7qOhhwknF8PNGnl39Ce_admin_1",
+      },
     });
 
     socket.on("connect", () => {
@@ -51,20 +56,30 @@ class App extends React.PureComponent {
     });
 
     socket.on("disconnect", (reason) => {
-      console.log(reason);
+      console.log("disconnect " + reason);
     });
 
-    socket.emit("signin", {
-      username: "admin_1",
-      ss: "l6q6opiOm6wVU7qOhhwknF8PNGnl39Ce_admin_1",
-    });
+    //  socket.emit("signin", {
+    // username: "admin_1",
+    //  ss: "l6q6opiOm6wVU7qOhhwknF8PNGnl39Ce_admin_1",
+    // });
 
     socket.on("signedIn", () => {
-      // socket.emit("anNon");
-      socket.emit("inGame");
-      socket.emit("newGame", { amount: 10 });
-      // socket.emit("bet", { amount: 10, betChoice: "hi" });
-      socket.emit("getHistory", { page: 1 });
+      //  socket.emit("collect");
+      socket.emit("inGame", {
+        username: "admin_1",
+        ss: "l6q6opiOm6wVU7qOhhwknF8PNGnl39Ce_admin_1",
+      });
+
+      // socket.emit("bet", { amount: 10 });
+
+      setTimeout(() => {
+        // socket.emit("deal", { amount: 10, betChoice: "h" });
+      }, 2000);
+      //socket.emit("getHistory", { page: 1 });
+      setTimeout(() => {
+        //socket.emit("getHistory", { page: 1 });
+      }, 10000);
     });
 
     this.setState({ socket });
@@ -76,9 +91,10 @@ class App extends React.PureComponent {
 
   postRequest() {
     const http = new XMLHttpRequest();
-    const url = "http://l1-result1.lumigame.com/GameTicket/GetAccessUrl";
+    const url = "http://localhost:5001/api/set-result";
     http.open("POST", url);
-    http.send();
+    http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    http.send(JSON.stringify({ roundId: 10, result: { rank: 5, suit: 2 } }));
 
     http.onreadystatechange = (e) => {
       console.log(http.responseText);
